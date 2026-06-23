@@ -1,0 +1,48 @@
+{
+  "innerHeight": 720,
+  "innerWidth": 1280,
+  "maxScroll": 4424,
+  "scrollHeight": 5144,
+  "title": "Collider | Dash",
+  "step": 600,
+  "url": "https://www.dashcreative.co/work/collider",
+  "slug": "dashcreative-collider",
+  "slices": [
+    {
+      "file": "C:\\Users\\djoum\\Documents\\Travail\\MAPBRAIN\\DEV\\mapbrain-agency\\tmp-browser-captures\\dashcreative-collider\\slice-000.png",
+      "scrollY": 0
+    },
+    {
+      "file": "C:\\Users\\djoum\\Documents\\Travail\\MAPBRAIN\\DEV\\mapbrain-agency\\tmp-browser-captures\\dashcreative-collider\\slice-001.png",
+      "scrollY": 599
+    },
+    {
+      "file": "C:\\Users\\djoum\\Documents\\Travail\\MAPBRAIN\\DEV\\mapbrain-agency\\tmp-browser-captures\\dashcreative-collider\\slice-002.png",
+      "scrollY": 1199
+    },
+    {
+      "file": "C:\\Users\\djoum\\Documents\\Travail\\MAPBRAIN\\DEV\\mapbrain-agency\\tmp-browser-captures\\dashcreative-collider\\slice-003.png",
+      "scrollY": 1799
+    },
+    {
+      "file": "C:\\Users\\djoum\\Documents\\Travail\\MAPBRAIN\\DEV\\mapbrain-agency\\tmp-browser-captures\\dashcreative-collider\\slice-004.png",
+      "scrollY": 2399
+    },
+    {
+      "file": "C:\\Users\\djoum\\Documents\\Travail\\MAPBRAIN\\DEV\\mapbrain-agency\\tmp-browser-captures\\dashcreative-collider\\slice-005.png",
+      "scrollY": 2999
+    },
+    {
+      "file": "C:\\Users\\djoum\\Documents\\Travail\\MAPBRAIN\\DEV\\mapbrain-agency\\tmp-browser-captures\\dashcreative-collider\\slice-006.png",
+      "scrollY": 3599
+    },
+    {
+      "file": "C:\\Users\\djoum\\Documents\\Travail\\MAPBRAIN\\DEV\\mapbrain-agency\\tmp-browser-captures\\dashcreative-collider\\slice-007.png",
+      "scrollY": 4199
+    },
+    {
+      "file": "C:\\Users\\djoum\\Documents\\Travail\\MAPBRAIN\\DEV\\mapbrain-agency\\tmp-browser-captures\\dashcreative-collider\\slice-008.png",
+      "scrollY": 4424
+    }
+  ]
+}

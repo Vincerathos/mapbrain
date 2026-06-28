@@ -1,5 +1,10 @@
 # CHANGELOG
 
+## 29-06-2026
+
+- 01:36 Correction de la section de contact en supprimant une prop devenue inutile dans `src/sections/final-cta-section.tsx` et en réalignant son appel dans `src/App.tsx` pour rétablir un build propre.
+- 01:36 Relance complète de la validation projet avec `tsc --noEmit`, `eslint` et `vite build`, puis remise à l'état du dépôt du `pnpm-lock.yaml` modifié uniquement par la réparation d'environnement locale.
+
 ## 23-06-2026
 
 - 09:41 Création d'un `AGENTS.md` projet pour cadrer le positionnement MAPBRAIN, la promesse éditoriale, les priorités produit et les règles de collaboration pour le développement du site portfolio.

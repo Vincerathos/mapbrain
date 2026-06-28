@@ -67,7 +67,7 @@ function App() {
         <CapabilitySection content={content.capabilities} />
         <PartnersSection content={content.partners} />
         <FaqSection content={content.faq} />
-        <FinalCtaSection content={content.finalCta} />
+        <FinalCtaSection />
       </main>
 
       <Footer

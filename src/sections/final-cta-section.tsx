@@ -2,13 +2,8 @@ import { useEffect, useState } from 'react'
 import type { FormEvent } from 'react'
 import { useTranslation } from 'react-i18next'
 import { useReveal } from '../hooks/use-reveal'
-import type { SiteContent } from '../types/site'
 
-interface FinalCtaSectionProps {
-  content: SiteContent['finalCta']
-}
-
-export function FinalCtaSection({ content }: FinalCtaSectionProps) {
+export function FinalCtaSection() {
   const revealRef = useReveal<HTMLElement>()
   const { i18n } = useTranslation()
   const isFrench = i18n.resolvedLanguage !== 'en'

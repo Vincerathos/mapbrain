@@ -19,15 +19,20 @@ export const siteContent: Record<Locale, SiteContent> = {
       cta: { href: '#contact', label: 'Réserver un audit' }
     },
     hero: {
-      eyebrow: 'Le studio qui transforme les idées en entreprises performantes',
+      eyebrow: 'Conseil, produit, IA et croissance dans une seule trajectoire',
       title: 'Analyse. Build. Scale.',
-      subtitle: 'Un partenaire unique pour structurer, construire et accélérer.',
+      subtitle: 'Analyser juste. Construire vite. Accélérer durablement.',
       body:
-        "Nous aidons les startups, PME et organisations à valider leurs opportunités, concevoir les bons produits et activer la croissance avec l'intelligence artificielle, le design et la technologie.",
-      primaryCta: { href: '#contact', label: 'Réserver un audit stratégique' },
-      secondaryCta: { href: '#framework', label: 'Découvrir notre méthode' },
-      badgeTitle: 'MAPBRAIN',
-      badgeBody: 'Audit stratégique et accélération produit',
+        'MAPBRAIN aide les équipes à réduire le risque, accélérer les décisions et produire plus vite grâce à une exécution unifiée.',
+      rotatingPhrases: [
+        'Analyser juste. Construire vite. Accélérer durablement.',
+        'Valider les opportunités avant de lancer trop tôt.',
+        'Concevoir des produits clairs, crédibles et rentables.'
+      ],
+      primaryCta: { href: '#contact', label: 'Lancer un audit' },
+      secondaryCta: { href: '#framework', label: 'Voir le framework' },
+      badgeTitle: 'MAPBRAIN Team',
+      badgeBody: 'Analyse, build et scale pour les équipes qui veulent aller vite.',
       serviceTags: [
         'Validation business',
         'Design produit',
@@ -44,8 +49,35 @@ export const siteContent: Record<Locale, SiteContent> = {
         src: 'https://images.unsplash.com/photo-1517048676732-d65bc937f952?auto=format&fit=crop&w=1600&q=80',
         alt: "Équipe en réunion stratégique autour d'une table de travail dans un studio contemporain."
       },
-      visualEyebrow: 'Stratégie / Design / Engineering / IA',
-      visualTitle: 'Pensé pour rester vivant, précis et immédiatement mémorable.'
+      visualEyebrow: 'Analyse / Build / Scale / IA',
+      visualTitle:
+        'Une base claire pour prendre de meilleures décisions et accélérer sans disperser l’exécution.'
+    },
+    about: {
+      eyebrow: 'About us',
+      title:
+        'Nous structurons des produits, des opérations et de la croissance avec une exécution pensée pour durer.',
+      body:
+        'MAPBRAIN combine stratégie, design, développement, IA et réseau pour transformer une ambition en système concret, crédible et scalable.',
+      figures: [
+        { value: '100+', label: 'Projects Built' },
+        { value: '100%', label: 'Client Satisfaction' },
+        { value: '$1M+', label: 'Partner Perks & Credits' },
+        { value: 'Worldwide', label: 'Global Presence' },
+        { value: 'Several / Week', label: 'MVPs Built' }
+      ],
+      recognition: [
+        { value: '#1', label: 'Mobile App on Coder' },
+        { value: 'Station F', label: 'Startup Selection' },
+        { value: 'Microsoft & Google', label: 'Official Partnerships' },
+        { value: 'Sortlist', label: 'Trusted Agency' },
+        { value: 'Cannes Festival', label: 'Selected Program' },
+        { value: 'Global Network', label: 'Industry Leaders & Public Figures' },
+        { value: '$1M+ Valuation', label: 'Company Growth Milestone' },
+        { value: '6 Continents', label: 'International Presence' },
+        { value: 'VC & BA Interest', label: 'Investor Recognition' },
+        { value: 'AI-Driven', label: 'Product & Growth Experts' }
+      ]
     },
     promise: {
       eyebrow: 'Notre promesse',
@@ -338,6 +370,53 @@ export const siteContent: Record<Locale, SiteContent> = {
         { label: 'Format', value: 'Audit, sprint, build complet ou optimisation', href: '#framework' }
       ]
     },
+    faq: {
+      eyebrow: 'FAQ',
+      title: 'Des questions avant de lancer le chantier ?',
+      body:
+        'Voici les réponses les plus utiles pour comprendre comment MAPBRAIN cadre, exécute et accélère un projet.',
+      contactPrompt: 'Vous avez encore une question ?',
+      contactCta: {
+        href: 'mailto:hello@mapbrain.agency?subject=Question%20MAPBRAIN',
+        label: 'Nous contacter'
+      },
+      visual: {
+        src: 'https://images.unsplash.com/photo-1593508512255-86ab42a8e620?auto=format&fit=crop&w=1200&q=80',
+        alt: 'Professionnel avec casque de realite virtuelle dans un univers technologique'
+      },
+      items: [
+        {
+          question: 'Quels types de missions MAPBRAIN peut prendre en charge ?',
+          answer:
+            'Nous intervenons sur le cadrage stratégique, le design produit, le développement web ou SaaS, l’automatisation IA et les systèmes de croissance.'
+        },
+        {
+          question: 'Travaillez-vous plutôt en audit, en sprint ou en accompagnement long ?',
+          answer:
+            'Les trois sont possibles. Nous pouvons démarrer par un audit court, enchaîner sur un sprint ciblé ou prendre un produit en exécution plus continue selon le contexte.'
+        },
+        {
+          question: 'À quelle vitesse peut-on lancer une première phase ?',
+          answer:
+            'Dès que le cadrage et les priorités sont clairs. L’objectif est justement de réduire les cycles de flottement pour enclencher rapidement une première phase utile.'
+        },
+        {
+          question: 'Est-ce que vous combinez stratégie, produit et automatisation dans une même mission ?',
+          answer:
+            'Oui. MAPBRAIN est pensé pour relier validation business, livraison produit et gains opérationnels dans une même trajectoire.'
+        },
+        {
+          question: 'Travaillez-vous avec des équipes déjà en place ?',
+          answer:
+            'Oui. Nous pouvons renforcer une équipe existante, structurer la collaboration avec des partenaires externes ou porter une partie de l’exécution en direct.'
+        },
+        {
+          question: 'Comment savoir si un audit est la bonne première étape ?',
+          answer:
+            'Quand il faut clarifier une opportunité, arbitrer des priorités ou éviter de lancer trop tôt, l’audit permet de réduire le risque avant d’investir davantage.'
+        }
+      ]
+    },
     footer: {
       blurb: 'MAPBRAIN aide les équipes à transformer leurs opportunités en produits puis en leviers de croissance.',
       copyright: 'MAPBRAIN — Analyse. Build. Scale.'
@@ -361,15 +440,20 @@ export const siteContent: Record<Locale, SiteContent> = {
       cta: { href: '#contact', label: 'Book an audit' }
     },
     hero: {
-      eyebrow: 'The studio turning ideas into high-performing businesses',
+      eyebrow: 'Strategy, product, AI and growth aligned in one path',
       title: 'Analyze. Build. Scale.',
-      subtitle: 'One partner to structure, build and accelerate.',
+      subtitle: 'Analyze clearly. Build fast. Scale with intent.',
       body:
-        'We help startups, SMEs and organizations validate opportunities, shape the right products and activate growth through artificial intelligence, design and technology.',
-      primaryCta: { href: '#contact', label: 'Book a strategic audit' },
-      secondaryCta: { href: '#framework', label: 'Explore our method' },
-      badgeTitle: 'MAPBRAIN',
-      badgeBody: 'Strategic audit and product acceleration',
+        'MAPBRAIN helps teams reduce risk, speed up decisions and ship faster through one aligned execution layer.',
+      rotatingPhrases: [
+        'Analyze clearly. Build fast. Scale with intent.',
+        'Validate opportunities before shipping too early.',
+        'Design sharper products with stronger business traction.'
+      ],
+      primaryCta: { href: '#contact', label: 'Start an audit' },
+      secondaryCta: { href: '#framework', label: 'View the framework' },
+      badgeTitle: 'MAPBRAIN Team',
+      badgeBody: 'Analyze, build and scale for teams that need speed and clarity.',
       serviceTags: [
         'Business validation',
         'Product design',
@@ -386,8 +470,35 @@ export const siteContent: Record<Locale, SiteContent> = {
         src: 'https://images.unsplash.com/photo-1517048676732-d65bc937f952?auto=format&fit=crop&w=1600&q=80',
         alt: 'Leadership team in a strategic workshop around a table inside a contemporary studio.'
       },
-      visualEyebrow: 'Strategy / Design / Engineering / AI',
-      visualTitle: 'Built to stay alive, sharp and instantly memorable.'
+      visualEyebrow: 'Analyze / Build / Scale / AI',
+      visualTitle:
+        'A sharper base for better decisions, faster shipping and more credible growth.'
+    },
+    about: {
+      eyebrow: 'About us',
+      title:
+        'We structure products, operations and growth through execution designed to hold up over time.',
+      body:
+        'MAPBRAIN combines strategy, design, development, AI and network leverage to turn ambition into a concrete, credible and scalable system.',
+      figures: [
+        { value: '100+', label: 'Projects Built' },
+        { value: '100%', label: 'Client Satisfaction' },
+        { value: '$1M+', label: 'Partner Perks & Credits' },
+        { value: 'Worldwide', label: 'Global Presence' },
+        { value: 'Several / Week', label: 'MVPs Built' }
+      ],
+      recognition: [
+        { value: '#1', label: 'Mobile App on Coder' },
+        { value: 'Station F', label: 'Startup Selection' },
+        { value: 'Microsoft & Google', label: 'Official Partnerships' },
+        { value: 'Sortlist', label: 'Trusted Agency' },
+        { value: 'Cannes Festival', label: 'Selected Program' },
+        { value: 'Global Network', label: 'Industry Leaders & Public Figures' },
+        { value: '$1M+ Valuation', label: 'Company Growth Milestone' },
+        { value: '6 Continents', label: 'International Presence' },
+        { value: 'VC & BA Interest', label: 'Investor Recognition' },
+        { value: 'AI-Driven', label: 'Product & Growth Experts' }
+      ]
     },
     promise: {
       eyebrow: 'Our promise',
@@ -675,6 +786,53 @@ export const siteContent: Record<Locale, SiteContent> = {
         { label: 'Email', value: 'hello@mapbrain.agency', href: 'mailto:hello@mapbrain.agency' },
         { label: 'Coverage', value: 'France-based and remote engagements', href: '#contact' },
         { label: 'Formats', value: 'Audit, sprint, full build or optimization', href: '#framework' }
+      ]
+    },
+    faq: {
+      eyebrow: 'FAQ',
+      title: 'Questions before starting the work?',
+      body:
+        'Here are the answers that matter most to understand how MAPBRAIN frames, builds and accelerates a project.',
+      contactPrompt: 'Still have a question?',
+      contactCta: {
+        href: 'mailto:hello@mapbrain.agency?subject=Question%20for%20MAPBRAIN',
+        label: 'Contact us'
+      },
+      visual: {
+        src: 'https://images.unsplash.com/photo-1593508512255-86ab42a8e620?auto=format&fit=crop&w=1200&q=80',
+        alt: 'Professional wearing a virtual reality headset in a tech environment'
+      },
+      items: [
+        {
+          question: 'What kinds of missions can MAPBRAIN handle?',
+          answer:
+            'We work across strategic framing, product design, web or SaaS development, AI automation and growth systems.'
+        },
+        {
+          question: 'Do you work through audits, sprints or longer partnerships?',
+          answer:
+            'All three are possible. We can start with a short audit, move into a focused sprint or support execution over a longer arc depending on the situation.'
+        },
+        {
+          question: 'How fast can a first phase start?',
+          answer:
+            'As soon as the framing and priorities are clear. The goal is precisely to reduce drift and trigger a useful first phase quickly.'
+        },
+        {
+          question: 'Can you combine strategy, product and automation in one engagement?',
+          answer:
+            'Yes. MAPBRAIN is built to connect business validation, product delivery and operational leverage inside one trajectory.'
+        },
+        {
+          question: 'Do you work with teams that already have internal resources?',
+          answer:
+            'Yes. We can strengthen an existing team, help structure external partners or directly own part of the execution layer.'
+        },
+        {
+          question: 'How do we know a strategic audit is the right first step?',
+          answer:
+            'When an opportunity needs clarification, priorities are unclear or the risk of building too early is high, the audit is usually the best starting point.'
+        }
       ]
     },
     footer: {

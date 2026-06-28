@@ -29,3 +29,5 @@ dist-ssr
 .tmp-dev.log
 creative-marketing-home.png
 test-creative-viewport.png
+
+.vercel

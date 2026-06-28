@@ -29,6 +29,7 @@ export interface HeroContent {
   image: ImageAsset
   metrics: HeroMetric[]
   primaryCta: CtaLink
+  rotatingPhrases: string[]
   secondaryCta: CtaLink
   serviceTags: string[]
   subtitle: string
@@ -46,6 +47,16 @@ export interface AudienceItem {
   description: string
   icon: 'rocket' | 'factory' | 'building' | 'landmark'
   title: string
+}
+
+export interface AboutFigure {
+  label: string
+  value: string
+}
+
+export interface AboutRecognition {
+  label: string
+  value: string
 }
 
 export interface FrameworkStep {
@@ -93,7 +104,19 @@ export interface ContactChannel {
   value: string
 }
 
+export interface FaqItem {
+  answer: string
+  question: string
+}
+
 export interface SiteContent {
+  about: {
+    body: string
+    eyebrow: string
+    figures: AboutFigure[]
+    recognition: AboutRecognition[]
+    title: string
+  }
   audiences: {
     eyebrow: string
     items: AudienceItem[]
@@ -119,6 +142,15 @@ export interface SiteContent {
     eyebrow: string
     primaryCta: CtaLink
     title: string
+  }
+  faq: {
+    body: string
+    contactCta: CtaLink
+    contactPrompt: string
+    eyebrow: string
+    items: FaqItem[]
+    title: string
+    visual: ImageAsset
   }
   footer: {
     blurb: string

@@ -22,12 +22,24 @@ export function useReveal<T extends HTMLElement>() {
     const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)')
 
     if (reducedMotion.matches) {
-      gsap.set(targets, { clearProps: 'all', opacity: 1, y: 0 })
+      gsap.set(targets, {
+        clearProps: 'all',
+        filter: 'blur(0px)',
+        opacity: 1,
+        scale: 1,
+        y: 0
+      })
       return undefined
     }
 
     const context = gsap.context(() => {
-      gsap.set(targets, { opacity: 0, y: 28 })
+      gsap.set(targets, {
+        filter: 'blur(10px)',
+        opacity: 0,
+        scale: 0.985,
+        transformOrigin: '50% 50%',
+        y: 34
+      })
     }, element)
 
     const observer = new IntersectionObserver(
@@ -39,9 +51,11 @@ export function useReveal<T extends HTMLElement>() {
         }
 
         gsap.to(targets, {
-          duration: 0.85,
+          duration: 0.95,
           ease: 'power3.out',
+          filter: 'blur(0px)',
           opacity: 1,
+          scale: 1,
           stagger: 0.08,
           y: 0
         })

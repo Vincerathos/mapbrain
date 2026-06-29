@@ -64,7 +64,7 @@ export function PartnersSection({ content }: PartnersSectionProps) {
           className="relative mt-10 overflow-hidden rounded-[30px] border border-[color:rgb(16_54_80_/_0.16)] bg-[var(--hero-dark)] p-4 sm:p-5"
           data-reveal
         >
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_14%_18%,rgba(95,214,255,0.18),transparent_18%),radial-gradient(circle_at_84%_82%,rgba(217,113,56,0.18),transparent_22%),linear-gradient(180deg,rgba(255,255,255,0.05),rgba(255,255,255,0))]" />
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_14%_18%,rgba(184,128,192,0.2),transparent_18%),radial-gradient(circle_at_84%_82%,rgba(208,152,128,0.18),transparent_22%),linear-gradient(180deg,rgba(255,255,255,0.05),rgba(255,255,255,0))]" />
           <div className="relative z-10 grid gap-4 lg:grid-cols-[minmax(0,1.08fr)_280px]">
             <div className="relative overflow-hidden rounded-[24px] border border-white/10">
               <img
@@ -73,7 +73,7 @@ export function PartnersSection({ content }: PartnersSectionProps) {
                 loading="lazy"
                 src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=1600&q=80"
               />
-              <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(12,28,40,0.04),rgba(12,28,40,0.72))]" />
+              <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(63,41,74,0.04),rgba(63,41,74,0.72))]" />
 
               <div className="absolute left-5 top-5 inline-flex items-center gap-3 rounded-full border border-white/12 bg-[color:rgb(255_255_255_/_0.1)] px-4 py-2 backdrop-blur-md">
                 <Sparkles className="size-4 text-[var(--accent-alt-soft)]" aria-hidden="true" />

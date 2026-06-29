@@ -169,7 +169,7 @@ export function CapabilitySection({ content }: CapabilitySectionProps) {
               return (
                 <article
                   key={card.id}
-                  className={`relative border-b border-[var(--line)] transition-[flex-basis,width,background-color,opacity] duration-[1200ms] ease-[cubic-bezier(0.23,1,0.32,1)] last:border-b-0 lg:border-b-0 lg:border-r lg:last:border-r-0 ${isActive ? 'bg-white lg:basis-[34%]' : 'bg-[linear-gradient(180deg,#f8fafc_0%,#f8f3ef_54%,#f6f1ec_100%)] lg:basis-[16.5%]'}`}
+                  className={`relative border-b border-[var(--line)] transition-[flex-basis,width,background-color,opacity] duration-[1200ms] ease-[cubic-bezier(0.23,1,0.32,1)] last:border-b-0 lg:border-b-0 lg:border-r lg:last:border-r-0 ${isActive ? 'bg-white lg:basis-[34%]' : 'bg-[linear-gradient(180deg,#f6f0f4_0%,#f4e3dd_54%,#efe1eb_100%)] lg:basis-[16.5%]'}`}
                   data-reveal
                   onMouseEnter={() => handleCardActivate(card.id)}
                 >
@@ -213,7 +213,7 @@ export function CapabilitySection({ content }: CapabilitySectionProps) {
                             {card.tags.map((tag) => (
                               <span
                                 key={tag}
-                                className="rounded-[6px] border border-[var(--line)] bg-[#fbfaf8] px-4 py-[0.6rem] text-[0.9rem] text-[var(--muted)]"
+                                className="rounded-[6px] border border-[var(--line)] bg-[#fbf6f8] px-4 py-[0.6rem] text-[0.9rem] text-[var(--muted)]"
                               >
                                 {tag}
                               </span>

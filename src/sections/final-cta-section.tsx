@@ -64,18 +64,18 @@ export function FinalCtaSection() {
 
   return (
     <section
-      className={`${isCaptureView ? 'fixed inset-0 z-[120] overflow-auto bg-white' : 'scroll-mt-6 border-b border-[var(--line)] bg-white'}`}
+      className={`${isCaptureView ? 'fixed inset-0 z-[120] overflow-auto bg-[var(--surface)]' : 'scroll-mt-6 border-b border-[var(--line)] bg-[var(--surface)]'}`}
       id="contact"
       ref={revealRef}
     >
       <div className="section-shell mx-auto max-w-[1720px] px-4 sm:px-6 lg:px-8">
-        <div className="border-b border-[var(--line)] pb-7">
+        <div className="border-b border-[var(--line)] pb-7" data-reveal>
           <h2 className="text-center text-[clamp(3.7rem,6vw,4.6rem)] leading-[0.92] tracking-[-0.08em] text-[var(--ink)]">
             {isFrench ? 'Parlons-en' : `Let's Talk`}
           </h2>
         </div>
 
-        <div className="mt-14 overflow-hidden rounded-[2px] bg-[#f6f6f6] px-5 py-8 sm:px-8 sm:py-10 lg:px-10">
+        <div className="mt-14 overflow-hidden rounded-[2px] bg-[var(--accent-soft)] px-5 py-8 sm:px-8 sm:py-10 lg:px-10" data-reveal>
           <div className="grid gap-8 xl:grid-cols-[minmax(0,1fr)_minmax(0,0.98fr)] xl:gap-9">
             <div className="border-b border-[var(--line)] pb-7 xl:border-b-0 xl:border-r xl:pb-0 xl:pr-9">
               <div className="flex items-start justify-between gap-6">
@@ -122,7 +122,7 @@ export function FinalCtaSection() {
                     <ul className="mt-6 space-y-3">
                       {offerBullets.map((bullet) => (
                         <li key={bullet} className="flex items-center gap-3 text-[1rem] leading-7 text-[var(--ink)]">
-                          <span className="size-2.5 shrink-0 bg-[#f05a22]" />
+                          <span className="size-2.5 shrink-0 bg-[var(--accent-alt)]" />
                           <span>{bullet}</span>
                         </li>
                       ))}
@@ -173,7 +173,7 @@ export function FinalCtaSection() {
               <div className="mt-8 border-t border-[var(--line)] pt-7">
                 <form className="grid gap-3" onSubmit={handleSubmit}>
                   <input
-                    className="h-[60px] rounded-[4px] border border-[#d8d8d8] bg-white px-5 text-[1rem] text-[var(--ink)] outline-none placeholder:text-[var(--ink)]"
+                    className="h-[60px] rounded-[4px] border border-[var(--line)] bg-white px-5 text-[1rem] text-[var(--ink)] outline-none placeholder:text-[var(--ink)]"
                     id="contact-full-name"
                     onChange={(event) => setFullName(event.target.value)}
                     placeholder={isFrench ? 'Nom complet' : 'Full Name'}
@@ -183,7 +183,7 @@ export function FinalCtaSection() {
                   />
 
                   <input
-                    className="h-[60px] rounded-[4px] border border-[#d8d8d8] bg-white px-5 text-[1rem] text-[var(--ink)] outline-none placeholder:text-[var(--ink)]"
+                    className="h-[60px] rounded-[4px] border border-[var(--line)] bg-white px-5 text-[1rem] text-[var(--ink)] outline-none placeholder:text-[var(--ink)]"
                     id="contact-email"
                     onChange={(event) => setEmail(event.target.value)}
                     placeholder="E-Mail"
@@ -193,7 +193,7 @@ export function FinalCtaSection() {
                   />
 
                   <input
-                    className="h-[60px] rounded-[4px] border border-[#d8d8d8] bg-white px-5 text-[1rem] text-[var(--ink)] outline-none placeholder:text-[var(--ink)]"
+                    className="h-[60px] rounded-[4px] border border-[var(--line)] bg-white px-5 text-[1rem] text-[var(--ink)] outline-none placeholder:text-[var(--ink)]"
                     id="contact-company"
                     onChange={(event) => setCompany(event.target.value)}
                     placeholder={isFrench ? 'Nom de la société' : 'Company name'}
@@ -202,7 +202,7 @@ export function FinalCtaSection() {
                   />
 
                   <textarea
-                    className="min-h-[124px] rounded-[4px] border border-[#d8d8d8] bg-white px-5 py-4 text-[1rem] text-[var(--ink)] outline-none placeholder:text-[var(--ink)]"
+                    className="min-h-[124px] rounded-[4px] border border-[var(--line)] bg-white px-5 py-4 text-[1rem] text-[var(--ink)] outline-none placeholder:text-[var(--ink)]"
                     id="contact-message"
                     onChange={(event) => setMessage(event.target.value)}
                     placeholder={isFrench ? 'Votre message' : 'Test Message'}
@@ -211,7 +211,7 @@ export function FinalCtaSection() {
                   />
 
                   <button
-                    className="mt-3 inline-flex h-[44px] w-full items-center justify-center rounded-[2px] bg-[#585858] px-5 text-[1rem] font-semibold text-white"
+                    className="mt-3 inline-flex h-[44px] w-full items-center justify-center rounded-[2px] bg-[var(--hero-dark)] px-5 text-[1rem] font-semibold text-white transition-colors duration-200 hover:bg-[var(--accent-deep)]"
                     type="submit"
                   >
                     {isFrench ? 'Envoyer' : 'Submit'}

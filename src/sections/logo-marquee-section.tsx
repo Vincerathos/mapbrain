@@ -1,17 +1,21 @@
+import { useReveal } from '../hooks/use-reveal'
+
 const marqueeLogos = Array.from({ length: 10 }, (_, index) => ({
   id: `logo-marquee-${index + 1}`,
   src: '/logo-mapbrain.png'
 }))
 
 export function LogoMarqueeSection() {
+  const revealRef = useReveal<HTMLElement>()
   const loopedLogos = [...marqueeLogos, ...marqueeLogos]
 
   return (
     <section
       aria-label="Partenaires visuels"
       className="relative -mt-4 border-b border-[var(--line)] bg-[var(--surface)]"
+      ref={revealRef}
     >
-      <div className="section-shell mx-auto max-w-[1720px] overflow-hidden px-4 sm:px-6 lg:px-8">
+      <div className="section-shell mx-auto max-w-[1720px] overflow-hidden px-4 sm:px-6 lg:px-8" data-reveal>
         <div className="logo-marquee-track flex min-w-max items-center gap-14">
           {loopedLogos.map((logo, index) => (
             <div

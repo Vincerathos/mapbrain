@@ -5,6 +5,7 @@ import type {
   MouseEvent as ReactMouseEvent,
   SyntheticEvent
 } from 'react'
+import { useReveal } from '../hooks/use-reveal'
 import type { SiteContent } from '../types/site'
 import { SectionBandHeading } from '../ui/section-band-heading'
 
@@ -34,6 +35,7 @@ interface LoomOEmbedResponse {
 }
 
 export function ProjectsSection({ content }: ProjectsSectionProps) {
+  const revealRef = useReveal<HTMLElement>()
   const { i18n } = useTranslation()
   const isFrench = i18n.resolvedLanguage !== 'en'
   const hoverTimeoutRef = useRef<number | null>(null)
@@ -407,6 +409,7 @@ export function ProjectsSection({ content }: ProjectsSectionProps) {
     <section
       className="overflow-hidden border-b border-[var(--line)] bg-[var(--surface)]"
       id="projects"
+      ref={revealRef}
     >
       <div className="section-shell-top mx-auto max-w-[1720px] px-4 sm:px-6 lg:px-8">
         <SectionBandHeading
@@ -418,7 +421,7 @@ export function ProjectsSection({ content }: ProjectsSectionProps) {
           }
         />
 
-        <div className="mt-7 max-w-[52rem]">
+        <div className="mt-7 max-w-[52rem]" data-reveal>
           <p className="text-base leading-8 text-[var(--muted)]">
             {content.body}
           </p>
@@ -427,6 +430,7 @@ export function ProjectsSection({ content }: ProjectsSectionProps) {
 
       <div
         className={`project-loom-stage relative mt-5 min-h-[620px] overflow-hidden border-y border-[var(--line)] bg-[var(--surface)] px-0 py-10 sm:py-12 lg:min-h-[720px] lg:py-14 ${activeCard ? 'has-active' : ''}`}
+        data-reveal
         onClick={handleStageClick}
         onMouseLeave={handleStageLeave}
         onMouseMove={handleStageMouseMove}

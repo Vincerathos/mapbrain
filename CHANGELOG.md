@@ -2,6 +2,8 @@
 
 ## 29-06-2026
 
+- 10:18 Généralisation des animations d’entrée GSAP sur l’ensemble des sections avec un reveal plus premium (opacity, translate, léger scale et blur), puis branchement explicite des blocs restés statiques comme `About`, le marquee logos, `Projects`, `FAQ`, le formulaire de contact et le footer.
+- 09:46 Remplacement de la palette du site par une nouvelle gamme issue du logo MAPBRAIN autour du saumon `#D09880` et de deux teintes rose/violet, avec refonte des variables globales, des gradients principaux et des accents visuels dans la hero, les blocs promesse, partenaires, automatisation, contact et présentation.
 - 01:36 Correction de la section de contact en supprimant une prop devenue inutile dans `src/sections/final-cta-section.tsx` et en réalignant son appel dans `src/App.tsx` pour rétablir un build propre.
 - 01:36 Relance complète de la validation projet avec `tsc --noEmit`, `eslint` et `vite build`, puis remise à l'état du dépôt du `pnpm-lock.yaml` modifié uniquement par la réparation d'environnement locale.
 

@@ -27,7 +27,7 @@ export function AutomationSection({ content }: AutomationSectionProps) {
   const revealRef = useReveal<HTMLElement>()
 
   return (
-    <section className="border-b border-[var(--line)] bg-white" id="automation" ref={revealRef}>
+    <section className="border-b border-[var(--line)] bg-[var(--surface)]" id="automation" ref={revealRef}>
       <div className="section-shell mx-auto max-w-[1720px] px-4 sm:px-6 lg:px-8">
         <SectionBandHeading eyebrow={content.eyebrow} title={content.title} />
 
@@ -40,10 +40,10 @@ export function AutomationSection({ content }: AutomationSectionProps) {
               className="relative overflow-hidden"
               style={{
                 background:
-                  'linear-gradient(180deg, rgba(9,23,34,0.2), rgba(9,23,34,0.05)), repeating-linear-gradient(90deg, rgba(235,241,245,0.12) 0px, rgba(235,241,245,0.12) 56px, rgba(235,241,245,0.03) 56px, rgba(235,241,245,0.03) 112px)'
+                  'linear-gradient(180deg, rgba(94,70,104,0.2), rgba(94,70,104,0.05)), repeating-linear-gradient(90deg, rgba(245,236,241,0.12) 0px, rgba(245,236,241,0.12) 56px, rgba(245,236,241,0.03) 56px, rgba(245,236,241,0.03) 112px)'
               }}
             >
-              <div className="absolute inset-y-0 right-0 w-24 bg-gradient-to-r from-transparent via-[color:rgb(9_23_34_/_0.42)] to-transparent blur-xl" />
+              <div className="absolute inset-y-0 right-0 w-24 bg-gradient-to-r from-transparent via-[color:rgb(94_70_104_/_0.42)] to-transparent blur-xl" />
               <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(255,255,255,0.04),rgba(255,255,255,0.0))]" />
             </div>
 
@@ -56,7 +56,7 @@ export function AutomationSection({ content }: AutomationSectionProps) {
                 src={content.image.src}
                 width="1600"
               />
-              <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(14,34,51,0.1),transparent_28%,rgba(255,255,255,0.0)_100%)]" />
+              <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(94,70,104,0.14),transparent_28%,rgba(255,255,255,0.0)_100%)]" />
             </figure>
 
             <div className="absolute inset-x-4 bottom-4 z-20 rounded-[20px] bg-[color:rgb(19_19_19_/_0.28)] p-4 shadow-[0_18px_50px_rgba(0,0,0,0.16)] backdrop-blur-xl sm:inset-x-6 sm:bottom-6 sm:p-5 lg:grid lg:grid-cols-[minmax(0,1.15fr)_minmax(0,0.85fr)] lg:gap-6 lg:px-6">

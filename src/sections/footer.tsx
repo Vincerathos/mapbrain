@@ -1,3 +1,4 @@
+import { useReveal } from '../hooks/use-reveal'
 import type { Locale, NavItem, SiteContent } from '../types/site'
 
 interface FooterProps {
@@ -7,6 +8,7 @@ interface FooterProps {
 }
 
 export function Footer({ content, currentLocale, items }: FooterProps) {
+  const revealRef = useReveal<HTMLElement>()
   const year = new Date().getFullYear()
   const primaryLinks = items.slice(0, 2)
   const secondaryLinks = items.slice(2, 4)
@@ -29,8 +31,9 @@ export function Footer({ content, currentLocale, items }: FooterProps) {
     <footer
       className="relative overflow-hidden border-t border-[rgba(17,17,17,0.08)] bg-[var(--surface)] text-[var(--ink)]"
       id="footer"
+      ref={revealRef}
     >
-      <div className="section-shell-top relative z-10 px-5 sm:px-8 lg:px-12">
+      <div className="section-shell-top relative z-10 px-5 sm:px-8 lg:px-12" data-reveal>
         <div className="flex flex-col gap-5 pb-8 text-[0.72rem] uppercase tracking-[0.12em] text-[var(--muted)] sm:pb-10 lg:flex-row lg:items-start lg:justify-between">
           <div className="flex flex-col gap-3 lg:min-w-[240px]">
             <p>{copy.copyright}</p>
@@ -71,7 +74,7 @@ export function Footer({ content, currentLocale, items }: FooterProps) {
         </div>
       </div>
 
-      <div className="relative">
+      <div className="relative" data-reveal>
         <div className="pointer-events-none absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-[var(--surface)] via-[color:rgb(249_249_249_/_0.7)] to-transparent" />
         <div className="px-2 sm:px-3">
           <p

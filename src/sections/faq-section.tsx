@@ -1,5 +1,6 @@
 import { ChevronRight, Plus } from 'lucide-react'
 import { useState } from 'react'
+import { useReveal } from '../hooks/use-reveal'
 import type { SiteContent } from '../types/site'
 import { SectionBandHeading } from '../ui/section-band-heading'
 
@@ -8,24 +9,26 @@ interface FaqSectionProps {
 }
 
 export function FaqSection({ content }: FaqSectionProps) {
+  const revealRef = useReveal<HTMLElement>()
   const [openIndex, setOpenIndex] = useState(0)
 
   return (
     <section
       className="border-b border-[var(--line)] bg-[var(--surface)]"
       id="faq"
+      ref={revealRef}
     >
       <div className="section-shell mx-auto max-w-[1720px] px-4 sm:px-6 lg:px-8">
         <SectionBandHeading eyebrow={content.eyebrow} title={content.title} />
 
-        <div className="mt-8 max-w-3xl">
+        <div className="mt-8 max-w-3xl" data-reveal>
           <p className="text-base leading-8 text-[var(--muted)] sm:text-lg">
             {content.body}
           </p>
         </div>
 
         <div className="mt-10 grid gap-5 xl:grid-cols-[minmax(0,1fr)_340px]">
-          <div className="grid gap-px rounded-[28px] border border-[var(--line)] bg-[var(--line)] overflow-hidden">
+          <div className="grid gap-px overflow-hidden rounded-[28px] border border-[var(--line)] bg-[var(--line)]" data-reveal>
             {content.items.map((item, index) => {
               const isOpen = index === openIndex
 

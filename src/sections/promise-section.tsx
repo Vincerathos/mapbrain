@@ -25,10 +25,10 @@ export function PromiseSection({ content }: PromiseSectionProps) {
               className="relative overflow-hidden p-7 sm:p-10 lg:p-12"
               style={{
                 background:
-                  'linear-gradient(180deg, rgba(248,244,239,0.06), rgba(248,244,239,0.02)), repeating-linear-gradient(90deg, rgba(248,244,239,0.09) 0px, rgba(248,244,239,0.09) 52px, rgba(248,244,239,0.02) 52px, rgba(248,244,239,0.02) 102px)'
+                  'linear-gradient(180deg, rgba(255,244,248,0.08), rgba(255,244,248,0.03)), repeating-linear-gradient(90deg, rgba(255,244,248,0.09) 0px, rgba(255,244,248,0.09) 52px, rgba(255,244,248,0.02) 52px, rgba(255,244,248,0.02) 102px)'
               }}
             >
-              <div className="absolute inset-y-0 right-0 w-28 bg-gradient-to-r from-transparent via-[color:rgb(12_31_47_/_0.22)] to-[color:rgb(248_244_239_/_0.16)] blur-2xl" />
+              <div className="absolute inset-y-0 right-0 w-28 bg-gradient-to-r from-transparent via-[color:rgb(94_70_104_/_0.24)] to-[color:rgb(255_244_248_/_0.16)] blur-2xl" />
               <div className="relative flex h-full flex-col justify-between">
                 <div>
                   <div className="flex items-center gap-3">
@@ -44,7 +44,7 @@ export function PromiseSection({ content }: PromiseSectionProps) {
               </div>
             </div>
 
-            <div className="relative flex items-end bg-[radial-gradient(circle_at_70%_16%,rgba(255,255,255,0.75),transparent_16%),linear-gradient(135deg,#ff844e_0%,#f68e69_28%,#efb4ae_56%,#f3d6d1_100%)] p-7 sm:p-10 lg:p-12">
+            <div className="relative flex items-end bg-[radial-gradient(circle_at_70%_16%,rgba(255,255,255,0.75),transparent_16%),linear-gradient(135deg,#d09880_0%,#d088a8_32%,#c69bc4_62%,#f0d9df_100%)] p-7 sm:p-10 lg:p-12">
               <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(255,255,255,0.08),transparent_48%,rgba(255,255,255,0.2))]" />
               <p className="relative z-10 max-w-[12ch] text-[clamp(2.3rem,4.6vw,4.5rem)] leading-[0.92] tracking-[-0.07em] text-white">
                 {content.body}

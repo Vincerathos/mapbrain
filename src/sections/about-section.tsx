@@ -1,3 +1,4 @@
+import { useReveal } from '../hooks/use-reveal'
 import type { SiteContent } from '../types/site'
 import { SectionBandHeading } from '../ui/section-band-heading'
 
@@ -6,6 +7,8 @@ interface AboutSectionProps {
 }
 
 export function AboutSection({ content }: AboutSectionProps) {
+  const revealRef = useReveal<HTMLElement>()
+
   const getFigureValueClassName = (value: string) => {
     if (value === 'Several / Week') {
       return 'text-[clamp(2.35rem,3.2vw,3.15rem)] leading-[0.9] tracking-[-0.08em]'
@@ -35,25 +38,26 @@ export function AboutSection({ content }: AboutSectionProps) {
     <section
       className="border-b border-[var(--line)] bg-[var(--surface)]"
       id="about"
+      ref={revealRef}
     >
       <div className="section-shell mx-auto max-w-[1720px] px-4 sm:px-6 lg:px-8">
         <SectionBandHeading eyebrow={content.eyebrow} title={content.title} />
 
         <div className="mt-10">
-          <div className="grid gap-3 lg:grid-cols-[minmax(0,1.18fr)_minmax(0,0.82fr)]">
+          <div className="grid gap-3 lg:grid-cols-[minmax(0,1.18fr)_minmax(0,0.82fr)]" data-reveal>
             <div
-              className="min-h-[270px] overflow-hidden rounded-[20px] border border-[var(--line)] bg-[linear-gradient(135deg,#ffcb68_0%,#ffdb9a_18%,#f88957_44%,#58c7c9_86%,#2bb0c9_100%)]"
+              className="min-h-[270px] overflow-hidden rounded-[20px] border border-[var(--line)] bg-[linear-gradient(135deg,#f1d4d5_0%,#d09880_26%,#d088a8_58%,#b880c0_100%)]"
             >
               <div className="h-full w-full bg-[radial-gradient(circle_at_62%_34%,rgba(255,255,255,0.26),transparent_18%),linear-gradient(115deg,rgba(255,255,255,0.06),rgba(255,255,255,0)_42%,rgba(255,255,255,0.14))]" />
             </div>
             <div
-              className="min-h-[270px] overflow-hidden rounded-[20px] border border-[var(--line)] bg-[linear-gradient(145deg,#dbe5ea_0%,#d8e0e5_28%,#f1c9b6_54%,#7de0eb_100%)]"
+              className="min-h-[270px] overflow-hidden rounded-[20px] border border-[var(--line)] bg-[linear-gradient(145deg,#f4edf1_0%,#ecd7e6_30%,#d8abc5_62%,#d09880_100%)]"
             >
-              <div className="h-full w-full bg-[radial-gradient(circle_at_30%_28%,rgba(255,114,79,0.58),transparent_15%),linear-gradient(100deg,rgba(255,255,255,0),rgba(255,255,255,0.34),rgba(255,255,255,0)_70%)]" />
+              <div className="h-full w-full bg-[radial-gradient(circle_at_30%_28%,rgba(208,136,168,0.54),transparent_15%),linear-gradient(100deg,rgba(255,255,255,0),rgba(255,255,255,0.34),rgba(255,255,255,0)_70%)]" />
             </div>
           </div>
 
-          <div className="mt-8 grid gap-5 border-t border-[var(--line)] pt-7 md:grid-cols-2 xl:grid-cols-[repeat(3,minmax(0,1fr))] 2xl:grid-cols-[repeat(5,minmax(0,1fr))]">
+          <div className="mt-8 grid gap-5 border-t border-[var(--line)] pt-7 md:grid-cols-2 xl:grid-cols-[repeat(3,minmax(0,1fr))] 2xl:grid-cols-[repeat(5,minmax(0,1fr))]" data-reveal>
             {content.figures.map((item, index) => (
               <div
                 key={item.label}
@@ -76,11 +80,11 @@ export function AboutSection({ content }: AboutSectionProps) {
           </div>
 
           <div className="mt-10 border-t border-[var(--line)] pt-7">
-            <p className="max-w-[58rem] text-[1rem] leading-8 text-[var(--muted)]">
+            <p className="max-w-[58rem] text-[1rem] leading-8 text-[var(--muted)]" data-reveal>
               {content.body}
             </p>
 
-            <div className="mt-8 grid gap-3 md:grid-cols-2 xl:grid-cols-3">
+            <div className="mt-8 grid gap-3 md:grid-cols-2 xl:grid-cols-3" data-reveal>
               {content.recognition.map((item) => (
                 <article
                   key={`${item.value}-${item.label}`}

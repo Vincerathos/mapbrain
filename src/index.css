@@ -34,12 +34,14 @@
 
 html {
   scroll-behavior: smooth;
+  overflow-x: clip;
 }
 
 body {
   margin: 0;
   min-width: 320px;
   background: var(--surface);
+  overflow-x: clip;
 }
 
 main > section {
@@ -95,6 +97,7 @@ ol {
 
 #root {
   min-height: 100svh;
+  overflow-x: clip;
 }
 
 ::selection {
@@ -320,8 +323,8 @@ ol {
 }
 
 .project-loom-card {
-  width: 456px;
-  flex: 0 0 456px;
+  width: 520px;
+  flex: 0 0 520px;
   padding: 0;
   border: 0;
   background: transparent;
@@ -337,6 +340,11 @@ ol {
 .project-loom-stage.has-active .project-loom-card.is-active {
   opacity: 1;
   filter: saturate(1);
+}
+
+.project-loom-stage.has-active .project-loom-row {
+  pointer-events: none;
+  user-select: none;
 }
 
 .project-loom-stage.has-active .project-loom-row-forward,
@@ -435,7 +443,17 @@ ol {
 
 .project-loom-spotlight.is-visible {
   opacity: 1;
+  pointer-events: auto;
   transform: translate3d(0, -50%, 0) scale(1);
+}
+
+.project-loom-backdrop {
+  position: absolute;
+  inset: 0;
+  z-index: 6;
+  border: 0;
+  background: rgba(249, 249, 249, 0.1);
+  cursor: default;
 }
 
 .project-loom-frame {
@@ -743,8 +761,8 @@ ol {
   }
 
   .project-loom-card {
-    width: 344px;
-    flex-basis: 344px;
+    width: 388px;
+    flex-basis: 388px;
   }
 
   .project-loom-stage {
@@ -759,9 +777,23 @@ ol {
 }
 
 @media (max-width: 767px) {
+  .hero-wordmark-mark {
+    margin-left: 0.08em;
+  }
+
+  .hero-phrase-shell {
+    min-height: 10.5rem;
+  }
+
+  .hero-service-thumb {
+    flex-basis: 74px;
+    width: 74px;
+    height: 52px;
+  }
+
   .project-loom-card {
-    width: 292px;
-    flex-basis: 292px;
+    width: 324px;
+    flex-basis: 324px;
   }
 
   .project-loom-label {

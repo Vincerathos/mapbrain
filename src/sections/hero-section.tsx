@@ -67,20 +67,22 @@ export function HeroSection({ content }: HeroSectionProps) {
     <section
       id="top"
       aria-labelledby="hero-title"
-      className="relative border-b border-[var(--line)]"
+      className="relative overflow-hidden border-b border-[var(--line)]"
       ref={revealRef}
     >
       <div className="section-shell-bottom mx-auto max-w-[1720px] px-4 pt-[7.1rem] sm:px-6 sm:pt-[7.65rem] lg:px-8 lg:pt-[8.2rem]">
         <div className="grid gap-4 xl:grid-cols-[minmax(0,1fr)_250px] xl:items-start">
           <div className="min-w-0 pt-3">
             <h1
-              className="hero-wordmark text-[clamp(4.2rem,8vw,8.4rem)] leading-[0.78] tracking-[-0.125em] text-[var(--ink)] xl:pr-8 xl:whitespace-nowrap"
+              className="hero-wordmark text-[clamp(2.95rem,15vw,8.4rem)] leading-[0.82] tracking-[-0.11em] text-[var(--ink)] sm:leading-[0.78] sm:tracking-[-0.125em] xl:pr-8 xl:whitespace-nowrap"
               data-reveal
               id="hero-title"
             >
-              <span>MAPBRAIN</span>
-              <sup className="hero-wordmark-mark">®</sup>
-              <span>_Agency</span>
+              <span className="inline-flex items-start">
+                <span className="block sm:inline">MAPBRAIN</span>
+                <sup className="hero-wordmark-mark">®</sup>
+              </span>
+              <span className="block sm:inline">_Agency</span>
             </h1>
           </div>
 
@@ -120,8 +122,8 @@ export function HeroSection({ content }: HeroSectionProps) {
           <div className="hero-stage-layer" />
           <div className="hero-stage-ribbon" />
 
-          <div className="grid min-h-[690px] gap-0 lg:grid-cols-[minmax(0,1fr)_78px]">
-            <div className="relative z-10 flex min-h-[690px] flex-col px-8 pb-24 pt-24 text-white sm:px-10 sm:pb-24 sm:pt-28 lg:px-9 lg:pb-[5.9rem] lg:pt-32 xl:px-10 xl:pt-[8.75rem]">
+          <div className="grid min-h-[auto] gap-0 sm:min-h-[690px] lg:grid-cols-[minmax(0,1fr)_78px]">
+            <div className="relative z-10 flex min-h-[auto] flex-col px-5 pb-8 pt-16 text-white sm:min-h-[690px] sm:px-10 sm:pb-24 sm:pt-28 lg:px-9 lg:pb-[5.9rem] lg:pt-32 xl:px-10 xl:pt-[8.75rem]">
               <div className="max-w-[58rem]">
                 <div className="mb-7 flex -space-x-2">
                   {teamPhotos.map((photoUrl, index) => (
@@ -172,11 +174,11 @@ export function HeroSection({ content }: HeroSectionProps) {
             </div>
           </div>
 
-          <div className="hero-card-strip absolute inset-x-8 bottom-3 z-20 flex gap-4 overflow-x-auto sm:inset-x-10 lg:inset-x-8">
+          <div className="hero-card-strip relative z-20 mt-5 grid gap-3 px-5 pb-5 sm:absolute sm:inset-x-10 sm:bottom-3 sm:mt-0 sm:flex sm:gap-4 sm:overflow-x-auto sm:px-0 sm:pb-0 lg:inset-x-8">
             {visibleTags.map((tag, index) => (
               <article
                 key={tag}
-                className="hero-service-card min-w-[13.6rem] flex-1 rounded-[16px] border border-[color:rgb(255_255_255_/_0.42)] bg-[color:rgb(255_255_255_/_0.82)] p-3 text-[var(--ink)] shadow-[0_18px_40px_rgba(17,17,17,0.08)] backdrop-blur-lg"
+                className="hero-service-card min-w-0 rounded-[16px] border border-[color:rgb(255_255_255_/_0.42)] bg-[color:rgb(255_255_255_/_0.82)] p-3 text-[var(--ink)] shadow-[0_18px_40px_rgba(17,17,17,0.08)] backdrop-blur-lg sm:min-w-[13.6rem] sm:flex-1"
               >
                 <div className="flex items-center gap-3">
                   <div className={`hero-service-thumb hero-service-thumb-${(index % 5) + 1}`} />

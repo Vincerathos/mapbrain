@@ -16,16 +16,16 @@ export function LogoMarqueeSection() {
       ref={revealRef}
     >
       <div className="section-shell mx-auto max-w-[1720px] overflow-hidden px-4 sm:px-6 lg:px-8" data-reveal>
-        <div className="logo-marquee-track flex min-w-max items-center gap-14">
+        <div className="logo-marquee-track flex min-w-max items-center gap-8 sm:gap-14">
           {loopedLogos.map((logo, index) => (
             <div
               key={`${logo.id}-${index}`}
-              className="flex h-10 w-[10.5rem] shrink-0 items-center justify-center"
+              className="flex h-8 w-[7.5rem] shrink-0 items-center justify-center sm:h-10 sm:w-[10.5rem]"
             >
               <img
                 alt=""
                 aria-hidden="true"
-                className="logo-marquee-mark h-9 w-auto object-contain"
+                className="logo-marquee-mark h-7 w-auto object-contain sm:h-9"
                 loading="lazy"
                 src={logo.src}
               />

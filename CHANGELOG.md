@@ -1,5 +1,17 @@
 # CHANGELOG
 
+## 30-06-2026
+
+- 14:42 Correction responsive mobile de la hero et du bandeau logos avec suppression du débordement horizontal global, resserrage du wordmark, empilement des cartes de service sur petit écran et réduction du grand vide bas dans la scène principale.
+- 14:24 Renommage éditorial des 7 projets Loom dans `src/data/site-content.ts` avec titres, descriptions et résultats réécrits en FR/EN à partir du contenu réel des walkthroughs pour remplacer les placeholders trop génériques.
+- 14:13 Recalage des cards de la section `Projects` vers un format plus panoramique avec moins de hauteur et davantage de largeur, sur desktop comme sur les breakpoints intermédiaires et mobile.
+- 14:13 Nouvelle augmentation de la présence visuelle des cards de la section `Projects` en élargissant encore leur hauteur d’affichage dans la grille.
+- 14:11 Nouvelle augmentation légère de la hauteur des cards de la section `Projects` pour leur donner davantage de présence visuelle dans la grille.
+- 14:08 Augmentation légère de la hauteur visuelle des cards de la section `Projects` en ajustant leur ratio d’image, afin d’obtenir une présence plus forte sans casser le carrousel existant.
+- 14:14 Correction de la source des miniatures de la section `Projects` pour utiliser les vraies `thumbnail_url` de Loom via `oEmbed`, avec repli sur l’image projet seulement si Loom ne renvoie pas de vignette exploitable.
+- 14:05 Correction de l’interaction dans la section `Projects` pour qu’une carte agrandie bloque bien les éléments derrière elle, tout en rendant le spotlight et ses liens réellement cliquables et en remplaçant les miniatures Loom vides par des images visibles par défaut.
+- 13:54 Intégration des projets fournis dans la section `Projects` avec 7 walkthroughs Loom réels et 3 prototypes Stitch reliés aux cartes concernées, puis refonte de `src/sections/projects-section.tsx` pour afficher une vidéo et des liens externes propres à chaque projet.
+
 ## 29-06-2026
 
 - 10:18 Généralisation des animations d’entrée GSAP sur l’ensemble des sections avec un reveal plus premium (opacity, translate, léger scale et blur), puis branchement explicite des blocs restés statiques comme `About`, le marquee logos, `Projects`, `FAQ`, le formulaire de contact et le footer.

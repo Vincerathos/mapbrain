@@ -84,7 +84,9 @@ export interface CapabilityItem {
 export interface ProjectItem {
   description: string
   image: ImageAsset
+  loomUrl: string
   outcomes: string[]
+  prototypeUrl?: string
   sector: string
   title: string
 }

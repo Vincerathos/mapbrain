@@ -244,39 +244,93 @@ export const siteContent: Record<Locale, SiteContent> = {
       eyebrow: 'Projets',
       title: 'Des formats de réalisation pensés comme des preuves de niveau, pas comme une simple galerie.',
       body:
-        'Même au lancement, le portfolio doit faire sentir le type de mandats que MAPBRAIN peut porter: cadrage fort, exécution propre et impact métier lisible.',
+        'Voici des projets réellement montrés via Loom et, quand disponible, reliés à leur prototype Stitch. L’objectif est de montrer le niveau de clarté, de design et d’exécution porté par MAPBRAIN.',
       items: [
         {
-          sector: 'SaaS B2B',
-          title: 'Plateforme de pilotage commercial augmentée par IA.',
+          sector: 'Prototype Stitch',
+          title: 'Horizon',
           description:
-            'Refonte d’un outil de prospection et de suivi pour faire converger qualification, relances et reporting dans une même interface.',
-          outcomes: ['Tunnel clarifié', 'Temps de traitement réduit', 'Meilleure visibilité pipeline'],
+            'Application mobile et web de suivi joueur avec progression, expérience, classement et personnalisation du profil dans une interface orientée engagement.',
+          loomUrl: 'https://www.loom.com/share/3e920f6a951c4064afafc168c8c4fd13',
+          prototypeUrl: 'https://stitch.withgoogle.com/projects/7178457093054865312',
+          outcomes: ['Suivi de progression', 'Classement joueur', 'Expérience mobile + web'],
           image: {
             src: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1600&q=80',
             alt: 'Dashboard analytique premium affiché sur grand écran dans un environnement produit.'
           }
         },
         {
-          sector: 'Service & opérations',
-          title: 'Système d’automatisation métier pour équipe en croissance.',
+          sector: 'Prototype Stitch',
+          title: 'FlatSweep',
           description:
-            'Conception d’un socle digital qui connecte les demandes, les documents et les validations pour fluidifier les opérations internes.',
-          outcomes: ['Moins de tâches manuelles', 'Circulation d’information plus nette', 'Base prête à scaler'],
+            'Plateforme de changement de logement étudiant pensée pour fluidifier les échanges, simplifier les prises de contact et intégrer une assistance conversationnelle.',
+          loomUrl: 'https://www.loom.com/share/7232391d1fff49a99d0892ea79bae4d7',
+          prototypeUrl: 'https://stitch.withgoogle.com/projects/118447669452290376',
+          outcomes: ['Échange de logements', 'Contact simplifié', 'Bot d’assistance intégré'],
           image: {
             src: 'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=1600&q=80',
             alt: 'Équipe de travail autour d’écrans et de documents pour piloter des opérations.'
           }
         },
         {
-          sector: 'Marque & acquisition',
-          title: 'Écosystème de contenu et de conversion pour offre premium.',
+          sector: 'Prototype Stitch',
+          title: 'FlatSwipe',
           description:
-            'Direction de site, structure éditoriale et dispositifs d’acquisition pour rendre une offre plus lisible, plus crédible et plus performante.',
-          outcomes: ['Positionnement renforcé', 'Lecture de l’offre simplifiée', 'Conversion mieux soutenue'],
+            'Application de découverte immobilière augmentée par IA, avec recommandations selon les préférences, messagerie intégrée et montée en compte premium.',
+          loomUrl: 'https://www.loom.com/share/545c88b73703429ebd8ea374b5b20027',
+          prototypeUrl: 'https://stitch.withgoogle.com/projects/3065775189670600268',
+          outcomes: ['Recommandation assistée par IA', 'Messagerie native', 'Upsell vers compte pro'],
           image: {
             src: 'https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=1600&q=80',
             alt: 'Studio créatif avec équipe produit et grands écrans de travail collaboratif.'
+          }
+        },
+        {
+          sector: 'Walkthrough Loom',
+          title: 'Luxury Commerce Dashboard',
+          description:
+            'Concept de boutique Shopify premium avec vitrine e-commerce, nouvelles collections, bestsellers et tableau de bord vendeur piloté par la performance.',
+          loomUrl: 'https://www.loom.com/share/5a5237704f3a467ea51a317d0f57cc36',
+          outcomes: ['Storefront premium', 'Dashboard vendeur', 'Suivi revenu et conversion'],
+          image: {
+            src: 'https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1600&q=80',
+            alt: 'Poste de travail avec interface produit et environnement de développement.'
+          }
+        },
+        {
+          sector: 'Walkthrough Loom',
+          title: 'Linguist VR',
+          description:
+            'Expérience immersive d’apprentissage des langues en VR avec exploration d’univers, progression XP, classement global et lecture analytique des performances.',
+          loomUrl: 'https://www.loom.com/share/9f7b76eb73254366a703d5438af14ae2',
+          outcomes: ['Exploration VR', 'Apprentissage multilingue', 'XP et analytics'],
+          image: {
+            src: 'https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=1600&q=80',
+            alt: 'Atelier de cadrage stratégique avec documents et écrans en réunion.'
+          }
+        },
+        {
+          sector: 'Walkthrough Loom',
+          title: 'Missoria Ops',
+          description:
+            'Interface de gestion opérationnelle pour piloter interventions, satisfaction, tickets, planning, échanges terrain et facturation depuis un même socle.',
+          loomUrl: 'https://www.loom.com/share/aa46ced9f1874cdeb5fe4c0527334194',
+          outcomes: ['Pilotage des interventions', 'Gestion planning et tickets', 'Facturation intégrée'],
+          image: {
+            src: 'https://images.unsplash.com/photo-1524758631624-e2822e304c36?auto=format&fit=crop&w=1600&q=80',
+            alt: 'Espace de travail premium avec matériaux sobres et perspective architecturale.'
+          }
+        },
+        {
+          sector: 'Walkthrough Loom',
+          title: 'Studio Portrait AI',
+          description:
+            'Prototype exploratoire autour d’un studio de génération de portraits assisté par IA, montré comme preuve de capacité sur des interfaces créatives et expérimentales.',
+          loomUrl: 'https://www.loom.com/share/b82cf2efa9c64ed9943f719a0cd66ea7',
+          outcomes: ['Direction créative IA', 'Interface exploratoire', 'Cas d’usage visuel'],
+          image: {
+            src: 'https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1600&q=80',
+            alt: 'Environnement technologique avec écrans et données orienté produit et automatisation.'
           }
         }
       ]
@@ -662,39 +716,93 @@ export const siteContent: Record<Locale, SiteContent> = {
       eyebrow: 'Projects',
       title: 'Delivery formats designed as proof of level, not as a generic gallery.',
       body:
-        'Even in the first release, the portfolio should express the kind of mandates MAPBRAIN can lead: strong framing, clean execution and measurable business value.',
+        'These are real agency projects shown through Loom and, when available, connected to their Stitch prototypes. The goal is to make the level of clarity, design and execution visible immediately.',
       items: [
         {
-          sector: 'B2B SaaS',
-          title: 'AI-augmented commercial steering platform.',
+          sector: 'Stitch Prototype',
+          title: 'Horizon',
           description:
-            'A redesign of a prospecting and follow-up tool to align qualification, outreach and reporting inside one sharper product surface.',
-          outcomes: ['Clearer funnel', 'Lower handling time', 'Stronger pipeline visibility'],
+            'Mobile and web gaming companion focused on player progression, experience, rankings and profile improvement inside one engaging product surface.',
+          loomUrl: 'https://www.loom.com/share/3e920f6a951c4064afafc168c8c4fd13',
+          prototypeUrl: 'https://stitch.withgoogle.com/projects/7178457093054865312',
+          outcomes: ['Progress tracking', 'Player rankings', 'Mobile + web experience'],
           image: {
             src: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1600&q=80',
             alt: 'Premium analytics dashboard displayed on a large screen in a product environment.'
           }
         },
         {
-          sector: 'Services & operations',
-          title: 'Operational automation system for a scaling team.',
+          sector: 'Stitch Prototype',
+          title: 'FlatSweep',
           description:
-            'A digital backbone connecting requests, documents and approvals to make internal execution cleaner and easier to scale.',
-          outcomes: ['Less manual work', 'Cleaner information flow', 'Scalable operating base'],
+            'Student housing exchange platform designed to simplify relocation, speed up user contact and integrate conversational assistance inside the flow.',
+          loomUrl: 'https://www.loom.com/share/7232391d1fff49a99d0892ea79bae4d7',
+          prototypeUrl: 'https://stitch.withgoogle.com/projects/118447669452290376',
+          outcomes: ['Housing exchange flow', 'Simplified contact', 'Embedded support bot'],
           image: {
             src: 'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=1600&q=80',
             alt: 'Working team around screens and documents to steer operations.'
           }
         },
         {
-          sector: 'Brand & acquisition',
-          title: 'Content and conversion ecosystem for a premium offer.',
+          sector: 'Stitch Prototype',
+          title: 'FlatSwipe',
           description:
-            'Site direction, editorial structure and acquisition systems shaped to make an offer more readable, credible and performant.',
-          outcomes: ['Stronger positioning', 'Simpler offer reading', 'Better conversion support'],
+            'AI-assisted housing discovery app with preference-based recommendations, native messaging and a premium account upgrade path.',
+          loomUrl: 'https://www.loom.com/share/545c88b73703429ebd8ea374b5b20027',
+          prototypeUrl: 'https://stitch.withgoogle.com/projects/3065775189670600268',
+          outcomes: ['AI recommendations', 'Built-in messaging', 'Premium upgrade path'],
           image: {
             src: 'https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=1600&q=80',
             alt: 'Creative studio with a product team and large collaborative screens.'
+          }
+        },
+        {
+          sector: 'Loom Walkthrough',
+          title: 'Luxury Commerce Dashboard',
+          description:
+            'Premium Shopify commerce concept combining a polished storefront, curated collections, bestsellers and a seller dashboard focused on performance.',
+          loomUrl: 'https://www.loom.com/share/5a5237704f3a467ea51a317d0f57cc36',
+          outcomes: ['Premium storefront', 'Seller dashboard', 'Revenue and conversion tracking'],
+          image: {
+            src: 'https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1600&q=80',
+            alt: 'Product workstation with interface screens and a development environment.'
+          }
+        },
+        {
+          sector: 'Loom Walkthrough',
+          title: 'Linguist VR',
+          description:
+            'Immersive language-learning experience in VR with explorable worlds, XP progression, global ranking and analytics-driven vocabulary improvement.',
+          loomUrl: 'https://www.loom.com/share/9f7b76eb73254366a703d5438af14ae2',
+          outcomes: ['VR exploration', 'Multi-language learning', 'XP and analytics'],
+          image: {
+            src: 'https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=1600&q=80',
+            alt: 'Strategic workshop with documents and screens in a meeting room.'
+          }
+        },
+        {
+          sector: 'Loom Walkthrough',
+          title: 'Missoria Ops',
+          description:
+            'Operational management interface built to centralize interventions, satisfaction, open tickets, scheduling, team communication and billing.',
+          loomUrl: 'https://www.loom.com/share/aa46ced9f1874cdeb5fe4c0527334194',
+          outcomes: ['Intervention tracking', 'Scheduling and tickets', 'Integrated billing'],
+          image: {
+            src: 'https://images.unsplash.com/photo-1524758631624-e2822e304c36?auto=format&fit=crop&w=1600&q=80',
+            alt: 'Premium workspace with restrained materials and architectural perspective.'
+          }
+        },
+        {
+          sector: 'Loom Walkthrough',
+          title: 'Studio Portrait AI',
+          description:
+            'Exploratory AI portrait studio shown as a proof of capability on more experimental, creative and generative interface work.',
+          loomUrl: 'https://www.loom.com/share/b82cf2efa9c64ed9943f719a0cd66ea7',
+          outcomes: ['Creative AI direction', 'Exploratory interface', 'Visual use case'],
+          image: {
+            src: 'https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1600&q=80',
+            alt: 'Technology environment with screens and data oriented toward product and automation.'
           }
         }
       ]

@@ -1,10 +1,7 @@
-import { Play } from 'lucide-react'
+import { ArrowUpRight, Play } from 'lucide-react'
 import { useEffect, useMemo, useRef, useState } from 'react'
 import { useTranslation } from 'react-i18next'
-import type {
-  MouseEvent as ReactMouseEvent,
-  SyntheticEvent
-} from 'react'
+import type { MouseEvent as ReactMouseEvent } from 'react'
 import { useReveal } from '../hooks/use-reveal'
 import type { SiteContent } from '../types/site'
 import { SectionBandHeading } from '../ui/section-band-heading'
@@ -15,23 +12,31 @@ interface ProjectsSectionProps {
 
 interface LoomProjectCard {
   description: string
+  embedSrc: string
   id: string
   indexLabel: string
+  imageSrc: string
+  loomUrl: string
+  prototypeUrl?: string
   sector: string
   thumbnailAlt: string
-  thumbnailSrc: string
   title: string
 }
 
-const loomVideoId = 'e0d6dd8b5737463090774e35266d8e94'
-const loomShareUrl = `https://www.loom.com/share/${loomVideoId}`
-const loomThumbnailFallbackUrl = `https://cdn.loom.com/sessions/thumbnails/${loomVideoId}-with-play.gif`
-const loomEmbedFallbackUrl = `https://www.loom.com/embed/${loomVideoId}?autoplay=1`
-const projectDebugTag = '[ProjectsSection Debug]'
-
 interface LoomOEmbedResponse {
-  html?: string
   thumbnail_url?: string
+}
+
+const getLoomVideoId = (url: string) => {
+  const match = url.match(/loom\.com\/share\/([a-zA-Z0-9]+)/i)
+  return match?.[1] ?? ''
+}
+
+const getLoomEmbedUrl = (url: string) => {
+  const videoId = getLoomVideoId(url)
+  return videoId
+    ? `https://www.loom.com/embed/${videoId}?autoplay=1`
+    : url
 }
 
 export function ProjectsSection({ content }: ProjectsSectionProps) {
@@ -40,65 +45,27 @@ export function ProjectsSection({ content }: ProjectsSectionProps) {
   const isFrench = i18n.resolvedLanguage !== 'en'
   const hoverTimeoutRef = useRef<number | null>(null)
   const stageRef = useRef<HTMLDivElement | null>(null)
-  const mouseMoveCountRef = useRef(0)
-  const [activeCardId, setActiveCardId] = useState<string | null>(null)
-  const [isVideoLoaded, setIsVideoLoaded] = useState(false)
-  const [loomThumbnailSrc, setLoomThumbnailSrc] = useState(
-    loomThumbnailFallbackUrl
-  )
-  const [loomEmbedSrc, setLoomEmbedSrc] = useState(loomEmbedFallbackUrl)
-
-  const debugLog = (message: string, payload?: unknown) => {
-    if (payload === undefined) {
-      console.log(`${projectDebugTag} ${message}`)
-      return
-    }
-
-    console.log(`${projectDebugTag} ${message}`, payload)
-  }
-
-  const debugWarn = (message: string, payload?: unknown) => {
-    if (payload === undefined) {
-      console.warn(`${projectDebugTag} ${message}`)
-      return
-    }
-
-    console.warn(`${projectDebugTag} ${message}`, payload)
-  }
-
-  const debugError = (message: string, payload?: unknown) => {
-    if (payload === undefined) {
-      console.error(`${projectDebugTag} ${message}`)
-      return
-    }
-
-    console.error(`${projectDebugTag} ${message}`, payload)
-  }
+  const [loomThumbnails, setLoomThumbnails] = useState<Record<string, string>>({})
 
   const cards = useMemo<LoomProjectCard[]>(
-    () => {
-      debugLog('building cards collection from content.items', {
-        itemCount: content.items.length
-      })
-
-      return (
-      Array.from({ length: 4 }, (_, index) => {
-        const project = content.items[index % content.items.length]
-
-        return {
-          description: project.description,
-          id: `loom-card-${index + 1}`,
-          indexLabel: String(index + 1).padStart(2, '0'),
-          sector: project.sector,
-          thumbnailAlt: `${project.title} Loom thumbnail`,
-          thumbnailSrc: loomThumbnailSrc,
-          title: project.title
-        }
-      })
-      )
-    },
-    [content.items, loomThumbnailSrc]
+    () =>
+      content.items.map((project, index) => ({
+        description: project.description,
+        embedSrc: getLoomEmbedUrl(project.loomUrl),
+        id: `loom-card-${index + 1}`,
+        imageSrc: project.image.src,
+        indexLabel: String(index + 1).padStart(2, '0'),
+        loomUrl: project.loomUrl,
+        prototypeUrl: project.prototypeUrl,
+        sector: project.sector,
+        thumbnailAlt: project.image.alt,
+        title: project.title
+      })),
+    [content.items]
   )
+
+  const [activeCardId, setActiveCardId] = useState<string | null>(null)
+  const [isVideoLoaded, setIsVideoLoaded] = useState(false)
 
   const activeCard = useMemo(
     () => cards.find((card) => card.id === activeCardId) ?? null,
@@ -106,216 +73,66 @@ export function ProjectsSection({ content }: ProjectsSectionProps) {
   )
 
   const topRow = [...cards, ...cards]
-  const bottomRow = [...cards.slice(1), ...cards.slice(0, 1), ...cards.slice(1), ...cards.slice(0, 1)]
+  const bottomSeed =
+    cards.length > 1 ? [...cards.slice(1), cards[0]] : cards
+  const bottomRow = [...bottomSeed, ...bottomSeed]
 
   useEffect(() => {
-    debugLog('active card effect fired', {
-      activeCardId
-    })
+    let isCancelled = false
 
+    const loadThumbnails = async () => {
+      const entries = await Promise.all(
+        cards.map(async (card) => {
+          try {
+            const response = await fetch(
+              `https://www.loom.com/v1/oembed?url=${encodeURIComponent(card.loomUrl)}`
+            )
+
+            if (!response.ok) {
+              return [card.id, card.imageSrc] as const
+            }
+
+            const data = (await response.json()) as LoomOEmbedResponse
+
+            return [card.id, data.thumbnail_url || card.imageSrc] as const
+          } catch {
+            return [card.id, card.imageSrc] as const
+          }
+        })
+      )
+
+      if (isCancelled) {
+        return
+      }
+
+      setLoomThumbnails(Object.fromEntries(entries))
+    }
+
+    void loadThumbnails()
+
+    return () => {
+      isCancelled = true
+    }
+  }, [cards])
+
+  useEffect(() => {
     if (!activeCardId) {
-      debugWarn('no active card, spotlight stays unloaded')
       return
     }
 
-    debugLog('scheduling deferred iframe mount after hover', {
-      activeCardId,
-      delayMs: 140
-    })
     hoverTimeoutRef.current = window.setTimeout(() => {
-      debugLog('hover timeout completed, iframe can mount now', {
-        activeCardId
-      })
       setIsVideoLoaded(true)
     }, 140)
 
     return () => {
       if (hoverTimeoutRef.current !== null) {
-        debugWarn('cleaning previous hover timeout', {
-          activeCardId
-        })
         window.clearTimeout(hoverTimeoutRef.current)
       }
     }
   }, [activeCardId])
 
-  useEffect(() => {
-    debugLog('component mounted')
-
-    return () => {
-      debugWarn('component unmounted')
-    }
-  }, [])
-
-  useEffect(() => {
-    debugLog('cards collection changed', {
-      cardIds: cards.map((card) => card.id),
-      thumbnailSrc: loomThumbnailSrc
-    })
-  }, [cards, loomThumbnailSrc])
-
-  useEffect(() => {
-    debugLog('active card resolved object changed', activeCard)
-  }, [activeCard])
-
-  useEffect(() => {
-    debugLog('iframe loaded state changed', {
-      isVideoLoaded
-    })
-  }, [isVideoLoaded])
-
-  useEffect(() => {
-    debugLog('current Loom endpoints', {
-      loomEmbedSrc,
-      loomShareUrl,
-      loomThumbnailSrc
-    })
-  }, [loomEmbedSrc, loomThumbnailSrc])
-
-  useEffect(() => {
-    const loadLoomOEmbed = async () => {
-      const oEmbedUrl = `https://www.loom.com/v1/oembed?url=${encodeURIComponent(loomShareUrl)}`
-
-      debugLog('starting Loom oEmbed fetch', {
-        oEmbedUrl
-      })
-
-      try {
-        const response = await fetch(oEmbedUrl)
-        debugLog('Loom oEmbed response received', {
-          ok: response.ok,
-          status: response.status,
-          statusText: response.statusText
-        })
-
-        if (!response.ok) {
-          throw new Error(`oEmbed request failed with status ${response.status}`)
-        }
-
-        const data = (await response.json()) as LoomOEmbedResponse
-        debugLog('Loom oEmbed payload parsed', data)
-
-        if (data.thumbnail_url) {
-          setLoomThumbnailSrc(data.thumbnail_url)
-          debugLog('updated thumbnail from Loom oEmbed', {
-            thumbnailUrl: data.thumbnail_url
-          })
-        } else {
-          debugWarn('Loom oEmbed payload has no thumbnail_url, keeping fallback')
-        }
-
-        if (data.html) {
-          const iframeSrcMatch = data.html.match(/src="([^"]+)"/i)
-          const iframeSrc = iframeSrcMatch?.[1]
-
-          if (iframeSrc) {
-            setLoomEmbedSrc(iframeSrc)
-            debugLog('updated iframe src from Loom oEmbed html', {
-              iframeSrc
-            })
-          } else {
-            debugWarn('Unable to parse iframe src from Loom oEmbed html, keeping fallback')
-          }
-        } else {
-          debugWarn('Loom oEmbed payload has no html field, keeping fallback embed src')
-        }
-      } catch (error) {
-        debugError('Loom oEmbed fetch failed, keeping fallback assets', {
-          error
-        })
-      }
-    }
-
-    void loadLoomOEmbed()
-  }, [])
-
-  useEffect(() => {
-    const onWindowError = (event: ErrorEvent) => {
-      debugError('window error captured', {
-        colno: event.colno,
-        filename: event.filename,
-        lineno: event.lineno,
-        message: event.message
-      })
-    }
-
-    const onUnhandledRejection = (event: PromiseRejectionEvent) => {
-      debugError('unhandled rejection captured', {
-        reason: event.reason
-      })
-    }
-
-    window.addEventListener('error', onWindowError)
-    window.addEventListener('unhandledrejection', onUnhandledRejection)
-    debugLog('global error listeners attached')
-
-    return () => {
-      window.removeEventListener('error', onWindowError)
-      window.removeEventListener('unhandledrejection', onUnhandledRejection)
-      debugWarn('global error listeners removed')
-    }
-  }, [])
-
-  useEffect(() => {
-    const logStageMetrics = () => {
-      const stageRect = stageRef.current?.getBoundingClientRect()
-
-      debugLog('stage metrics snapshot', {
-        activeCardId,
-        mouseMoveEvents: mouseMoveCountRef.current,
-        rect: stageRect
-          ? {
-              bottom: stageRect.bottom,
-              height: stageRect.height,
-              left: stageRect.left,
-              right: stageRect.right,
-              top: stageRect.top,
-              width: stageRect.width
-            }
-          : null
-      })
-
-      const loomResources = performance
-        .getEntriesByType('resource')
-        .filter(
-          (entry) =>
-            entry.name.includes('loom') || entry.name.includes('oembed')
-        )
-        .map((entry) => ({
-          decodedBodySize:
-            'decodedBodySize' in entry ? entry.decodedBodySize : undefined,
-          duration: entry.duration,
-          initiatorType:
-            'initiatorType' in entry ? entry.initiatorType : undefined,
-          name: entry.name,
-          transferSize: 'transferSize' in entry ? entry.transferSize : undefined
-        }))
-
-      debugLog('performance resources mentioning loom', loomResources)
-    }
-
-    logStageMetrics()
-    const intervalId = window.setInterval(logStageMetrics, 2500)
-    debugLog('resource/metrics interval attached', {
-      intervalMs: 2500
-    })
-
-    return () => {
-      window.clearInterval(intervalId)
-      debugWarn('resource/metrics interval removed')
-    }
-  }, [activeCardId])
-
   const handleCardEnter = (cardId: string) => {
-    debugLog('card hover enter', {
-      cardId,
-      previousActiveCardId: activeCardId
-    })
-
     if (hoverTimeoutRef.current !== null) {
-      debugWarn('clearing pending hover timeout before activating new card', {
-        cardId
-      })
       window.clearTimeout(hoverTimeoutRef.current)
     }
 
@@ -323,13 +140,12 @@ export function ProjectsSection({ content }: ProjectsSectionProps) {
     setActiveCardId(cardId)
   }
 
-  const handleStageLeave = () => {
-    debugWarn('stage leave detected, closing spotlight', {
-      activeCardId
-    })
+  const handleCardActivate = (cardId: string) => {
+    handleCardEnter(cardId)
+  }
 
+  const handleStageLeave = () => {
     if (hoverTimeoutRef.current !== null) {
-      debugWarn('clearing hover timeout on stage leave')
       window.clearTimeout(hoverTimeoutRef.current)
     }
 
@@ -337,72 +153,14 @@ export function ProjectsSection({ content }: ProjectsSectionProps) {
     setActiveCardId(null)
   }
 
-  const handleStageMouseMove = (event: ReactMouseEvent<HTMLDivElement>) => {
-    mouseMoveCountRef.current += 1
-
-    const rect = stageRef.current?.getBoundingClientRect()
-    debugLog('stage mousemove', {
-      clientX: event.clientX,
-      clientY: event.clientY,
-      localX: rect ? event.clientX - rect.left : null,
-      localY: rect ? event.clientY - rect.top : null,
-      moveCount: mouseMoveCountRef.current
-    })
-  }
-
   const handleStageClick = (event: ReactMouseEvent<HTMLDivElement>) => {
     const target = event.target as HTMLElement
-    debugLog('stage click detected', {
-      className: target.className,
-      tagName: target.tagName
-    })
 
     if (target.closest('.project-loom-card')) {
-      debugLog('click happened inside a project card, keeping spotlight open')
       return
     }
 
-    debugWarn('click happened outside cards, closing spotlight')
     handleStageLeave()
-  }
-
-  const handleThumbnailLoad = (
-    event: SyntheticEvent<HTMLImageElement>,
-    cardId: string
-  ) => {
-    const image = event.currentTarget
-    debugLog('thumbnail loaded', {
-      cardId,
-      currentSrc: image.currentSrc,
-      height: image.naturalHeight,
-      width: image.naturalWidth
-    })
-  }
-
-  const handleThumbnailError = (
-    event: SyntheticEvent<HTMLImageElement>,
-    cardId: string
-  ) => {
-    const image = event.currentTarget
-    debugError('thumbnail failed to load', {
-      cardId,
-      currentSrc: image.currentSrc,
-      src: image.src
-    })
-  }
-
-  const handleIframeLoad = () => {
-    debugLog('iframe load event fired', {
-      activeCardId,
-      src: loomEmbedSrc
-    })
-  }
-
-  const handleIframeError = () => {
-    debugError('iframe error event fired', {
-      activeCardId,
-      src: loomEmbedSrc
-    })
   }
 
   return (
@@ -416,12 +174,12 @@ export function ProjectsSection({ content }: ProjectsSectionProps) {
           eyebrow={content.eyebrow}
           title={
             isFrench
-              ? 'Des projets montrés en Loom, pas racontés.'
-              : 'Projects shown in Loom, not just described.'
+              ? 'Des projets montrés en démo, pas racontés.'
+              : 'Projects shown in demo, not just described.'
           }
         />
 
-        <div className="mt-7 max-w-[52rem]" data-reveal>
+        <div className="mt-7 max-w-[56rem]" data-reveal>
           <p className="text-base leading-8 text-[var(--muted)]">
             {content.body}
           </p>
@@ -433,11 +191,19 @@ export function ProjectsSection({ content }: ProjectsSectionProps) {
         data-reveal
         onClick={handleStageClick}
         onMouseLeave={handleStageLeave}
-        onMouseMove={handleStageMouseMove}
         ref={stageRef}
       >
         <div className="project-loom-fade-left" />
         <div className="project-loom-fade-right" />
+
+        {activeCard ? (
+          <button
+            aria-label={isFrench ? 'Fermer le projet actif' : 'Close active project'}
+            className="project-loom-backdrop"
+            onClick={handleStageLeave}
+            type="button"
+          />
+        ) : null}
 
         <div className="space-y-5 lg:space-y-6">
           <div className="project-loom-row project-loom-row-forward">
@@ -449,6 +215,7 @@ export function ProjectsSection({ content }: ProjectsSectionProps) {
                 <button
                   key={cardId}
                   className={`project-loom-card ${isActive ? 'is-active' : ''}`}
+                  onClick={() => handleCardActivate(card.id)}
                   onMouseEnter={() => handleCardEnter(card.id)}
                   type="button"
                 >
@@ -457,9 +224,7 @@ export function ProjectsSection({ content }: ProjectsSectionProps) {
                       alt={card.thumbnailAlt}
                       className="project-loom-thumb-image"
                       loading="lazy"
-                      onError={(event) => handleThumbnailError(event, card.id)}
-                      onLoad={(event) => handleThumbnailLoad(event, card.id)}
-                      src={card.thumbnailSrc}
+                      src={loomThumbnails[card.id] ?? card.imageSrc}
                     />
                     <div className="project-loom-thumb-copy">
                       <div className="space-y-2">
@@ -483,6 +248,7 @@ export function ProjectsSection({ content }: ProjectsSectionProps) {
                 <button
                   key={cardId}
                   className={`project-loom-card ${isActive ? 'is-active' : ''}`}
+                  onClick={() => handleCardActivate(card.id)}
                   onMouseEnter={() => handleCardEnter(card.id)}
                   type="button"
                 >
@@ -491,9 +257,7 @@ export function ProjectsSection({ content }: ProjectsSectionProps) {
                       alt={card.thumbnailAlt}
                       className="project-loom-thumb-image"
                       loading="lazy"
-                      onError={(event) => handleThumbnailError(event, card.id)}
-                      onLoad={(event) => handleThumbnailLoad(event, card.id)}
-                      src={card.thumbnailSrc}
+                      src={loomThumbnails[card.id] ?? card.imageSrc}
                     />
                     <div className="project-loom-thumb-copy">
                       <div className="space-y-2">
@@ -524,17 +288,20 @@ export function ProjectsSection({ content }: ProjectsSectionProps) {
                   className="project-loom-iframe"
                   key={activeCard.id}
                   loading="lazy"
-                  onError={handleIframeError}
-                  onLoad={handleIframeLoad}
-                  src={loomEmbedSrc}
-                  title="MAPBRAIN Loom Preview"
+                  src={activeCard.embedSrc}
+                  title={`MAPBRAIN Project Preview - ${activeCard.title}`}
                 />
               ) : (
                 <div className="project-loom-placeholder">
                   <img
                     alt={activeCard?.thumbnailAlt ?? 'Loom thumbnail preview'}
                     className="project-loom-placeholder-image"
-                    src={loomThumbnailSrc}
+                    src={
+                      (activeCard ? loomThumbnails[activeCard.id] : undefined) ??
+                      activeCard?.imageSrc ??
+                      (cards[0] ? loomThumbnails[cards[0].id] : undefined) ??
+                      cards[0]?.imageSrc
+                    }
                   />
                   <span className="project-loom-play">
                     <Play className="size-8 fill-current" />
@@ -545,24 +312,45 @@ export function ProjectsSection({ content }: ProjectsSectionProps) {
               <aside className="project-loom-aside">
                 <div className="project-loom-aside-panel">
                   <span className="project-loom-aside-kicker">
-                    {activeCard?.sector ?? (isFrench ? 'Projet Loom' : 'Loom project')}
+                    {activeCard?.sector ?? (isFrench ? 'Projet MAPBRAIN' : 'MAPBRAIN project')}
                   </span>
                   <h3 className="project-loom-aside-title">
-                    {activeCard?.title ?? (isFrench ? 'Survolez une vidéo' : 'Hover a video')}
+                    {activeCard?.title ?? (isFrench ? 'Survolez un projet' : 'Hover a project')}
                   </h3>
                   <p className="project-loom-aside-body">
                     {activeCard?.description ??
                       (isFrench
-                        ? 'Chaque case study sera présenté en walkthrough Loom pour montrer le niveau réel de réflexion, de design et d’exécution.'
-                        : 'Each case study will be presented as a Loom walkthrough to show the real level of thinking, design and execution.')}
+                        ? 'Survolez une carte pour afficher la vidéo Loom correspondante et accéder, quand disponible, au prototype Stitch associé.'
+                        : 'Hover a card to display its matching Loom walkthrough and, when available, open the related Stitch prototype.')}
                   </p>
-                  <div className="project-loom-aside-cta">
-                    <span className="project-loom-mini-play">
-                      <Play className="size-4 fill-current" />
-                    </span>
-                    <span>
-                      {isFrench ? 'Lecture automatique au survol' : 'Autoplay on hover'}
-                    </span>
+                  <div className="flex flex-wrap gap-3 pt-2">
+                    {activeCard?.prototypeUrl ? (
+                      <a
+                        className="project-loom-aside-cta"
+                        href={activeCard.prototypeUrl}
+                        rel="noreferrer"
+                        target="_blank"
+                      >
+                        <span className="project-loom-mini-play">
+                          <ArrowUpRight className="size-4" />
+                        </span>
+                        <span>{isFrench ? 'Ouvrir Stitch' : 'Open Stitch'}</span>
+                      </a>
+                    ) : null}
+
+                    {activeCard?.loomUrl ? (
+                      <a
+                        className="project-loom-aside-cta"
+                        href={activeCard.loomUrl}
+                        rel="noreferrer"
+                        target="_blank"
+                      >
+                        <span className="project-loom-mini-play">
+                          <Play className="size-4 fill-current" />
+                        </span>
+                        <span>{isFrench ? 'Voir sur Loom' : 'Watch on Loom'}</span>
+                      </a>
+                    ) : null}
                   </div>
                 </div>
               </aside>

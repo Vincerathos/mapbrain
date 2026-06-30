@@ -1,4 +1,4 @@
-import { ArrowUpRight, Play } from 'lucide-react'
+import { ArrowUpRight, Play, X } from 'lucide-react'
 import { useEffect, useMemo, useRef, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import type { MouseEvent as ReactMouseEvent } from 'react'
@@ -131,6 +131,19 @@ export function ProjectsSection({ content }: ProjectsSectionProps) {
     }
   }, [activeCardId])
 
+  useEffect(() => {
+    if (!activeCard) {
+      return undefined
+    }
+
+    const previousOverflow = document.body.style.overflow
+    document.body.style.overflow = 'hidden'
+
+    return () => {
+      document.body.style.overflow = previousOverflow
+    }
+  }, [activeCard])
+
   const handleCardEnter = (cardId: string) => {
     if (hoverTimeoutRef.current !== null) {
       window.clearTimeout(hoverTimeoutRef.current)
@@ -160,6 +173,10 @@ export function ProjectsSection({ content }: ProjectsSectionProps) {
       return
     }
 
+    if (target.closest('.project-loom-spotlight')) {
+      return
+    }
+
     handleStageLeave()
   }
 
@@ -183,6 +200,16 @@ export function ProjectsSection({ content }: ProjectsSectionProps) {
           <p className="text-base leading-8 text-[var(--muted)]">
             {content.body}
           </p>
+          <div className="mt-4 inline-flex items-center gap-2 rounded-full border border-[var(--line)] bg-white px-3 py-2 text-[0.72rem] font-medium tracking-[0.02em] text-[var(--ink)] shadow-[0_8px_24px_rgba(17,17,17,0.04)]">
+            <span className="inline-flex size-6 items-center justify-center rounded-full bg-[var(--accent-soft)] text-[var(--ink)]">
+              <Play className="size-3.5 fill-current" />
+            </span>
+            <span>
+              {isFrench
+                ? 'Touchez une card pour ouvrir la démo'
+                : 'Tap a card to open the demo'}
+            </span>
+          </div>
         </div>
       </div>
 
@@ -311,6 +338,14 @@ export function ProjectsSection({ content }: ProjectsSectionProps) {
 
               <aside className="project-loom-aside">
                 <div className="project-loom-aside-panel">
+                  <button
+                    aria-label={isFrench ? 'Fermer la prévisualisation' : 'Close preview'}
+                    className="project-loom-close"
+                    onClick={handleStageLeave}
+                    type="button"
+                  >
+                    <X className="size-4" />
+                  </button>
                   <span className="project-loom-aside-kicker">
                     {activeCard?.sector ?? (isFrench ? 'Projet MAPBRAIN' : 'MAPBRAIN project')}
                   </span>

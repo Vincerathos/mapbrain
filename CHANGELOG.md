@@ -2,6 +2,12 @@
 
 ## 30-06-2026
 
+- 20:58 Augmentation plus franche de la largeur des cards mobiles de `Projects` après vérification browser, le précédent passage à `296px` restant trop discret visuellement ; les cards passent désormais à `332px`.
+- 20:56 Élargissement supplémentaire des cards mobiles de la section `Projects` pour afficher des visuels plus larges sans réaugmenter artificiellement leur hauteur.
+- 20:54 Ajustement fin des cards mobiles de `Projects` en les rendant un peu moins hautes mais plus larges, puis ajout d’un indicateur explicite invitant l’utilisateur à toucher une card pour ouvrir la démo Loom.
+- 20:52 Augmentation forte de la hauteur visuelle des cards mobiles de la section `Projects` en resserrant nettement leur ratio d’image pour leur redonner plus de présence verticale à l’écran.
+- 20:50 Allègement visuel supplémentaire de la scène mobile `Projects` en supprimant l’effet de voile latéral et le dimming agressif des cards actives, tout en réduisant nettement la taille des cartes, des overlays et du padding pour afficher plus de projets à l’écran.
+- 20:28 Correction de l’expérience mobile de la section `Projects` après vérification dans le browser intégré : la preview Loom n’est plus masquée sur petit écran, le tap sur une card ouvre une modale vidéo visible avec fermeture dédiée, le scroll de fond est bloqué pendant l’ouverture et le rail ne rogne plus la première carte à gauche.
 - 14:42 Correction responsive mobile de la hero et du bandeau logos avec suppression du débordement horizontal global, resserrage du wordmark, empilement des cartes de service sur petit écran et réduction du grand vide bas dans la scène principale.
 - 14:24 Renommage éditorial des 7 projets Loom dans `src/data/site-content.ts` avec titres, descriptions et résultats réécrits en FR/EN à partir du contenu réel des walkthroughs pour remplacer les placeholders trop génériques.
 - 14:13 Recalage des cards de la section `Projects` vers un format plus panoramique avec moins de hauteur et davantage de largeur, sur desktop comme sur les breakpoints intermédiaires et mobile.

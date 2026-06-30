@@ -520,6 +520,7 @@ ol {
 }
 
 .project-loom-aside-panel {
+  position: relative;
   display: flex;
   min-height: 100%;
   flex-direction: column;
@@ -532,6 +533,21 @@ ol {
     rgba(16, 16, 18, 0.54);
   padding: 24px;
   color: white;
+}
+
+.project-loom-close {
+  position: absolute;
+  top: 18px;
+  right: 18px;
+  display: inline-flex;
+  width: 36px;
+  height: 36px;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: 9999px;
+  background: rgba(255, 255, 255, 0.12);
+  color: rgba(255, 255, 255, 0.92);
 }
 
 .project-loom-aside-kicker {
@@ -757,7 +773,15 @@ ol {
 
 @media (max-width: 1279px) {
   .project-loom-spotlight {
-    display: none;
+    position: fixed;
+    top: 50%;
+    right: 16px;
+    left: 16px;
+    z-index: 80;
+    width: auto;
+    max-height: calc(100svh - 32px);
+    overflow-y: auto;
+    transform: translate3d(0, -50%, 0) scale(0.96);
   }
 
   .project-loom-card {
@@ -767,6 +791,37 @@ ol {
 
   .project-loom-stage {
     min-height: auto;
+  }
+
+  .project-loom-backdrop {
+    position: fixed;
+    inset: 0;
+    z-index: 70;
+    background: rgba(17, 17, 17, 0.32);
+    backdrop-filter: blur(6px);
+  }
+
+  .project-loom-frame {
+    padding: 18px 18px 20px;
+    border-radius: 24px;
+  }
+
+  .project-loom-screen {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .project-loom-iframe,
+  .project-loom-placeholder {
+    min-height: auto;
+    aspect-ratio: 16 / 9;
+    height: auto;
+  }
+
+  .project-loom-aside-panel {
+    min-height: auto;
+    border-radius: 26px;
+    padding: 22px;
+    padding-top: 58px;
   }
 }
 
@@ -791,12 +846,78 @@ ol {
     height: 52px;
   }
 
+  .project-loom-stage {
+    padding-top: 18px;
+    padding-bottom: 18px;
+  }
+
+  .project-loom-row {
+    gap: 12px;
+    padding-inline: 12px;
+  }
+
   .project-loom-card {
-    width: 324px;
-    flex-basis: 324px;
+    width: 332px;
+    flex-basis: 332px;
+  }
+
+  .project-loom-thumb {
+    aspect-ratio: 1.26 / 1;
+    border-radius: 16px;
+  }
+
+  .project-loom-thumb-copy {
+    right: 10px;
+    bottom: 10px;
+    left: 10px;
+    gap: 8px;
+  }
+
+  .project-loom-badge {
+    min-width: 36px;
+    padding: 5px 8px;
+    font-size: 0.6rem;
+  }
+
+  .project-loom-sector {
+    max-width: 11ch;
+    font-size: 0.55rem;
+  }
+
+  .project-loom-stage.has-active .project-loom-card {
+    opacity: 1;
+    filter: none;
+  }
+
+  .project-loom-fade-left,
+  .project-loom-fade-right {
+    display: none;
+  }
+
+  .project-loom-frame {
+    padding: 14px 14px 16px;
+  }
+
+  .project-loom-browser-bar {
+    padding-bottom: 12px;
+  }
+
+  .project-loom-aside-panel {
+    border-radius: 22px;
+    padding: 18px;
+    padding-top: 54px;
+  }
+
+  .project-loom-close {
+    top: 14px;
+    right: 14px;
+    width: 34px;
+    height: 34px;
   }
 
   .project-loom-label {
-    font-size: 0.98rem;
+    max-width: 10ch;
+    font-size: 0.84rem;
+    line-height: 1.02;
   }
 }

@@ -1,5 +1,15 @@
 # CHANGELOG
 
+## 01-07-2026
+
+- 15:10 Recomposition de la section `audiences` pour mieux mélanger texte et images ligne par ligne, en cassant l’effet de colonne d’images à droite tout en conservant 3 lignes et 3 visuels.
+- 15:02 Simplification forte de la mosaïque `audiences` vers 3 lignes nettes et 3 images seulement, avec moins de cartes texte, une dispersion plus aérée et une composition desktop plus lisible.
+- 15:00 Réduction de la mosaïque `audiences` à 5 tuiles image en supprimant 3 visuels supplémentaires au profit de cartes texte, afin de renforcer la lecture éditoriale tout en conservant un rectangle complet.
+- 14:57 Rééquilibrage de la section `audiences` vers davantage de contenu éditorial et moins d’images, avec une vraie carte `PME` développée à la bonne taille et une mosaïque finale majoritairement composée de cartes texte.
+- 14:45 Recalage de la mosaïque `audiences` pour former un rectangle plein sans trou sur desktop grâce à des positions de grille explicites, puis remplacement des derniers visuels figuratifs par une sélection d’images abstraites uniquement.
+- 14:41 Remplacement des images cassées de la section `audiences` par des URLs directes plus fiables afin d’éliminer les tuiles blanches dues au hotlinking bloqué sur certains visuels décoratifs.
+- 21:06 Refonte complète de la section `audiences` en vraie mosaïque bento asymétrique avec tailles de tuiles variées, cartes texte plus éditoriales et remplacement des anciens visuels uniformes par une sélection d’images décoratives plus fortes trouvées sur le web.
+
 ## 30-06-2026
 
 - 20:58 Augmentation plus franche de la largeur des cards mobiles de `Projects` après vérification browser, le précédent passage à `296px` restant trop discret visuellement ; les cards passent désormais à `332px`.

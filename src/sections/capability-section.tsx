@@ -140,8 +140,8 @@ export function CapabilitySection({ content }: CapabilitySectionProps) {
     >
       <div className="section-shell mx-auto max-w-[1720px] px-4 sm:px-6 lg:px-8">
         <SectionBandHeading
-          eyebrow={isFrench ? 'Build' : 'Build'}
-          title={isFrench ? 'Transformer une idée en produit.' : 'Turn Ideas Into Products.'}
+          eyebrow={content.eyebrow}
+          title={content.title}
         />
 
         <div className="mt-14 overflow-hidden border border-[var(--line)] bg-white">
@@ -218,11 +218,14 @@ export function CapabilitySection({ content }: CapabilitySectionProps) {
           </div>
         </div>
 
-        <p className="mt-8 max-w-3xl text-[1rem] leading-8 text-[var(--muted)]" data-reveal>
-          {isFrench
-            ? 'Nous concevons et développons des solutions digitales performantes et évolutives.'
-            : 'We design and develop scalable digital products.'}
-        </p>
+        {content.body ? (
+          <p
+            className="mt-8 max-w-3xl text-[1rem] leading-8 text-[var(--muted)]"
+            data-reveal
+          >
+            {content.body}
+          </p>
+        ) : null}
       </div>
     </section>
   )

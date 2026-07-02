@@ -6,6 +6,7 @@ import {
   Users,
   Video
 } from 'lucide-react'
+import { useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { useReveal } from '../hooks/use-reveal'
 import type { AutomationUseCase, SiteContent } from '../types/site'
@@ -28,6 +29,13 @@ export function AutomationSection({ content }: AutomationSectionProps) {
   const revealRef = useReveal<HTMLElement>()
   const { i18n } = useTranslation()
   const isFrench = i18n.resolvedLanguage !== 'en'
+  const [expandedCards, setExpandedCards] = useState<string[]>([])
+
+  const toggleCardDetails = (title: string) => {
+    setExpandedCards((current) =>
+      current.includes(title) ? current.filter((entry) => entry !== title) : [...current, title]
+    )
+  }
 
   return (
     <section className="border-b border-[var(--line)] bg-[var(--surface)]" id="automation" ref={revealRef}>
@@ -98,6 +106,8 @@ export function AutomationSection({ content }: AutomationSectionProps) {
             const Icon = icons[item.icon]
             const isPrimary = index === 0
             const isAccent = item.icon === 'settings'
+            const isExpanded = expandedCards.includes(item.title)
+            const detailsId = `automation-card-details-${index + 1}`
 
             return (
               <article
@@ -141,41 +151,59 @@ export function AutomationSection({ content }: AutomationSectionProps) {
                       </div>
                     </div>
                   ) : null}
+
+                  <button
+                    aria-controls={detailsId}
+                    aria-expanded={isExpanded}
+                    className={`mt-7 inline-flex min-h-11 items-center rounded-full border px-4 py-2 text-[0.82rem] font-medium transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent-deep)] focus-visible:ring-offset-2 ${isPrimary ? 'border-white/18 bg-white/8 text-white hover:bg-white/14 focus-visible:ring-offset-[var(--hero-dark)]' : 'border-[var(--line)] bg-white text-[var(--ink)] hover:bg-[var(--accent-soft)]/70 focus-visible:ring-offset-white'}`}
+                    onClick={() => toggleCardDetails(item.title)}
+                    type="button"
+                  >
+                    {isExpanded
+                      ? isFrench
+                        ? 'Voir moins'
+                        : 'Show less'
+                      : isFrench
+                        ? 'Voir plus'
+                        : 'Show more'}
+                  </button>
                 </div>
 
-                <div className="mt-10 grid gap-6">
-                  <div>
-                    <p className={`font-mono text-[0.68rem] uppercase tracking-[0.22em] ${isPrimary ? 'text-white/62' : 'text-[var(--muted)]'}`}>
-                      {isFrench ? 'Exemples' : 'Examples'}
-                    </p>
-                    <ul className={`mt-3 space-y-3 text-sm leading-6 sm:text-base ${isPrimary ? 'text-white' : 'text-[var(--ink)]'}`}>
-                      {item.examples.map((example) => (
-                        <li
-                          key={example}
-                          className={`border-t pt-3 ${isPrimary ? 'border-white/18' : 'border-[color:rgb(17_17_17_/_0.08)]'}`}
-                        >
-                          {example}
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
+                {isExpanded ? (
+                  <div className="mt-10 grid gap-6" id={detailsId}>
+                    <div>
+                      <p className={`font-mono text-[0.68rem] uppercase tracking-[0.22em] ${isPrimary ? 'text-white/62' : 'text-[var(--muted)]'}`}>
+                        {isFrench ? 'Exemples' : 'Examples'}
+                      </p>
+                      <ul className={`mt-3 space-y-3 text-sm leading-6 sm:text-base ${isPrimary ? 'text-white' : 'text-[var(--ink)]'}`}>
+                        {item.examples.map((example) => (
+                          <li
+                            key={example}
+                            className={`border-t pt-3 ${isPrimary ? 'border-white/18' : 'border-[color:rgb(17_17_17_/_0.08)]'}`}
+                          >
+                            {example}
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
 
-                  <div>
-                    <p className={`font-mono text-[0.68rem] uppercase tracking-[0.22em] ${isPrimary ? 'text-white/62' : 'text-[var(--muted)]'}`}>
-                      {isFrench ? 'Bénéfices' : 'Benefits'}
-                    </p>
-                    <ul className={`mt-3 space-y-3 text-sm leading-6 sm:text-base ${isPrimary ? 'text-white' : 'text-[var(--ink)]'}`}>
-                      {item.benefits.map((result) => (
-                        <li
-                          key={result}
-                          className={`border-t pt-3 ${isPrimary ? 'border-white/18' : 'border-[color:rgb(17_17_17_/_0.08)]'}`}
-                        >
-                          {result}
-                        </li>
-                      ))}
-                    </ul>
+                    <div>
+                      <p className={`font-mono text-[0.68rem] uppercase tracking-[0.22em] ${isPrimary ? 'text-white/62' : 'text-[var(--muted)]'}`}>
+                        {isFrench ? 'Bénéfices' : 'Benefits'}
+                      </p>
+                      <ul className={`mt-3 space-y-3 text-sm leading-6 sm:text-base ${isPrimary ? 'text-white' : 'text-[var(--ink)]'}`}>
+                        {item.benefits.map((result) => (
+                          <li
+                            key={result}
+                            className={`border-t pt-3 ${isPrimary ? 'border-white/18' : 'border-[color:rgb(17_17_17_/_0.08)]'}`}
+                          >
+                            {result}
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
                   </div>
-                </div>
+                ) : null}
               </article>
             )
           })}

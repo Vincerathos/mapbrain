@@ -14,8 +14,8 @@ export function FinalCtaSection() {
   const isCaptureView =
     typeof window !== 'undefined' && window.location.hash === '#contact'
   const socialItems = [
-    { href: 'https://www.instagram.com', label: 'Instagram', src: 'https://cdn.simpleicons.org/instagram/111111' },
-    { href: 'https://www.linkedin.com', label: 'LinkedIn', src: 'https://cdn.simpleicons.org/linkedin/111111' },
+    { href: 'https://www.instagram.com/aimapbrain?igsh=MWt4cWJwMjZzanI2Nw==', label: 'Instagram', src: 'https://cdn.simpleicons.org/instagram/111111' },
+    { href: 'https://www.linkedin.com/company/mapbrain/', label: 'LinkedIn', src: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linkedin/linkedin-original.svg' },
     { href: 'https://www.facebook.com', label: 'Facebook', src: 'https://cdn.simpleicons.org/facebook/111111' },
     { href: 'https://x.com', label: 'X', src: 'https://cdn.simpleicons.org/x/111111' }
   ]

@@ -19,12 +19,12 @@ export function HeroSection({ content }: HeroSectionProps) {
   ]
   const socialLinks = [
     {
-      href: 'https://www.linkedin.com',
-      iconSrc: 'https://cdn.simpleicons.org/linkedin/111111',
+      href: 'https://www.linkedin.com/company/mapbrain/',
+      iconSrc: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linkedin/linkedin-original.svg',
       label: 'LinkedIn'
     },
     {
-      href: 'https://www.instagram.com',
+      href: 'https://www.instagram.com/aimapbrain?igsh=MWt4cWJwMjZzanI2Nw==',
       iconSrc: 'https://cdn.simpleicons.org/instagram/111111',
       label: 'Instagram'
     },
@@ -74,7 +74,7 @@ export function HeroSection({ content }: HeroSectionProps) {
         <div className="grid gap-4 xl:grid-cols-[minmax(0,1fr)_250px] xl:items-start">
           <div className="min-w-0 pt-3">
             <h1
-              className="hero-wordmark whitespace-nowrap text-[clamp(2.1rem,11vw,8.4rem)] leading-[0.82] tracking-[-0.11em] text-[var(--ink)] sm:leading-[0.78] sm:tracking-[-0.125em] xl:pr-8"
+              className="hero-wordmark whitespace-nowrap text-[clamp(2.1rem,11vw,8.4rem)] leading-[0.82] tracking-[-0.07em] text-[var(--ink)] sm:leading-[0.78] sm:tracking-[-0.09em] xl:pr-8"
               data-reveal
               id="hero-title"
             >

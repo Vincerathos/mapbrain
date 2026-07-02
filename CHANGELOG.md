@@ -2,6 +2,11 @@
 
 ## 02-07-2026
 
+- 14:44 Correction de l’erreur TypeScript du dernier déploiement Vercel dans `CapabilitySection` en réutilisant effectivement le contenu `capabilities` injecté par `App`, avec heading et texte bas désormais pilotés par les données.
+- 14:26 Remplacement de l’icône LinkedIn cassée par une source SVG en ligne plus fiable dans la hero et la section contact, afin de rétablir son affichage.
+- 14:22 Transformation des cards de la section automatisation en cartes à détails repliés, avec un bouton `Voir plus / Voir moins` par carte pour afficher les exemples et bénéfices à la demande.
+- 14:20 Mise à jour des liens sociaux Instagram et LinkedIn de MAPBRAIN dans la hero et la section de contact finale avec les URLs fournies.
+- 14:17 Augmentation de l’espacement entre les lettres du wordmark hero `MAPBRAIN®_Agency` en desserrant le tracking sur mobile et desktop.
 - 12:35 Simplification des mini-cards de service dans la hero en supprimant la valeur affichée à droite du numéro, pour ne conserver que l’index entre parenthèses.
 - 12:34 Déplacement de la section `Promise` juste après les 6 projets vedettes et refonte complète de son layout pour corriger ses proportions, réduire l’effet écrasé et rendre la hiérarchie visuelle plus équilibrée.
 - 12:33 Suppression de “& Institutions” dans la card audience `Organisations / Organizations` pour éliminer le dépassement du titre dans la mosaïque.

@@ -23,7 +23,13 @@ function FrameworkCard({
 
   return (
     <article className="overflow-hidden rounded-[8px] border border-[color:rgb(17_17_17_/_0.08)] bg-white" data-reveal>
-      <div className="grid lg:grid-cols-[360px_minmax(0,1fr)]">
+      <div
+        className={`grid ${
+          reversed
+            ? 'lg:grid-cols-[minmax(0,1fr)_420px]'
+            : 'lg:grid-cols-[420px_minmax(0,1fr)]'
+        }`}
+      >
         <figure className={`${reversed ? 'lg:order-2' : ''} bg-[var(--panel)]`}>
           <img
             alt={step.image.alt}
@@ -114,7 +120,7 @@ export function FrameworkSection({ content }: FrameworkSectionProps) {
   return (
     <section className="border-b border-[var(--line)] bg-[var(--surface)]" id="framework" ref={revealRef}>
       <div className="section-shell mx-auto max-w-[1720px] px-4 sm:px-6 lg:px-8">
-        <SectionBandHeading eyebrow={content.eyebrow} title={content.title} />
+        <SectionBandHeading eyebrow="MAPBRAIN" title={content.eyebrow} />
 
         <p className="mt-8 max-w-3xl text-base leading-7 text-[var(--muted)] sm:text-lg sm:leading-8" data-reveal>
           {content.body}

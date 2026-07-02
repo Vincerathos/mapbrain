@@ -70,10 +70,18 @@ export interface FrameworkStep {
 }
 
 export interface AutomationUseCase {
+  benefits: string[]
+  examples: string[]
+  cases?: string[]
   description: string
   icon: 'target' | 'megaphone' | 'video' | 'users' | 'settings' | 'message'
+  title: string
+}
+
+export interface AutomationRationale {
   results: string[]
   title: string
+  body: string[]
 }
 
 export interface CapabilityItem {
@@ -98,6 +106,12 @@ export interface PartnerLogo {
 export interface PartnerStat {
   label: string
   value: string
+}
+
+export interface PartnerDetailGroup {
+  items: string[]
+  note?: string
+  title: string
 }
 
 export interface ContactChannel {
@@ -128,6 +142,7 @@ export interface SiteContent {
     body: string
     eyebrow: string
     image: ImageAsset
+    rationale: AutomationRationale
     title: string
     useCases: AutomationUseCase[]
   }
@@ -176,7 +191,9 @@ export interface SiteContent {
     items: NavItem[]
   }
   partners: {
+    advantages: string[]
     body: string
+    detailGroups: PartnerDetailGroup[]
     eyebrow: string
     logos: PartnerLogo[]
     perksLabel: string

@@ -49,7 +49,7 @@ export function PartnersSection({ content }: PartnersSectionProps) {
         }
       ]
 
-  const perks = content.perks.slice(0, 3)
+  const perks = content.perks
 
   return (
     <section
@@ -73,17 +73,17 @@ export function PartnersSection({ content }: PartnersSectionProps) {
                 loading="lazy"
                 src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=1600&q=80"
               />
-              <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(63,41,74,0.04),rgba(63,41,74,0.72))]" />
+              <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(38,22,47,0.14),rgba(38,22,47,0.82))]" />
 
-              <div className="absolute left-5 top-5 inline-flex items-center gap-3 rounded-full border border-white/12 bg-[color:rgb(255_255_255_/_0.1)] px-4 py-2 backdrop-blur-md">
+              <div className="absolute left-5 top-5 inline-flex items-center gap-3 rounded-full border border-white/18 bg-[color:rgb(43_28_52_/_0.68)] px-4 py-2.5 shadow-[0_10px_26px_rgba(0,0,0,0.18)] backdrop-blur-md">
                 <Sparkles className="size-4 text-[var(--accent-alt-soft)]" aria-hidden="true" />
-                <span className="font-mono text-[0.68rem] uppercase tracking-[0.18em] text-white/76">
+                <span className="font-mono text-[0.68rem] uppercase tracking-[0.18em] text-white/92">
                   {visualLabel}
                 </span>
               </div>
 
-              <div className="absolute inset-x-4 bottom-4 max-w-[32rem] rounded-[22px] border border-white/10 bg-[color:rgb(255_255_255_/_0.08)] p-5 backdrop-blur-xl sm:inset-x-5 sm:bottom-5 sm:max-w-[36rem]">
-                <p className="text-[clamp(1.7rem,3vw,2.8rem)] leading-[0.96] tracking-[-0.07em] text-white">
+              <div className="absolute inset-x-4 bottom-4 max-w-[32rem] rounded-[22px] border border-white/14 bg-[linear-gradient(180deg,rgba(61,42,73,0.78),rgba(40,26,49,0.88))] p-5 shadow-[0_18px_44px_rgba(0,0,0,0.2)] backdrop-blur-xl sm:inset-x-5 sm:bottom-5 sm:max-w-[36rem] sm:p-6">
+                <p className="text-[clamp(1.72rem,3vw,2.8rem)] leading-[1.02] tracking-[-0.035em] text-white">
                   {content.body}
                 </p>
               </div>
@@ -134,8 +134,49 @@ export function PartnersSection({ content }: PartnersSectionProps) {
               </div>
             </div>
           </div>
-
         </article>
+
+        <div className="mt-8 grid gap-4 xl:grid-cols-3" data-reveal>
+          {content.detailGroups.map((group) => (
+            <article
+              key={group.title}
+              className="rounded-[24px] border border-[var(--line)] bg-white p-6 sm:p-7"
+            >
+              <h3 className="text-[1.45rem] leading-[1.02] tracking-[-0.05em] text-[var(--ink)]">
+                {group.title}
+              </h3>
+              {group.note ? (
+                <p className="mt-4 text-[0.98rem] leading-7 text-[var(--muted)]">{group.note}</p>
+              ) : null}
+              <ul className="mt-5 space-y-3">
+                {group.items.map((item) => (
+                  <li
+                    key={item}
+                    className="border-t border-[color:rgb(17_17_17_/_0.08)] pt-3 text-[0.98rem] leading-7 text-[var(--ink)]"
+                  >
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </article>
+          ))}
+        </div>
+
+        <div className="mt-8 rounded-[28px] border border-[var(--line)] bg-[var(--surface)] p-6 sm:p-8" data-reveal>
+          <p className="font-mono text-[0.76rem] uppercase tracking-[0.24em] text-[var(--muted)]">
+            {isFrench ? 'Votre avantage' : 'Your advantage'}
+          </p>
+          <div className="mt-5 grid gap-3 md:grid-cols-2 xl:grid-cols-3">
+            {content.advantages.map((item) => (
+              <div
+                key={item}
+                className="rounded-[20px] border border-[var(--line)] bg-white px-5 py-4 text-[0.98rem] leading-7 text-[var(--ink)]"
+              >
+                {item}
+              </div>
+            ))}
+          </div>
+        </div>
       </div>
     </section>
   )

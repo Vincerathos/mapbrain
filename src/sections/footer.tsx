@@ -16,13 +16,13 @@ export function Footer({ content, currentLocale, items }: FooterProps) {
     currentLocale === 'fr'
       ? {
           audit: 'Réserver un audit',
-          contact: 'hello@mapbrain.agency',
+          contact: 'contact@mapbrain.ai',
           copyright: `© ${year} MAPBRAIN`,
           strategy: 'Analyse. Build. Scale.'
         }
       : {
           audit: 'Book an audit',
-          contact: 'hello@mapbrain.agency',
+          contact: 'contact@mapbrain.ai',
           copyright: `© ${year} MAPBRAIN`,
           strategy: 'Analyze. Build. Scale.'
         }
@@ -60,13 +60,13 @@ export function Footer({ content, currentLocale, items }: FooterProps) {
           <div className="flex flex-wrap gap-x-6 gap-y-2 lg:min-w-[280px] lg:justify-end">
             <a
               className="transition-colors duration-200 hover:text-[var(--ink)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--ink)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--surface)]"
-              href="mailto:hello@mapbrain.agency"
+              href="mailto:contact@mapbrain.ai"
             >
               {copy.contact}
             </a>
             <a
               className="transition-colors duration-200 hover:text-[var(--ink)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--ink)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--surface)]"
-              href="mailto:hello@mapbrain.agency?subject=MAPBRAIN%20Strategic%20Audit"
+              href="mailto:contact@mapbrain.ai?subject=MAPBRAIN%20Strategic%20Audit"
             >
               {copy.audit}
             </a>

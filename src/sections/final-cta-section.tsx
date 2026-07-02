@@ -59,7 +59,7 @@ export function FinalCtaSection() {
       message
     ].join('\n')
 
-    window.location.href = `mailto:hello@mapbrain.agency?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`
+    window.location.href = `mailto:contact@mapbrain.ai?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`
   }
 
   return (
@@ -70,7 +70,7 @@ export function FinalCtaSection() {
     >
       <div className="section-shell mx-auto max-w-[1720px] px-4 sm:px-6 lg:px-8">
         <div className="border-b border-[var(--line)] pb-7" data-reveal>
-          <h2 className="text-center text-[clamp(3.7rem,6vw,4.6rem)] leading-[0.92] tracking-[-0.08em] text-[var(--ink)]">
+          <h2 className="section-title-break text-center text-[clamp(3.7rem,6vw,4.6rem)] leading-[0.96] tracking-[-0.028em] text-[var(--ink)]">
             {isFrench ? 'Parlons-en' : `Let's Talk`}
           </h2>
         </div>
@@ -108,10 +108,10 @@ export function FinalCtaSection() {
                 <div className="grid gap-6 lg:grid-cols-[168px_minmax(0,1fr)]">
                   <figure className="overflow-hidden rounded-[4px]">
                     <img
-                      alt="VR designer portrait"
+                      alt="Equipe d agence en train de travailler autour d une table"
                       className="h-[216px] w-full object-cover"
                       loading="lazy"
-                      src="https://images.unsplash.com/photo-1593508512255-86ab42a8e620?auto=format&fit=crop&w=900&q=80"
+                      src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=900&q=80"
                     />
                   </figure>
 
@@ -119,7 +119,7 @@ export function FinalCtaSection() {
                     <p className="text-[1.7rem] font-semibold leading-none tracking-[-0.05em] text-[var(--ink)]">
                       {isFrench ? 'Ce que nous proposons' : 'What we offer'}
                     </p>
-                    <ul className="mt-6 space-y-3">
+                    <ul className="mt-10 space-y-3 sm:mt-12">
                       {offerBullets.map((bullet) => (
                         <li key={bullet} className="flex items-center gap-3 text-[1rem] leading-7 text-[var(--ink)]">
                           <span className="size-2.5 shrink-0 bg-[var(--accent-alt)]" />
@@ -138,7 +138,7 @@ export function FinalCtaSection() {
                       E-Mail
                     </p>
                     <p className="mt-6 text-[1rem] leading-8 text-[var(--ink)]">
-                      info.avoora@agency.com
+                      contact@mapbrain.ai
                     </p>
                   </div>
 
@@ -147,9 +147,7 @@ export function FinalCtaSection() {
                       {isFrench ? 'Bureau' : 'Office'}
                     </p>
                     <p className="mt-6 text-[1rem] leading-8 text-[var(--ink)]">
-                      452 Riverside Dr,
-                      <br />
-                      Apt 1C, New York, NY 10027
+                      Marseille
                     </p>
                   </div>
                 </div>

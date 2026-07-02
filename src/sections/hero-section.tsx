@@ -70,11 +70,11 @@ export function HeroSection({ content }: HeroSectionProps) {
       className="relative overflow-hidden border-b border-[var(--line)]"
       ref={revealRef}
     >
-      <div className="section-shell-bottom mx-auto max-w-[1720px] px-4 pt-[7.1rem] sm:px-6 sm:pt-[7.65rem] lg:px-8 lg:pt-[8.2rem]">
+      <div className="section-shell-bottom mx-auto max-w-[1720px] px-4 pt-[8rem] sm:px-6 sm:pt-[8.6rem] lg:px-8 lg:pt-[9.1rem]">
         <div className="grid gap-4 xl:grid-cols-[minmax(0,1fr)_250px] xl:items-start">
           <div className="min-w-0 pt-3">
             <h1
-              className="hero-wordmark text-[clamp(2.95rem,15vw,8.4rem)] leading-[0.82] tracking-[-0.11em] text-[var(--ink)] sm:leading-[0.78] sm:tracking-[-0.125em] xl:pr-8 xl:whitespace-nowrap"
+              className="hero-wordmark whitespace-nowrap text-[clamp(2.1rem,11vw,8.4rem)] leading-[0.82] tracking-[-0.11em] text-[var(--ink)] sm:leading-[0.78] sm:tracking-[-0.125em] xl:pr-8"
               data-reveal
               id="hero-title"
             >
@@ -82,7 +82,7 @@ export function HeroSection({ content }: HeroSectionProps) {
                 <span className="block sm:inline">MAPBRAIN</span>
                 <sup className="hero-wordmark-mark">®</sup>
               </span>
-              <span className="block sm:inline">_Agency</span>
+              <span className="inline">_Agency</span>
             </h1>
           </div>
 
@@ -183,12 +183,9 @@ export function HeroSection({ content }: HeroSectionProps) {
                 <div className="flex items-center gap-3">
                   <div className={`hero-service-thumb hero-service-thumb-${(index % 5) + 1}`} />
                   <div className="min-w-0">
-                    <div className="flex items-center gap-2 text-[var(--ink)]">
+                    <div className="flex items-center text-[var(--ink)]">
                       <span className="font-mono text-[0.7rem] uppercase tracking-[0.18em]">
                         ({String(index + 1).padStart(2, '0')})
-                      </span>
-                      <span className="text-sm font-medium tracking-[-0.02em] text-[var(--muted)]">
-                        {content.metrics[index % content.metrics.length]?.value}
                       </span>
                     </div>
                     <p className="mt-2 text-[1.02rem] leading-6 tracking-[-0.03em] text-[var(--ink)]">

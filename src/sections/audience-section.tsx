@@ -24,20 +24,20 @@ interface AudienceTile {
 
 const visuals: AudienceVisual[] = [
   {
-    alt: 'Dégradé abstrait iridescent aux couleurs douces',
-    src: 'https://images.unsplash.com/photo-1579546929518-9e396f3cc809?auto=format&fit=crop&w=1800&q=80'
+    alt: 'Équipe startup en échange autour d un ordinateur portable dans un espace de travail moderne',
+    src: 'https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=1800&q=80'
   },
   {
-    alt: 'Texture abstraite sombre avec courbes lumineuses',
-    src: 'https://images.unsplash.com/photo-1557672172-298e090bd0f1?auto=format&fit=crop&w=1800&q=80'
+    alt: 'Opératrice en environnement logistique ou opérationnel avec tablette et suivi terrain',
+    src: 'https://images.unsplash.com/photo-1517048676732-d65bc937f952?auto=format&fit=crop&w=1800&q=80'
   },
   {
-    alt: 'Composition abstraite colorée avec reflets holographiques',
-    src: 'https://images.unsplash.com/photo-1550684376-efcbd6e3f031?auto=format&fit=crop&w=1800&q=80'
+    alt: 'Réunion business dans une grande entreprise autour d un écran de présentation',
+    src: 'https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=1800&q=80'
   },
   {
-    alt: 'Flux abstrait violet et bleu façon aurore',
-    src: 'https://images.unsplash.com/photo-1515405295579-ba7b45403062?auto=format&fit=crop&w=1800&q=80'
+    alt: 'Groupe de travail en salle de réunion pour piloter des décisions et arbitrages collectifs',
+    src: 'https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1800&q=80'
   },
   {
     alt: 'Dégradé abstrait vert et turquoise avec texture douce',
@@ -169,11 +169,11 @@ export function AudienceSection({ content }: AudienceSectionProps) {
                     </span>
                   </div>
 
-                  <div className="space-y-4">
+                  <div>
                     <h3 className="max-w-[11ch] text-[clamp(2rem,4vw,3.4rem)] font-[700] leading-[0.92] tracking-[-0.06em] text-[var(--ink)]">
                       {tile.title}
                     </h3>
-                    <p className="max-w-[30ch] text-[0.98rem] leading-7 text-[var(--muted)]">
+                    <p className="mt-7 max-w-[30ch] text-[0.98rem] leading-7 text-[var(--muted)]">
                       {tile.body}
                     </p>
                   </div>

@@ -8,12 +8,15 @@ import { AutomationSection } from './sections/automation-section'
 import { CapabilitySection } from './sections/capability-section'
 import { FaqSection } from './sections/faq-section'
 import { FinalCtaSection } from './sections/final-cta-section'
+import { FeaturedProjectsSection } from './sections/featured-projects-section'
 import { Footer } from './sections/footer'
 import { Header } from './sections/header'
 import { HeroSection } from './sections/hero-section'
 import { LogoMarqueeSection } from './sections/logo-marquee-section'
 import { PartnersSection } from './sections/partners-section'
+import { PromiseSection } from './sections/promise-section'
 import { ProjectsSection } from './sections/projects-section'
+import { FrameworkSection } from './sections/framework-section'
 import type { Locale } from './types/site'
 
 function App() {
@@ -55,14 +58,22 @@ function App() {
         {t('skipToContent')}
       </a>
 
-      <Header currentLocale={locale} onLocaleChange={handleLocaleChange} />
+      <Header
+        cta={content.navigation.cta}
+        currentLocale={locale}
+        items={content.navigation.items}
+        onLocaleChange={handleLocaleChange}
+      />
 
       <main id="content">
         <HeroSection content={content.hero} />
+        <FeaturedProjectsSection content={content.projects} />
+        <PromiseSection content={content.promise} />
         <LogoMarqueeSection />
         <AboutSection content={content.about} />
-        <ProjectsSection content={content.projects} />
         <AudienceSection content={content.audiences} />
+        <FrameworkSection content={content.framework} />
+        <ProjectsSection content={content.projects} />
         <AutomationSection content={content.automation} />
         <CapabilitySection content={content.capabilities} />
         <PartnersSection content={content.partners} />

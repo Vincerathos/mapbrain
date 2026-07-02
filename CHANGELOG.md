@@ -1,5 +1,47 @@
 # CHANGELOG
 
+## 02-07-2026
+
+- 12:35 Simplification des mini-cards de service dans la hero en supprimant la valeur affichée à droite du numéro, pour ne conserver que l’index entre parenthèses.
+- 12:34 Déplacement de la section `Promise` juste après les 6 projets vedettes et refonte complète de son layout pour corriger ses proportions, réduire l’effet écrasé et rendre la hiérarchie visuelle plus équilibrée.
+- 12:33 Suppression de “& Institutions” dans la card audience `Organisations / Organizations` pour éliminer le dépassement du titre dans la mosaïque.
+- 12:32 Correction du layout desktop des cards inversées dans la section `framework`, afin que le bloc texte ne soit plus coincé dans la petite colonne pendant que l’image prend toute la largeur.
+- 12:31 Augmentation franche de l’espacement entre le titre “Ce que nous proposons” et ses bullets dans la section contact, avec marge renforcée sur mobile comme sur desktop.
+- 12:30 Intégration structurelle du contenu stratégique fourni dans le site avec remise en page des sections `Promise` et `Framework`, réécriture du `Hero`, enrichissement complet de `Automation`, refonte du bloc `Build/Capabilities` et extension de `Partners` pour afficher les listes, exemples, bénéfices et contenus détaillés en FR/EN. 
+- 12:17 Mise à jour des coordonnées visibles dans la section contact avec l’email `contact@mapbrain.ai` et une adresse simplifiée à `Marseille`.
+- 12:16 Centrage vertical et horizontal des titres dans les cards fermées de la section `capabilities` sur mobile, avec maintien du comportement desktop existant.
+- 12:15 Correction explicite des cards texte `audiences` en remplaçant le simple `space-y` par une vraie marge haute sous les titres, afin de créer un écart visuel net entre titre et sous-texte.
+- 12:14 Augmentation de l’espacement entre le titre “Ce que nous proposons” et sa liste de bullets dans la section contact.
+- 12:13 Remplacement de l’image VR dans la section contact par une photo d’agence montrant des personnes au travail, plus cohérente avec le bloc “Ce que nous proposons”.
+- 12:10 Remplacement global de l’adresse email du site par `contact@mapbrain.ai`, y compris dans les contenus affichés, le footer et tous les liens `mailto`.
+- 12:04 Remplacement du titre FAQ français pour passer de “Des questions avant de lancer le chantier ?” à “Des questions avant de lancer le projet ?”.
+- 12:03 Ajout d’un vrai menu burger mobile dans le `Header`, avec panneau déroulant pour les liens de navigation, conservation du switch de langue et CTA mobile dédié.
+- 12:00 Centrage mobile des titres dans toutes les cards de la section `capabilities`, aussi bien pour les cartes ouvertes que fermées, tout en conservant l’alignement desktop.
+- 11:59 Suppression du texte de clôture de la section `capabilities` en FR et EN, pour retirer la phrase explicative sur l’absence de portfolio détaillé.
+- 11:58 Augmentation de l’espacement entre titre et sous-texte dans toutes les cards actives de la section `capabilities`, pour aérer uniformément la lecture de chaque service.
+- 11:55 Augmentation de la marge haute dans le panneau principal de la section `automation`, pour mieux décoller le label et le texte du bord supérieur sur mobile.
+- 11:54 Correction de lisibilité dans la section `partners` sur le grand visuel, avec overlay plus sombre, badge supérieur plus contrasté et panneau texte renforcé pour rendre le contenu lisible sur mobile.
+- 11:50 Suppression de la phrase d’ouverture du texte `automation` en FR et EN pour ne conserver que le message central sur l’augmentation des équipes et l’accélération des opérations.
+- 11:49 Traduction du label `AI systems with operational intent` dans les deux langues de la section `automation`, avec ajout d’une petite marge basse pour mieux le séparer du texte principal.
+- 11:48 Détente typographique du bloc principal de la section `automation` avec texte plus respirant, tracking moins serré, line-height augmenté et cartes `Use case` légèrement plus aérées.
+- 11:46 Augmentation de l’espacement entre les titres et les sous-textes dans toutes les cards texte de la section `audiences`, pour mieux aérer la lecture.
+- 11:45 Remplacement des visuels abstraits utilisés dans la mosaïque `audiences` par de vraies photos plus cohérentes avec les textes associés : startup, opérations PME, environnement entreprise et pilotage collectif.
+- 11:43 Augmentation globale de l’espacement des titres de section avec plus d’air entre les mots et un tracking moins serré entre les lettres, appliqués au heading partagé et aux titres hors bandeau.
+- 11:40 Ajout d’un espacement supérieur plus généreux avant le wordmark de la hero sur mobile et desktop, pour mieux le décoller du haut de page.
+- 11:39 Nouvel élargissement du statement principal `About` pour lui donner encore plus de largeur de lecture et limiter davantage les coupures de ligne.
+- 11:38 Élargissement du statement principal de la section `About` en augmentant sa largeur maximale, afin de réduire les retours à la ligne et lui donner plus d’ampleur horizontale.
+- 11:37 Transformation du texte principal de la section `About` en statement beaucoup plus imposant, avec taille fortement augmentée et traitement typographique plus éditorial.
+- 11:36 Recalage du wordmark hero sur mobile pour forcer `MAPBRAIN_Agency` sur une seule ligne, avec taille réduite sur petit écran et suppression du retour à la ligne du suffixe.
+- 11:35 Amplification supplémentaire des cartes de reconnaissance de la section `About` sur mobile, avec blocs plus hauts, padding renforcé et hiérarchie typographique plus marquée pour leur donner davantage de poids visuel.
+- 11:34 Rééquilibrage mobile de la section `About` avec réduction de la taille des 5 KPI principaux et amplification visuelle des cartes de reconnaissance via plus de padding, de hauteur et de taille typographique.
+- 11:31 Correction du centrage mobile des métriques `About` en regroupant chaque valeur et son libellé dans un axe centré unique, pour éviter le décalage visuel observé entre chiffres et textes.
+- 11:30 Centrage mobile des métriques de la section `About`, avec valeurs et libellés alignés au centre sur petit écran tout en conservant l’alignement à gauche sur desktop.
+- 11:28 Suppression des deux grands panneaux décoratifs dégradés dans la section `About`, avec remontée directe des métriques pour alléger visuellement le bloc “Nous structurons des produits...”.
+- 11:27 Correction typographique des titres de sections avec un tracking moins serré et un léger espacement entre mots, appliqués au composant partagé de heading ainsi qu’aux titres de contact et projets en vedette.
+- 11:26 Transformation de la section `FeaturedProjectsSection` en double rail de cards défilantes, pour reprendre le mouvement horizontal de la section projets principale au lieu d’une grille fixe.
+- 11:24 Refonte du `Header` avec un vrai menu de navigation issu du contenu localisé, un retour marque vers le haut de page et un CTA visible aux côtés du switch de langue.
+- 11:18 Ajout d’une nouvelle section compacte `FeaturedProjectsSection` juste après la hero pour mettre en avant 6 projets cliquables avant la section projets détaillée, avec grille responsive et lien de renvoi vers la galerie complète.
+
 ## 01-07-2026
 
 - 15:10 Recomposition de la section `audiences` pour mieux mélanger texte et images ligne par ligne, en cassant l’effet de colonne d’images à droite tout en conservant 3 lignes et 3 visuels.

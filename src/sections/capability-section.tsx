@@ -27,119 +27,102 @@ export function CapabilitySection({ content }: CapabilitySectionProps) {
     ? [
         {
           description:
-            'Nous cadrons l’opportunité, clarifions la proposition de valeur et transformons une intuition en plan exécutable.',
-          id: 'strategy',
-          image:
-            'https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1600&q=80',
-          index: '01',
-          label: 'Service',
-          tags: ['Audit stratégique', 'Positionnement', 'Validation business'],
-          title: 'Stratégie & audit'
-        },
-        {
-          description:
-            'Architecture d’interface, parcours, hiérarchie et direction produit pour rendre une offre plus lisible et plus crédible.',
+            'Nous concevons des interfaces, des parcours et des systèmes visuels pensés pour rendre une offre plus claire, plus crédible et plus simple à utiliser.',
           id: 'design',
           image:
             'https://images.unsplash.com/photo-1559028012-481c04fa702d?auto=format&fit=crop&w=1600&q=80',
-          index: '02',
-          label: 'Service',
-          tags: ['UX flows', 'UI systems', 'Prototype'],
-          title: 'Design produit'
+          index: '01',
+          label: 'Build',
+          tags: ['UX/UI Design', 'Product Design', 'Web Design', 'Mobile Design'],
+          title: 'Design'
         },
         {
           description:
-            'Sites premium, apps web, SaaS et outils internes construits pour être rapides, maintenables et prêts à scaler.',
-          id: 'build',
+            'Nous développons des solutions digitales performantes, maintenables et évolutives pour transformer une idée en produit réellement utilisable.',
+          id: 'development',
           image:
             'https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1600&q=80',
-          index: '03',
-          label: 'Service',
-          tags: ['Web app', 'SaaS', 'Outils métier'],
-          title: 'Web development'
+          index: '02',
+          label: 'Build',
+          tags: ['Applications Web', 'Applications Mobile', 'SaaS', 'E-commerce', 'Outils métiers'],
+          title: 'Développement'
         },
         {
           description:
-            'Automatisations concrètes, assistants IA et systèmes internes qui réduisent le temps perdu et augmentent la capacité des équipes.',
+            'Nous déployons des assistants IA, agents et workflows intelligents pour réduire les tâches répétitives et accélérer l’exécution.',
           id: 'ai',
           image:
             'https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&w=1600&q=80',
-          index: '04',
-          label: 'Service',
-          tags: ['Automation', 'Assistants IA', 'Ops'],
-          title: 'IA & automation'
+          index: '03',
+          label: 'Build',
+          tags: ['Assistants IA', 'Agents IA', 'Automatisations', 'Workflows intelligents'],
+          title: 'IA & automatisation'
         },
         {
           description:
-            'Acquisition, contenu, conversion et pilotage croissance pour transformer une base produit en levier de scale.',
-          id: 'growth',
+            'Le résultat attendu est simple : construire plus vite, mieux servir les utilisateurs et augmenter la productivité sans alourdir les coûts.',
+          id: 'gains',
           image:
             'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1600&q=80',
-          index: '05',
-          label: 'Service',
-          tags: ['Growth ops', 'Contenu', 'Conversion'],
-          title: 'Growth ops'
+          index: '04',
+          label: 'Résultat',
+          tags: [
+            'Mise sur le marché plus rapide',
+            'Meilleure expérience utilisateur',
+            'Productivité accrue',
+            'Réduction des coûts'
+          ],
+          title: 'Ce que vous gagnez'
         }
       ]
     : [
         {
           description:
-            'We frame the opportunity, clarify the value proposition and turn an intuition into an executable plan.',
-          id: 'strategy',
-          image:
-            'https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1600&q=80',
-          index: '01',
-          label: 'Service',
-          tags: ['Strategic audit', 'Positioning', 'Business validation'],
-          title: 'Strategy & audit'
-        },
-        {
-          description:
-            'Interface architecture, journeys, hierarchy and product direction to make an offer clearer and more credible.',
+            'We design interfaces, journeys and visual systems that make an offer clearer, more credible and easier to use.',
           id: 'design',
           image:
             'https://images.unsplash.com/photo-1559028012-481c04fa702d?auto=format&fit=crop&w=1600&q=80',
-          index: '02',
-          label: 'Service',
-          tags: ['UX flows', 'UI systems', 'Prototype'],
-          title: 'Product design'
+          index: '01',
+          label: 'Build',
+          tags: ['UX/UI Design', 'Product Design', 'Web Design', 'Mobile Design'],
+          title: 'Design'
         },
         {
           description:
-            'Premium sites, web apps, SaaS and internal tools built to be fast, maintainable and ready to scale.',
-          id: 'build',
+            'We develop scalable digital solutions that turn a direction into a fast, maintainable and useful product.',
+          id: 'development',
           image:
             'https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1600&q=80',
-          index: '03',
-          label: 'Service',
-          tags: ['Web app', 'SaaS', 'Internal tools'],
-          title: 'Web development'
+          index: '02',
+          label: 'Build',
+          tags: ['Web Applications', 'Mobile Applications', 'SaaS Platforms', 'E-commerce', 'Business Tools'],
+          title: 'Development'
         },
         {
           description:
-            'Practical automations, AI assistants and internal systems that reduce wasted time and expand team capacity.',
+            'We deploy AI assistants, agents and intelligent workflows that reduce repetitive work and speed up execution.',
           id: 'ai',
           image:
             'https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&w=1600&q=80',
-          index: '04',
-          label: 'Service',
-          tags: ['Automation', 'AI assistants', 'Ops'],
+          index: '03',
+          label: 'Build',
+          tags: ['AI Assistants', 'AI Agents', 'Automation', 'Intelligent Workflows'],
           title: 'AI & automation'
         },
         {
           description:
-            'Acquisition, content, conversion and growth steering to turn a product base into a real scaling lever.',
-          id: 'growth',
+            'The outcome is simple: faster execution, better user experience, more productivity and lower operating costs.',
+          id: 'gains',
           image:
             'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1600&q=80',
-          index: '05',
-          label: 'Service',
-          tags: ['Growth ops', 'Content', 'Conversion'],
-          title: 'Growth ops'
+          index: '04',
+          label: 'Outcome',
+          tags: ['Faster Execution', 'Better User Experience', 'Increased Productivity', 'Lower Operating Costs'],
+          title: 'What you gain'
         }
       ]
 
-  const [activeCardId, setActiveCardId] = useState(expertiseCards[0]?.id ?? 'strategy')
+  const [activeCardId, setActiveCardId] = useState(expertiseCards[0]?.id ?? 'design')
 
   const handleCardActivate = (cardId: string) => {
     if (cardId === activeCardId) {
@@ -157,8 +140,8 @@ export function CapabilitySection({ content }: CapabilitySectionProps) {
     >
       <div className="section-shell mx-auto max-w-[1720px] px-4 sm:px-6 lg:px-8">
         <SectionBandHeading
-          eyebrow={isFrench ? 'Service' : 'Service'}
-          title={isFrench ? 'Notre expertise' : 'Our expertise'}
+          eyebrow={isFrench ? 'Build' : 'Build'}
+          title={isFrench ? 'Transformer une idée en produit.' : 'Turn Ideas Into Products.'}
         />
 
         <div className="mt-14 overflow-hidden border border-[var(--line)] bg-white">
@@ -201,15 +184,15 @@ export function CapabilitySection({ content }: CapabilitySectionProps) {
                           />
                         </figure>
 
-                        <div className="mt-5">
+                        <div className="mt-5 text-center lg:text-left">
                           <h3 className="text-[clamp(1.95rem,2.85vw,2.55rem)] font-[520] leading-[0.95] tracking-[-0.07em] text-[var(--ink)]">
                             {card.title}
                           </h3>
-                          <p className="mt-4 max-w-[31rem] text-[1.02rem] leading-8 text-[var(--muted)]">
+                          <p className="mx-auto mt-6 max-w-[31rem] text-[1.02rem] leading-8 text-[var(--muted)] lg:mx-0">
                             {card.description}
                           </p>
 
-                          <div className="mt-5 flex flex-wrap gap-3">
+                          <div className="mt-5 flex flex-wrap justify-center gap-3 lg:justify-start">
                             {card.tags.map((tag) => (
                               <span
                                 key={tag}
@@ -222,8 +205,8 @@ export function CapabilitySection({ content }: CapabilitySectionProps) {
                         </div>
                       </div>
                     ) : (
-                      <div className="flex h-[180px] items-end px-6 pb-6 lg:h-[calc(522px-64px)] lg:pb-6">
-                        <h3 className="text-[2.1rem] font-[450] leading-none tracking-[-0.07em] text-[rgba(17,17,17,0.78)] lg:[writing-mode:vertical-rl] lg:[transform:rotate(180deg)]">
+                      <div className="flex h-[180px] items-center justify-center px-6 py-6 lg:h-[calc(522px-64px)] lg:items-end lg:justify-start lg:pb-6 lg:pt-0">
+                        <h3 className="text-center text-[2.1rem] font-[450] leading-none tracking-[-0.07em] text-[rgba(17,17,17,0.78)] lg:text-left lg:[writing-mode:vertical-rl] lg:[transform:rotate(180deg)]">
                           {card.title}
                         </h3>
                       </div>
@@ -235,11 +218,10 @@ export function CapabilitySection({ content }: CapabilitySectionProps) {
           </div>
         </div>
 
-        <p
-          className="mt-8 max-w-3xl text-[1rem] leading-8 text-[var(--muted)]"
-          data-reveal
-        >
-          {content.body}
+        <p className="mt-8 max-w-3xl text-[1rem] leading-8 text-[var(--muted)]" data-reveal>
+          {isFrench
+            ? 'Nous concevons et développons des solutions digitales performantes et évolutives.'
+            : 'We design and develop scalable digital products.'}
         </p>
       </div>
     </section>

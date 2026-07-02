@@ -19,18 +19,18 @@ export const siteContent: Record<Locale, SiteContent> = {
       cta: { href: '#contact', label: 'Réserver un audit' }
     },
     hero: {
-      eyebrow: 'Conseil, produit, IA et croissance dans une seule trajectoire',
+      eyebrow: 'Le studio qui transforme les idées en entreprises performantes.',
       title: 'Analyse. Build. Scale.',
-      subtitle: 'Analyser juste. Construire vite. Accélérer durablement.',
+      subtitle: 'Transformez vos idées en produits performants.',
       body:
-        'MAPBRAIN aide les équipes à réduire le risque, accélérer les décisions et produire plus vite grâce à une exécution unifiée.',
+        "Nous aidons les startups, PME et organisations à valider leurs opportunités, construire les bons produits et accélérer leur croissance grâce à l'intelligence artificielle, au design et à la technologie.",
       rotatingPhrases: [
-        'Analyser juste. Construire vite. Accélérer durablement.',
-        'Valider les opportunités avant de lancer trop tôt.',
-        'Concevoir des produits clairs, crédibles et rentables.'
+        'Transformez vos idées en produits performants.',
+        "Passez de l'idée à la croissance avec un seul partenaire.",
+        'Analyse. Build. Scale.'
       ],
-      primaryCta: { href: '#contact', label: 'Lancer un audit' },
-      secondaryCta: { href: '#framework', label: 'Voir le framework' },
+      primaryCta: { href: '#contact', label: 'Réserver un audit stratégique' },
+      secondaryCta: { href: '#projects', label: 'Découvrir nos réalisations' },
       badgeTitle: 'MAPBRAIN Team',
       badgeBody: 'Analyse, build et scale pour les équipes qui veulent aller vite.',
       serviceTags: [
@@ -81,9 +81,9 @@ export const siteContent: Record<Locale, SiteContent> = {
     },
     promise: {
       eyebrow: 'Notre promesse',
-      title: "Passer de l'idée à la croissance sans fragmenter l'exécution.",
+      title: "Un seul partenaire pour passer de l'idée à la croissance.",
       body:
-        'MAPBRAIN réunit stratégie, intelligence artificielle, design et engineering dans un même mouvement. Le résultat recherché est simple : moins de friction, moins de risque et plus de vitesse.',
+        'Nous combinons stratégie, intelligence artificielle, design, développement et accompagnement afin de réduire les risques et accélérer l’exécution.',
       points: [
         {
           title: 'Comprendre avant de produire',
@@ -109,7 +109,7 @@ export const siteContent: Record<Locale, SiteContent> = {
         {
           icon: 'rocket',
           title: 'Startups',
-          description: 'Valider une idée, lancer un produit et accélérer une traction encore fragile.'
+          description: 'Valider une idée, lancer un produit et accélérer sa croissance.'
         },
         {
           icon: 'factory',
@@ -119,12 +119,12 @@ export const siteContent: Record<Locale, SiteContent> = {
         {
           icon: 'building',
           title: 'Entreprises',
-          description: "Moderniser des parcours, créer de nouveaux services et intégrer l'IA utile."
+          description: 'Créer de nouveaux services, moderniser les processus et intégrer l’IA.'
         },
         {
           icon: 'landmark',
           title: 'Organisations',
-          description: "Structurer l'innovation, piloter de nouveaux projets et déployer des initiatives lisibles."
+          description: 'Accélérer l’innovation et développer de nouveaux projets.'
         }
       ]
     },
@@ -139,16 +139,22 @@ export const siteContent: Record<Locale, SiteContent> = {
         {
           step: '01',
           label: 'Analyse',
-          title: 'Comprendre le marché, les usages et la valeur avant le développement.',
+          title: 'Comprendre avant d’investir.',
           description:
-            'Nous clarifions l’opportunité, les angles de différenciation et les arbitrages business pour éviter les faux départs.',
+            'Nous analysons le marché, les utilisateurs et les opportunités afin de prendre les bonnes décisions avant de développer.',
           whatWeDo: [
-            'Études de marché et lecture concurrentielle',
-            'Validation business et produit',
-            'Cadrage de proposition de valeur',
-            'Hypothèses de croissance prioritaires'
+            'Études de marché',
+            'Validation business',
+            'Validation produit',
+            'Analyse concurrentielle',
+            'Stratégie de croissance'
           ],
-          gains: ['Moins de risque', 'Plus de clarté', 'Des décisions plus rapides'],
+          gains: [
+            'Moins de risques',
+            'Plus de clarté',
+            'Meilleures décisions',
+            'Retour sur investissement optimisé'
+          ],
           image: {
             src: 'https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=1600&q=80',
             alt: 'Session de cadrage stratégique autour de documents et indicateurs.'
@@ -157,16 +163,28 @@ export const siteContent: Record<Locale, SiteContent> = {
         {
           step: '02',
           label: 'Build',
-          title: 'Transformer une direction claire en produit digital crédible et performant.',
+          title: 'Transformer une idée en produit.',
           description:
-            'Nous dessinons l’expérience, la structure et la base technique avec une exécution alignée sur la vitesse de mise sur le marché.',
+            'Nous concevons et développons des solutions digitales performantes et évolutives.',
           whatWeDo: [
-            'UX/UI design et direction produit',
-            'Applications web, mobile et SaaS',
-            'E-commerce et outils métiers',
-            'Systèmes de contenus et de conversion'
+            'UX/UI Design',
+            'Product Design',
+            'Applications Web',
+            'Applications Mobile',
+            'SaaS',
+            'E-commerce',
+            'Outils métiers',
+            'Assistants IA',
+            'Agents IA',
+            'Automatisations',
+            'Workflows intelligents'
           ],
-          gains: ['Meilleure expérience', 'Livraison plus nette', 'Base scalable'],
+          gains: [
+            'Mise sur le marché plus rapide',
+            'Meilleure expérience utilisateur',
+            'Productivité accrue',
+            'Réduction des coûts'
+          ],
           image: {
             src: 'https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1600&q=80',
             alt: 'Studio produit avec interface designée sur grand écran et table de travail.'
@@ -196,47 +214,161 @@ export const siteContent: Record<Locale, SiteContent> = {
       eyebrow: 'IA & automatisation',
       title: 'Des assistants conçus pour produire un impact métier réel.',
       body:
-        "L'objectif n'est pas d'ajouter de la technologie pour cocher une case. L'objectif est d'augmenter les équipes, réduire les tâches répétitives et accélérer les opérations.",
+        "L'objectif est d'aider vos équipes à travailler plus vite, plus efficacement et avec moins de tâches répétitives.",
       image: {
         src: 'https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1600&q=80',
         alt: "Poste de travail avancé avec écrans, données et environnement orienté automatisation."
       },
+      rationale: {
+        title: "Les entreprises n'adoptent pas l'IA pour remplacer leurs équipes.",
+        body: [
+          "Elles l'adoptent pour permettre à leurs équipes d'accomplir davantage avec les mêmes ressources."
+        ],
+        results: [
+          'Gain de temps',
+          'Réduction des tâches répétitives',
+          'Productivité accrue',
+          'Meilleure expérience client',
+          'Croissance accélérée',
+          'Plus de valeur créée par collaborateur'
+        ]
+      },
       useCases: [
         {
+          benefits: [
+            'Plus d’opportunités',
+            'Plus de rendez-vous qualifiés',
+            'Moins de tâches administratives',
+            'Plus de temps pour vendre',
+            'Cycles de vente plus rapides',
+            'Augmentation du chiffre d’affaires'
+          ],
+          cases: [
+            'Recherche de prospects',
+            'Qualification',
+            'Relances automatiques',
+            'Préparation des rendez-vous',
+            'Suivi commercial'
+          ],
           icon: 'target',
           title: 'Assistant Vente',
-          description: 'Automatise prospection, qualification, relances et préparation commerciale.',
-          results: ['Plus d’opportunités', 'Plus de rendez-vous qualifiés']
+          description: 'Automatisez la prospection, les relances et le suivi commercial.',
+          examples: [
+            'Génération automatique de leads',
+            'Enrichissement des contacts',
+            'Emails personnalisés',
+            'Messages LinkedIn automatisés',
+            'Priorisation des opportunités',
+            'Mise à jour automatique du CRM'
+          ]
         },
         {
+          benefits: [
+            'Plus de visibilité',
+            'Plus de contenu',
+            'Meilleur référencement',
+            'Réduction des coûts de production'
+          ],
+          cases: ['LinkedIn', 'SEO', 'Blog', 'Newsletter', 'Réseaux sociaux', 'Communication'],
           icon: 'megaphone',
-          title: 'Assistant Marketing',
-          description: 'Produit et redistribue du contenu SEO, social, newsletter ou vidéo.',
-          results: ['Visibilité renforcée', 'Coûts de production réduits']
+          title: 'Assistant Marketing & Contenu',
+          description: 'Créez et distribuez du contenu à grande échelle.',
+          examples: [
+            'Création automatique de posts LinkedIn',
+            'Génération d’articles SEO',
+            'Création de scripts YouTube',
+            'Création de contenus TikTok',
+            'Instagram Reels',
+            'YouTube Shorts'
+          ]
         },
         {
+          benefits: [
+            'Production accélérée',
+            'Diffusion multi-plateformes',
+            'Audience élargie',
+            'Présence continue'
+          ],
           icon: 'video',
           title: 'Assistant Vidéo',
-          description: 'Transforme articles, podcasts ou scripts en contenus multi-formats.',
-          results: ['Production accélérée', 'Diffusion multi-plateformes']
+          description: 'Produisez du contenu vidéo automatiquement.',
+          examples: [
+            'Transformer un article en vidéo',
+            'Transformer un podcast en Shorts',
+            'Générer des vidéos YouTube',
+            'Créer des TikTok automatiquement',
+            'Générer des sous-titres',
+            'Traduire les vidéos en plusieurs langues'
+          ]
         },
         {
+          benefits: [
+            'Recrutement plus rapide',
+            'Gain de temps administratif',
+            'Processus fluidifiés',
+            'Expérience collaborateur améliorée'
+          ],
+          cases: [
+            'Tri des candidatures',
+            'Préqualification',
+            'Onboarding',
+            'Documentation interne',
+            'Support collaborateurs'
+          ],
           icon: 'users',
           title: 'Assistant RH',
-          description: 'Fluidifie tri de candidatures, préqualification et onboarding.',
-          results: ['Recrutement plus rapide', 'Charge administrative réduite']
+          description: 'Simplifiez le recrutement et l’intégration.',
+          examples: [
+            'Analyse automatique des CV',
+            'Matching candidat/poste',
+            'Planification des entretiens',
+            'Assistant RH interne',
+            'Base de connaissances entreprise'
+          ]
         },
         {
+          benefits: [
+            'Productivité accrue',
+            'Réduction des erreurs',
+            'Gain de temps',
+            'Meilleure organisation',
+            'Réduction des coûts opérationnels'
+          ],
+          cases: [
+            'Gestion documentaire',
+            'Reporting',
+            'Gestion de projets',
+            'Workflows internes',
+            'Validation de processus'
+          ],
           icon: 'settings',
           title: 'Assistant Opérations',
-          description: 'Orchestre documents, reporting, validations et synchronisations métier.',
-          results: ['Moins d’erreurs', 'Processus plus propres']
+          description: 'Optimisez les processus internes.',
+          examples: [
+            'Traitement automatique des documents',
+            'Extraction de données PDF',
+            'Génération de rapports',
+            'Automatisation des validations',
+            'Synchronisation des outils métiers'
+          ]
         },
         {
+          benefits: [
+            'Réponses plus rapides',
+            'Satisfaction client améliorée',
+            'Réduction de la charge support',
+            'Service client scalable'
+          ],
           icon: 'message',
           title: 'Assistant Support',
-          description: 'Répond, qualifie et escalade les demandes clients en continu.',
-          results: ['Réponses plus rapides', 'Support scalable']
+          description: 'Assistance instantanée 24/7.',
+          examples: [
+            'Réponses automatiques',
+            'FAQ intelligente',
+            'Qualification des demandes',
+            'Recherche dans la base documentaire',
+            'Escalade automatique des demandes complexes'
+          ]
         }
       ]
     },
@@ -338,8 +470,7 @@ export const siteContent: Record<Locale, SiteContent> = {
     capabilities: {
       eyebrow: 'Capacités d’exécution',
       title: 'Ce que MAPBRAIN peut mettre en place dès le v1 d’un produit ou d’un système.',
-      body:
-        'Même sans afficher un portfolio détaillé à ce stade, le site doit donner une perception nette de la largeur de nos capacités et de la précision de notre exécution.',
+      body: '',
       image: {
         src: 'https://images.unsplash.com/photo-1524758631624-e2822e304c36?auto=format&fit=crop&w=1600&q=80',
         alt: 'Grand espace de travail éditorial et technologique avec matériaux sobres.'
@@ -379,9 +510,67 @@ export const siteContent: Record<Locale, SiteContent> = {
     },
     partners: {
       eyebrow: 'Écosystème',
-      title: 'Un réseau technologique et opérationnel conçu pour aider les projets ambitieux à aller plus vite.',
+      title: 'Un écosystème global pensé pour la croissance.',
       body:
-        'Construire un produit n’est qu’une partie du chemin. Accéder aux bons outils, aux bons partenaires et aux bonnes opportunités fait souvent la différence.',
+        'Construire un produit n’est qu’une partie du chemin. Accéder aux bonnes ressources, aux bonnes personnes et aux bonnes opportunités fait souvent la différence.',
+      advantages: [
+        'Accès plus rapide aux ressources',
+        'Accès plus rapide aux opportunités de financement',
+        'Réduction des coûts d’infrastructure',
+        'Partenariats stratégiques',
+        'Développement produit plus rapide',
+        'Croissance plus rapide'
+      ],
+      detailGroups: [
+        {
+          title: 'Partenaires technologiques',
+          items: [
+            'Microsoft',
+            'Google',
+            'Amazon Web Services (AWS)',
+            'NVIDIA',
+            'OpenAI',
+            'Anthropic',
+            'Notion',
+            'PostHog',
+            'Vercel',
+            'Scaleway',
+            'GitHub',
+            'Stripe',
+            'HubSpot',
+            'Airtable',
+            'Cloudflare'
+          ],
+          note: 'et bien d’autres.'
+        },
+        {
+          title: 'Accès à plus de 1M$ de perks startup',
+          items: [
+            'Cloud Credits',
+            'AI Tools',
+            'Software Licenses',
+            'Hosting',
+            'Infrastructure',
+            'Technical Support',
+            'Startup Programs'
+          ],
+          note:
+            'Selon l’éligibilité, ces avantages peuvent représenter des centaines de milliers de dollars et parfois plus de 1M$ de valeur cumulée.'
+        },
+        {
+          title: 'Accès direct aux écosystèmes d’innovation',
+          items: [
+            'Program Managers',
+            'Startup Program Managers',
+            'Ecosystem Leaders',
+            'Innovation Managers',
+            'AI Experts',
+            'Product Experts'
+          ],
+          note:
+            'Nous interagissons régulièrement avec ces profils pour aider nos clients à identifier et accéder aux opportunités pertinentes.'
+        }
+      ],
       perksLabel: 'Avantages stratégiques',
       logos: [
         { name: 'OpenAI' },
@@ -399,6 +588,7 @@ export const siteContent: Record<Locale, SiteContent> = {
       ],
       perks: [
         'Accès à des crédits cloud et outils IA',
+        'Accès à des licences logicielles et hébergements',
         'Réduction des coûts d’infrastructure',
         'Mise en relation avec des programmes et experts',
         'Accélération de la mise sur le marché'
@@ -415,23 +605,23 @@ export const siteContent: Record<Locale, SiteContent> = {
       body:
         'Le point de départ recommandé est un audit stratégique court pour clarifier le potentiel, les priorités et le bon plan d’exécution.',
       primaryCta: {
-        href: 'mailto:hello@mapbrain.agency?subject=Audit%20strategique%20MAPBRAIN',
+        href: 'mailto:contact@mapbrain.ai?subject=Audit%20strategique%20MAPBRAIN',
         label: 'Réserver un audit par email'
       },
       channels: [
-        { label: 'Email', value: 'hello@mapbrain.agency', href: 'mailto:hello@mapbrain.agency' },
+        { label: 'Email', value: 'contact@mapbrain.ai', href: 'mailto:contact@mapbrain.ai' },
         { label: 'Localisation', value: 'Interventions en France et à distance', href: '#contact' },
         { label: 'Format', value: 'Audit, sprint, build complet ou optimisation', href: '#framework' }
       ]
     },
     faq: {
       eyebrow: 'FAQ',
-      title: 'Des questions avant de lancer le chantier ?',
+      title: 'Des questions avant de lancer le projet ?',
       body:
         'Voici les réponses les plus utiles pour comprendre comment MAPBRAIN cadre, exécute et accélère un projet.',
       contactPrompt: 'Vous avez encore une question ?',
       contactCta: {
-        href: 'mailto:hello@mapbrain.agency?subject=Question%20MAPBRAIN',
+        href: 'mailto:contact@mapbrain.ai?subject=Question%20MAPBRAIN',
         label: 'Nous contacter'
       },
       visual: {
@@ -494,18 +684,18 @@ export const siteContent: Record<Locale, SiteContent> = {
       cta: { href: '#contact', label: 'Book an audit' }
     },
     hero: {
-      eyebrow: 'Strategy, product, AI and growth aligned in one path',
+      eyebrow: 'The studio turning ideas into high-performing companies.',
       title: 'Analyze. Build. Scale.',
-      subtitle: 'Analyze clearly. Build fast. Scale with intent.',
+      subtitle: 'Turn ideas into scalable products.',
       body:
-        'MAPBRAIN helps teams reduce risk, speed up decisions and ship faster through one aligned execution layer.',
+        'We help startups, SMEs and organizations validate opportunities, build the right products and accelerate growth through artificial intelligence, design and technology.',
       rotatingPhrases: [
-        'Analyze clearly. Build fast. Scale with intent.',
-        'Validate opportunities before shipping too early.',
-        'Design sharper products with stronger business traction.'
+        'Turn ideas into scalable products.',
+        'Move from idea to growth with one partner.',
+        'Analyze. Build. Scale.'
       ],
-      primaryCta: { href: '#contact', label: 'Start an audit' },
-      secondaryCta: { href: '#framework', label: 'View the framework' },
+      primaryCta: { href: '#contact', label: 'Book a Strategic Audit' },
+      secondaryCta: { href: '#projects', label: 'Discover Our Work' },
       badgeTitle: 'MAPBRAIN Team',
       badgeBody: 'Analyze, build and scale for teams that need speed and clarity.',
       serviceTags: [
@@ -556,9 +746,9 @@ export const siteContent: Record<Locale, SiteContent> = {
     },
     promise: {
       eyebrow: 'Our promise',
-      title: 'Move from idea to growth without splitting execution across too many actors.',
+      title: 'One Partner From Idea to Growth.',
       body:
-        'MAPBRAIN brings strategy, artificial intelligence, design and engineering into one motion. The outcome is simple: less friction, less risk and more speed.',
+        'We combine strategy, artificial intelligence, design, engineering and growth support to reduce risk and accelerate execution.',
       points: [
         {
           title: 'Understand before building',
@@ -581,7 +771,7 @@ export const siteContent: Record<Locale, SiteContent> = {
         {
           icon: 'rocket',
           title: 'Startups',
-          description: 'Validate an idea, launch a product and accelerate fragile early traction.'
+          description: 'Validate ideas, launch products and accelerate growth.'
         },
         {
           icon: 'factory',
@@ -591,12 +781,12 @@ export const siteContent: Record<Locale, SiteContent> = {
         {
           icon: 'building',
           title: 'Enterprises',
-          description: 'Modernize journeys, launch new services and integrate useful AI.'
+          description: 'Launch new services, modernize processes and integrate AI.'
         },
         {
           icon: 'landmark',
           title: 'Organizations',
-          description: 'Structure innovation, lead new initiatives and make complex projects readable.'
+          description: 'Accelerate innovation and develop new initiatives.'
         }
       ]
     },
@@ -611,16 +801,17 @@ export const siteContent: Record<Locale, SiteContent> = {
         {
           step: '01',
           label: 'Analyze',
-          title: 'Understand market, usage and value before development starts.',
+          title: 'Understand Before Investing.',
           description:
-            'We clarify the opportunity, differentiation angles and business trade-offs to avoid expensive false starts.',
+            'We analyze markets, users and opportunities before development begins.',
           whatWeDo: [
-            'Market research and competitive analysis',
-            'Business and product validation',
-            'Value proposition framing',
-            'Priority growth hypotheses'
+            'Market Research',
+            'Business Validation',
+            'Product Validation',
+            'Competitive Analysis',
+            'Growth Strategy'
           ],
-          gains: ['Lower risk', 'Clearer direction', 'Faster decisions'],
+          gains: ['Reduced Risk', 'Clear Direction', 'Better Decisions', 'Improved ROI'],
           image: {
             src: 'https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=1600&q=80',
             alt: 'Strategic framing session around documents and indicators.'
@@ -629,16 +820,28 @@ export const siteContent: Record<Locale, SiteContent> = {
         {
           step: '02',
           label: 'Build',
-          title: 'Turn a clear direction into a credible and high-performing digital product.',
+          title: 'Turn Ideas Into Products.',
           description:
-            'We shape the experience, structure and technical base with execution aligned to time-to-market.',
+            'We design and develop scalable digital products.',
           whatWeDo: [
-            'UX/UI design and product direction',
-            'Web, mobile and SaaS applications',
-            'E-commerce and internal tools',
-            'Content and conversion systems'
+            'UX/UI Design',
+            'Product Design',
+            'Web Applications',
+            'Mobile Applications',
+            'SaaS Platforms',
+            'E-commerce',
+            'Business Tools',
+            'AI Assistants',
+            'AI Agents',
+            'Automation',
+            'Intelligent Workflows'
           ],
-          gains: ['Stronger experience', 'Sharper delivery', 'Scalable base'],
+          gains: [
+            'Faster Execution',
+            'Better User Experience',
+            'Increased Productivity',
+            'Lower Operating Costs'
+          ],
           image: {
             src: 'https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1600&q=80',
             alt: 'Product studio with large-screen interface design and material workspace.'
@@ -668,47 +871,159 @@ export const siteContent: Record<Locale, SiteContent> = {
       eyebrow: 'AI & automation',
       title: 'Assistants designed to create real business impact.',
       body:
-        'The goal is not to add technology for its own sake. The goal is to augment teams, reduce repetitive work and accelerate operations.',
+        'The goal is to help teams work faster, more efficiently and with fewer repetitive tasks.',
       image: {
         src: 'https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1600&q=80',
         alt: 'Advanced workstation with screens, data and an automation-oriented environment.'
       },
+      rationale: {
+        title: 'Companies do not adopt AI to replace their teams.',
+        body: ['They adopt it to help teams accomplish more with the same resources.'],
+        results: [
+          'Time savings',
+          'Reduced repetitive work',
+          'Higher productivity',
+          'Better customer experience',
+          'Faster growth',
+          'More value created per employee'
+        ]
+      },
       useCases: [
         {
+          benefits: [
+            'More opportunities',
+            'More qualified meetings',
+            'Less administrative work',
+            'More time to sell',
+            'Faster sales cycles',
+            'Higher revenue'
+          ],
+          cases: [
+            'Prospect research',
+            'Qualification',
+            'Automated follow-ups',
+            'Meeting preparation',
+            'Sales follow-up'
+          ],
           icon: 'target',
           title: 'Sales Assistant',
-          description: 'Automates prospecting, qualification, follow-ups and sales preparation.',
-          results: ['More opportunities', 'More qualified meetings']
+          description: 'Automate prospecting, follow-ups and sales execution.',
+          examples: [
+            'Automatic lead generation',
+            'Contact enrichment',
+            'Personalized emails',
+            'Automated LinkedIn outreach',
+            'Opportunity prioritization',
+            'Automatic CRM updates'
+          ]
         },
         {
+          benefits: [
+            'More visibility',
+            'More content',
+            'Stronger SEO',
+            'Lower production costs'
+          ],
+          cases: ['LinkedIn', 'SEO', 'Blog', 'Newsletter', 'Social media', 'Communication'],
           icon: 'megaphone',
-          title: 'Marketing Assistant',
-          description: 'Creates and redistributes SEO, social, newsletter and video content.',
-          results: ['Stronger visibility', 'Lower production cost']
+          title: 'Marketing & Content Assistant',
+          description: 'Create and distribute content at scale.',
+          examples: [
+            'Automatic LinkedIn posts',
+            'SEO article generation',
+            'YouTube script creation',
+            'TikTok content creation',
+            'Instagram Reels',
+            'YouTube Shorts'
+          ]
         },
         {
+          benefits: [
+            'Faster production',
+            'Multi-platform distribution',
+            'Wider audience reach',
+            'Always-on presence'
+          ],
           icon: 'video',
           title: 'Video Assistant',
-          description: 'Turns articles, podcasts or scripts into multi-format content.',
-          results: ['Faster production', 'Cross-platform distribution']
+          description: 'Produce video content automatically.',
+          examples: [
+            'Turn an article into a video',
+            'Turn a podcast into Shorts',
+            'Generate YouTube videos',
+            'Create TikToks automatically',
+            'Generate subtitles',
+            'Translate videos into multiple languages'
+          ]
         },
         {
+          benefits: [
+            'Faster hiring',
+            'Administrative time saved',
+            'Smoother processes',
+            'Better employee experience'
+          ],
+          cases: [
+            'Application triage',
+            'Prequalification',
+            'Onboarding',
+            'Internal documentation',
+            'Employee support'
+          ],
           icon: 'users',
           title: 'HR Assistant',
-          description: 'Improves candidate triage, prequalification and onboarding.',
-          results: ['Faster hiring', 'Reduced admin load']
+          description: 'Simplify recruitment and onboarding.',
+          examples: [
+            'Automatic resume analysis',
+            'Candidate-role matching',
+            'Interview scheduling',
+            'Internal HR assistant',
+            'Company knowledge base'
+          ]
         },
         {
+          benefits: [
+            'Higher productivity',
+            'Fewer errors',
+            'Time savings',
+            'Better organization',
+            'Lower operating costs'
+          ],
+          cases: [
+            'Document management',
+            'Reporting',
+            'Project management',
+            'Internal workflows',
+            'Process validation'
+          ],
           icon: 'settings',
           title: 'Operations Assistant',
-          description: 'Orchestrates documents, reporting, approvals and tool syncing.',
-          results: ['Fewer errors', 'Cleaner processes']
+          description: 'Optimize internal processes.',
+          examples: [
+            'Automatic document processing',
+            'PDF data extraction',
+            'Report generation',
+            'Approval automation',
+            'Business tool synchronization'
+          ]
         },
         {
+          benefits: [
+            'Faster replies',
+            'Improved customer satisfaction',
+            'Reduced support workload',
+            'Scalable customer service'
+          ],
           icon: 'message',
-          title: 'Support Assistant',
-          description: 'Answers, qualifies and escalates customer requests continuously.',
-          results: ['Faster replies', 'Scalable support']
+          title: 'Customer Support Assistant',
+          description: 'Instant support, 24/7.',
+          examples: [
+            'Automated replies',
+            'Smart FAQ',
+            'Request qualification',
+            'Documentation search',
+            'Automatic escalation of complex cases'
+          ]
         }
       ]
     },
@@ -810,8 +1125,7 @@ export const siteContent: Record<Locale, SiteContent> = {
     capabilities: {
       eyebrow: 'Execution capabilities',
       title: 'What MAPBRAIN can put in place from the first version of a product or system.',
-      body:
-        'Even without a detailed case-study library yet, the site should clearly communicate the breadth of our capabilities and the sharpness of execution.',
+      body: '',
       image: {
         src: 'https://images.unsplash.com/photo-1524758631624-e2822e304c36?auto=format&fit=crop&w=1600&q=80',
         alt: 'Large editorial and technical workspace with restrained materials.'
@@ -851,9 +1165,67 @@ export const siteContent: Record<Locale, SiteContent> = {
     },
     partners: {
       eyebrow: 'Ecosystem',
-      title: 'A technology and growth network built to help ambitious teams move faster.',
+      title: 'A Global Ecosystem Built for Growth',
       body:
-        'Building a product is only one part of the journey. Access to the right tools, people and opportunities often makes the difference.',
+        'Building a product is only one part of the journey. Accessing the right resources, people and opportunities is often what makes the difference.',
+      advantages: [
+        'Faster access to resources',
+        'Faster access to funding opportunities',
+        'Reduced infrastructure costs',
+        'Strategic partnerships',
+        'Faster product development',
+        'Faster growth'
+      ],
+      detailGroups: [
+        {
+          title: 'Technology Partners',
+          items: [
+            'Microsoft',
+            'Google',
+            'Amazon Web Services (AWS)',
+            'NVIDIA',
+            'OpenAI',
+            'Anthropic',
+            'Notion',
+            'PostHog',
+            'Vercel',
+            'Scaleway',
+            'GitHub',
+            'Stripe',
+            'HubSpot',
+            'Airtable',
+            'Cloudflare'
+          ],
+          note: 'and many more.'
+        },
+        {
+          title: 'Access to $1M+ in Startup Perks',
+          items: [
+            'Cloud Credits',
+            'AI Tools',
+            'Software Licenses',
+            'Hosting',
+            'Infrastructure',
+            'Technical Support',
+            'Startup Programs'
+          ],
+          note:
+            'Depending on eligibility, these benefits can represent hundreds of thousands of dollars and, in some cases, more than $1M in combined value.'
+        },
+        {
+          title: 'Direct Access to Innovation Ecosystems',
+          items: [
+            'Program Managers',
+            'Startup Program Managers',
+            'Ecosystem Leaders',
+            'Innovation Managers',
+            'AI Experts',
+            'Product Experts'
+          ],
+          note:
+            'We regularly interact with these profiles to help our clients identify and access relevant opportunities.'
+        }
+      ],
       perksLabel: 'Strategic advantages',
       logos: [
         { name: 'OpenAI' },
@@ -871,6 +1243,7 @@ export const siteContent: Record<Locale, SiteContent> = {
       ],
       perks: [
         'Access to cloud credits and AI tools',
+        'Access to licenses, hosting and infrastructure support',
         'Lower infrastructure costs',
         'Connections to programs and experts',
         'Faster path to market'
@@ -887,11 +1260,11 @@ export const siteContent: Record<Locale, SiteContent> = {
       body:
         'The recommended starting point is a short strategic audit to clarify potential, priorities and the right execution plan.',
       primaryCta: {
-        href: 'mailto:hello@mapbrain.agency?subject=MAPBRAIN%20Strategic%20Audit',
+        href: 'mailto:contact@mapbrain.ai?subject=MAPBRAIN%20Strategic%20Audit',
         label: 'Book an audit by email'
       },
       channels: [
-        { label: 'Email', value: 'hello@mapbrain.agency', href: 'mailto:hello@mapbrain.agency' },
+        { label: 'Email', value: 'contact@mapbrain.ai', href: 'mailto:contact@mapbrain.ai' },
         { label: 'Coverage', value: 'France-based and remote engagements', href: '#contact' },
         { label: 'Formats', value: 'Audit, sprint, full build or optimization', href: '#framework' }
       ]
@@ -903,7 +1276,7 @@ export const siteContent: Record<Locale, SiteContent> = {
         'Here are the answers that matter most to understand how MAPBRAIN frames, builds and accelerates a project.',
       contactPrompt: 'Still have a question?',
       contactCta: {
-        href: 'mailto:hello@mapbrain.agency?subject=Question%20for%20MAPBRAIN',
+        href: 'mailto:contact@mapbrain.ai?subject=Question%20for%20MAPBRAIN',
         label: 'Contact us'
       },
       visual: {

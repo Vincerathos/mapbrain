@@ -16,26 +16,16 @@ export interface ImageAsset {
   src: string
 }
 
-export interface HeroMetric {
-  label: string
-  value: string
-}
-
 export interface HeroContent {
   badgeBody: string
   badgeTitle: string
   body: string
-  eyebrow: string
-  image: ImageAsset
-  metrics: HeroMetric[]
   primaryCta: CtaLink
   rotatingPhrases: string[]
   secondaryCta: CtaLink
   serviceTags: string[]
   subtitle: string
   title: string
-  visualEyebrow: string
-  visualTitle: string
 }
 
 export interface PromisePoint {
@@ -84,9 +74,13 @@ export interface AutomationRationale {
   body: string[]
 }
 
-export interface CapabilityItem {
-  items: string[]
+export interface FormationProgram {
+  audience: string
+  description: string
+  duration: string
+  image: ImageAsset
   title: string
+  topics: string[]
 }
 
 export interface ProjectItem {
@@ -146,11 +140,14 @@ export interface SiteContent {
     title: string
     useCases: AutomationUseCase[]
   }
-  capabilities: {
+  formations: {
     body: string
-    columns: CapabilityItem[]
+    cta: CtaLink
     eyebrow: string
-    image: ImageAsset
+    formats: string[]
+    formatsTitle: string
+    note: string
+    programs: FormationProgram[]
     title: string
   }
   finalCta: {

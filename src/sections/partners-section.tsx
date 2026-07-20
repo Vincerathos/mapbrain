@@ -1,15 +1,19 @@
-import {
-  Bot,
-  Cloud,
-  Cpu,
-  Rocket,
-  ShieldCheck,
-  Sparkles
-} from 'lucide-react'
 import { useTranslation } from 'react-i18next'
 import { useReveal } from '../hooks/use-reveal'
 import type { SiteContent } from '../types/site'
+import {
+  BoltIcon,
+  ChipIcon,
+  CloudIcon,
+  CostDownIcon,
+  GaugeIcon,
+  LayersIcon,
+  NetworkIcon,
+  ServerIcon
+} from '../ui/partner-icons'
 import { SectionBandHeading } from '../ui/section-band-heading'
+
+const perkIcons = [CloudIcon, ServerIcon, CostDownIcon, NetworkIcon, GaugeIcon]
 
 interface PartnersSectionProps {
   content: SiteContent['partners']
@@ -21,33 +25,32 @@ export function PartnersSection({ content }: PartnersSectionProps) {
   const isFrench = i18n.resolvedLanguage !== 'en'
 
   const visualLabel = isFrench
-    ? 'Infra, IA, paiement, deployement'
+    ? 'Infra, IA, paiement, déploiement'
     : 'Infra, AI, payments, deployment'
-  const accentCards = isFrench
-    ? [
-        {
-          icon: Bot,
-          title: 'Outils IA',
-          value: content.stats[0]?.value ?? '$1M+'
-        },
-        {
-          icon: Cloud,
-          title: 'Ressources activables',
-          value: content.stats[2]?.value ?? 'Faster'
-        }
-      ]
-    : [
-        {
-          icon: Bot,
-          title: 'AI tooling',
-          value: content.stats[0]?.value ?? '$1M+'
-        },
-        {
-          icon: Cloud,
-          title: 'Activatable resources',
-          value: content.stats[2]?.value ?? 'Faster'
-        }
-      ]
+  const accentCards: { icon: typeof ChipIcon; title: string; value?: string }[] =
+    isFrench
+      ? [
+          {
+            icon: ChipIcon,
+            title: 'Outils IA',
+            value: content.stats[0]?.value ?? '$1M+'
+          },
+          {
+            icon: BoltIcon,
+            title: 'Ressources activables'
+          }
+        ]
+      : [
+          {
+            icon: ChipIcon,
+            title: 'AI tooling',
+            value: content.stats[0]?.value ?? '$1M+'
+          },
+          {
+            icon: BoltIcon,
+            title: 'Activatable resources'
+          }
+        ]
 
   const perks = content.perks
 
@@ -75,14 +78,14 @@ export function PartnersSection({ content }: PartnersSectionProps) {
               />
               <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(38,22,47,0.14),rgba(38,22,47,0.82))]" />
 
-              <div className="absolute left-5 top-5 inline-flex items-center gap-3 rounded-full border border-white/18 bg-[color:rgb(43_28_52_/_0.68)] px-4 py-2.5 shadow-[0_10px_26px_rgba(0,0,0,0.18)] backdrop-blur-md">
-                <Sparkles className="size-4 text-[var(--accent-alt-soft)]" aria-hidden="true" />
+              <div className="absolute left-5 top-5 inline-flex items-center gap-3 rounded-full border border-white/18 bg-[color:rgb(43_28_52_/_0.85)] px-4 py-2.5 shadow-[0_10px_26px_rgba(0,0,0,0.18)]">
+                <LayersIcon className="size-4 text-[var(--accent-alt-soft)]" />
                 <span className="font-mono text-[0.68rem] uppercase tracking-[0.18em] text-white/92">
                   {visualLabel}
                 </span>
               </div>
 
-              <div className="absolute inset-x-4 bottom-4 max-w-[32rem] rounded-[22px] border border-white/14 bg-[linear-gradient(180deg,rgba(61,42,73,0.78),rgba(40,26,49,0.88))] p-5 shadow-[0_18px_44px_rgba(0,0,0,0.2)] backdrop-blur-xl sm:inset-x-5 sm:bottom-5 sm:max-w-[36rem] sm:p-6">
+              <div className="absolute inset-x-4 bottom-4 max-w-[32rem] rounded-[22px] border border-white/14 bg-[linear-gradient(180deg,rgba(61,42,73,0.92),rgba(40,26,49,0.96))] p-5 shadow-[0_18px_44px_rgba(0,0,0,0.2)] sm:inset-x-5 sm:bottom-5 sm:max-w-[36rem] sm:p-6">
                 <p className="text-[clamp(1.72rem,3vw,2.8rem)] leading-[1.02] tracking-[-0.035em] text-white">
                   {content.body}
                 </p>
@@ -103,13 +106,21 @@ export function PartnersSection({ content }: PartnersSectionProps) {
                         <span className={`inline-flex size-11 items-center justify-center rounded-[14px] border ${index === 0 ? 'border-[color:rgb(17_17_17_/_0.08)] bg-white text-[var(--accent-alt-deep)]' : 'border-white/12 bg-white/8 text-white'}`}>
                           <Icon className="size-5" aria-hidden="true" />
                         </span>
-                        <p className={`font-mono text-[0.68rem] uppercase tracking-[0.18em] ${index === 0 ? 'text-[var(--muted)]' : 'text-white/58'}`}>
+                        {card.value ? (
+                          <p className={`font-mono text-[0.68rem] uppercase tracking-[0.18em] ${index === 0 ? 'text-[var(--muted)]' : 'text-white/72'}`}>
+                            {card.title}
+                          </p>
+                        ) : null}
+                      </div>
+                      {card.value ? (
+                        <p className={`mt-8 text-[clamp(2rem,3vw,2.8rem)] leading-none tracking-[-0.08em] ${index === 0 ? 'text-[var(--ink)]' : 'text-white'}`}>
+                          {card.value}
+                        </p>
+                      ) : (
+                        <p className="mt-8 text-[clamp(1.5rem,2.2vw,2rem)] leading-[1.05] tracking-[-0.05em] text-white">
                           {card.title}
                         </p>
-                      </div>
-                      <p className={`mt-8 text-[clamp(2rem,3vw,2.8rem)] leading-none tracking-[-0.08em] ${index === 0 ? 'text-[var(--ink)]' : 'text-white'}`}>
-                        {card.value}
-                      </p>
+                      )}
                     </div>
                   )
                 })}
@@ -117,15 +128,15 @@ export function PartnersSection({ content }: PartnersSectionProps) {
 
               <div className="grid gap-3">
                 {perks.map((perk, index) => {
-                  const Icon = index === 0 ? Cpu : index === 1 ? ShieldCheck : Rocket
+                  const Icon = perkIcons[index % perkIcons.length]
 
                   return (
                     <div
                       key={perk}
-                      className="flex items-start gap-4 rounded-[22px] border border-white/10 bg-[color:rgb(255_255_255_/_0.08)] px-5 py-4 text-white backdrop-blur-md"
+                      className="flex items-start gap-4 rounded-[22px] border border-white/10 bg-[color:rgb(255_255_255_/_0.12)] px-5 py-4 text-white"
                     >
                       <span className="inline-flex size-10 shrink-0 items-center justify-center rounded-[14px] border border-white/12 bg-white/8 text-[var(--accent-alt-soft)]">
-                        <Icon className="size-5" aria-hidden="true" />
+                        <Icon className="size-5" />
                       </span>
                       <p className="text-sm leading-6 text-white/78">{perk}</p>
                     </div>
@@ -145,37 +156,21 @@ export function PartnersSection({ content }: PartnersSectionProps) {
               <h3 className="text-[1.45rem] leading-[1.02] tracking-[-0.05em] text-[var(--ink)]">
                 {group.title}
               </h3>
-              {group.note ? (
-                <p className="mt-4 text-[0.98rem] leading-7 text-[var(--muted)]">{group.note}</p>
-              ) : null}
-              <ul className="mt-5 space-y-3">
+              <div className="mt-5 flex flex-wrap gap-2">
                 {group.items.map((item) => (
-                  <li
+                  <span
                     key={item}
-                    className="border-t border-[color:rgb(17_17_17_/_0.08)] pt-3 text-[0.98rem] leading-7 text-[var(--ink)]"
+                    className="rounded-full border border-[color:rgb(17_17_17_/_0.1)] bg-[var(--surface)] px-3 py-1.5 text-[0.82rem] leading-6 text-[var(--ink)]"
                   >
                     {item}
-                  </li>
+                  </span>
                 ))}
-              </ul>
+              </div>
+              {group.note ? (
+                <p className="mt-4 text-[0.88rem] leading-6 text-[var(--muted)]">{group.note}</p>
+              ) : null}
             </article>
           ))}
-        </div>
-
-        <div className="mt-8 rounded-[28px] border border-[var(--line)] bg-[var(--surface)] p-6 sm:p-8" data-reveal>
-          <p className="font-mono text-[0.76rem] uppercase tracking-[0.24em] text-[var(--muted)]">
-            {isFrench ? 'Votre avantage' : 'Your advantage'}
-          </p>
-          <div className="mt-5 grid gap-3 md:grid-cols-2 xl:grid-cols-3">
-            {content.advantages.map((item) => (
-              <div
-                key={item}
-                className="rounded-[20px] border border-[var(--line)] bg-white px-5 py-4 text-[0.98rem] leading-7 text-[var(--ink)]"
-              >
-                {item}
-              </div>
-            ))}
-          </div>
         </div>
       </div>
     </section>

@@ -1,9 +1,11 @@
 import { Menu, X } from 'lucide-react'
 import { useState } from 'react'
+import { hashToView, type View } from '../lib/views'
 import type { CtaLink, Locale, NavItem } from '../types/site'
 import { LocaleSwitcher } from '../ui/locale-switcher'
 
 interface HeaderProps {
+  activeView: View
   currentLocale: Locale
   cta: CtaLink
   items: NavItem[]
@@ -11,6 +13,7 @@ interface HeaderProps {
 }
 
 export function Header({
+  activeView,
   currentLocale,
   cta,
   items,
@@ -21,6 +24,9 @@ export function Header({
   const handleCloseMobileMenu = () => {
     setIsMobileMenuOpen(false)
   }
+
+  const isActive = (href: string) =>
+    hashToView[href.replace('#', '')] === activeView
 
   return (
     <header className="absolute inset-x-0 top-0 z-40">
@@ -40,7 +46,12 @@ export function Header({
                 {items.map((item) => (
                   <li key={item.href}>
                     <a
-                      className="inline-flex min-h-10 items-center rounded-full px-4 py-2 text-[0.76rem] font-medium uppercase tracking-[0.12em] text-[var(--muted)] transition-colors duration-200 hover:text-[var(--ink)]"
+                      aria-current={isActive(item.href) ? 'page' : undefined}
+                      className={`inline-flex min-h-10 items-center rounded-full px-4 py-2 text-[0.76rem] font-medium uppercase tracking-[0.12em] transition-colors duration-200 ${
+                        isActive(item.href)
+                          ? 'bg-[var(--ink)] text-white'
+                          : 'text-[var(--muted)] hover:text-[var(--ink)]'
+                      }`}
                       href={item.href}
                     >
                       {item.label}
@@ -80,7 +91,12 @@ export function Header({
                   {items.map((item) => (
                     <li key={item.href}>
                       <a
-                        className="flex min-h-12 items-center rounded-[16px] border border-[var(--line)] bg-white px-4 py-3 text-[0.82rem] font-medium uppercase tracking-[0.12em] text-[var(--ink)]"
+                        aria-current={isActive(item.href) ? 'page' : undefined}
+                        className={`flex min-h-12 items-center rounded-[16px] border px-4 py-3 text-[0.82rem] font-medium uppercase tracking-[0.12em] ${
+                          isActive(item.href)
+                            ? 'border-[var(--ink)] bg-[var(--ink)] text-white'
+                            : 'border-[var(--line)] bg-white text-[var(--ink)]'
+                        }`}
                         href={item.href}
                         onClick={handleCloseMobileMenu}
                       >

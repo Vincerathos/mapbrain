@@ -46,7 +46,7 @@ export function AutomationSection({ content }: AutomationSectionProps) {
           className="mt-12 overflow-hidden rounded-[30px] border border-[color:rgb(17_17_17_/_0.08)] bg-[var(--hero-dark)]"
           data-reveal
         >
-          <div className="relative grid min-h-[560px] lg:grid-cols-[minmax(0,0.88fr)_minmax(0,1.12fr)]">
+          <div className="relative grid min-h-[460px] lg:grid-cols-[minmax(0,0.88fr)_minmax(0,1.12fr)]">
             <div
               className="relative overflow-hidden"
               style={{
@@ -70,7 +70,7 @@ export function AutomationSection({ content }: AutomationSectionProps) {
               <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(94,70,104,0.14),transparent_28%,rgba(255,255,255,0.0)_100%)]" />
             </figure>
 
-            <div className="absolute inset-x-4 bottom-4 z-20 rounded-[20px] bg-[color:rgb(19_19_19_/_0.28)] px-5 pb-5 pt-7 shadow-[0_18px_50px_rgba(0,0,0,0.16)] backdrop-blur-xl sm:inset-x-6 sm:bottom-6 sm:px-6 sm:pb-6 sm:pt-8 lg:grid lg:grid-cols-[minmax(0,1.15fr)_minmax(0,0.85fr)] lg:gap-6 lg:px-7">
+            <div className="absolute inset-x-4 bottom-4 z-20 rounded-[20px] bg-[color:rgb(19_19_19_/_0.45)] px-5 pb-5 pt-7 shadow-[0_18px_50px_rgba(0,0,0,0.16)] backdrop-blur-md sm:inset-x-6 sm:bottom-6 sm:px-6 sm:pb-6 sm:pt-8 lg:grid lg:grid-cols-[minmax(0,1.15fr)_minmax(0,0.85fr)] lg:gap-6 lg:px-7">
               <div>
                 <div className="mb-2 flex items-center gap-3">
                   <span className="size-2 rounded-full bg-[var(--accent-alt)]" />
@@ -88,7 +88,7 @@ export function AutomationSection({ content }: AutomationSectionProps) {
               <div className="mt-7 grid gap-px bg-white/12 lg:mt-0">
                 {content.useCases.slice(0, 3).map((item) => (
                   <div key={`${item.title}-headline`} className="bg-black/8 px-5 py-4 sm:px-6 sm:py-5">
-                    <p className="font-mono text-[0.68rem] uppercase tracking-[0.22em] text-white/58">
+                    <p className="font-mono text-[0.68rem] uppercase tracking-[0.22em] text-white/72">
                       {isFrench ? "Cas d'usage" : 'Use case'}
                     </p>
                     <p className="mt-3 text-[1rem] leading-7 tracking-[-0.015em] text-white sm:text-[1.05rem]">
@@ -112,7 +112,7 @@ export function AutomationSection({ content }: AutomationSectionProps) {
             return (
               <article
                 key={item.title}
-                className={`${isPrimary ? 'bg-[var(--hero-dark)] text-white' : isAccent ? 'bg-[var(--accent-soft)]' : 'bg-[var(--surface)]'} flex min-h-[320px] flex-col justify-between p-6 sm:p-8`}
+                className={`${isPrimary ? 'bg-[var(--hero-dark)] text-white' : isAccent ? 'bg-[var(--accent-soft)]' : 'bg-[var(--surface)]'} flex flex-col justify-between p-6 sm:p-7`}
                 data-reveal
               >
                 <div>
@@ -127,7 +127,7 @@ export function AutomationSection({ content }: AutomationSectionProps) {
                     </span>
                   </div>
 
-                  <h3 className={`mt-10 max-w-sm text-[1.8rem] leading-[1.02] tracking-[-0.055em] ${isPrimary ? 'text-white' : 'text-[var(--ink)]'} sm:text-[2.2rem]`}>
+                  <h3 className={`mt-6 max-w-sm text-[1.6rem] leading-[1.02] tracking-[-0.05em] ${isPrimary ? 'text-white' : 'text-[var(--ink)]'} sm:text-[1.9rem]`}>
                     {item.title}
                   </h3>
                   <p className={`mt-4 max-w-sm text-sm leading-7 sm:text-base ${isPrimary ? 'text-[color:rgb(255_255_255_/_0.82)]' : 'text-[var(--muted)]'}`}>
@@ -136,7 +136,7 @@ export function AutomationSection({ content }: AutomationSectionProps) {
 
                   {item.cases && item.cases.length > 0 ? (
                     <div className="mt-6">
-                      <p className={`font-mono text-[0.68rem] uppercase tracking-[0.22em] ${isPrimary ? 'text-white/62' : 'text-[var(--muted)]'}`}>
+                      <p className={`font-mono text-[0.68rem] uppercase tracking-[0.22em] ${isPrimary ? 'text-white/72' : 'text-[var(--muted)]'}`}>
                         {isFrench ? "Cas d'usage" : 'Use cases'}
                       </p>
                       <div className="mt-3 flex flex-wrap gap-2">
@@ -172,7 +172,7 @@ export function AutomationSection({ content }: AutomationSectionProps) {
                 {isExpanded ? (
                   <div className="mt-10 grid gap-6" id={detailsId}>
                     <div>
-                      <p className={`font-mono text-[0.68rem] uppercase tracking-[0.22em] ${isPrimary ? 'text-white/62' : 'text-[var(--muted)]'}`}>
+                      <p className={`font-mono text-[0.68rem] uppercase tracking-[0.22em] ${isPrimary ? 'text-white/72' : 'text-[var(--muted)]'}`}>
                         {isFrench ? 'Exemples' : 'Examples'}
                       </p>
                       <ul className={`mt-3 space-y-3 text-sm leading-6 sm:text-base ${isPrimary ? 'text-white' : 'text-[var(--ink)]'}`}>
@@ -188,7 +188,7 @@ export function AutomationSection({ content }: AutomationSectionProps) {
                     </div>
 
                     <div>
-                      <p className={`font-mono text-[0.68rem] uppercase tracking-[0.22em] ${isPrimary ? 'text-white/62' : 'text-[var(--muted)]'}`}>
+                      <p className={`font-mono text-[0.68rem] uppercase tracking-[0.22em] ${isPrimary ? 'text-white/72' : 'text-[var(--muted)]'}`}>
                         {isFrench ? 'Bénéfices' : 'Benefits'}
                       </p>
                       <ul className={`mt-3 space-y-3 text-sm leading-6 sm:text-base ${isPrimary ? 'text-white' : 'text-[var(--ink)]'}`}>
@@ -209,32 +209,6 @@ export function AutomationSection({ content }: AutomationSectionProps) {
           })}
         </div>
 
-        <div className="mt-10 rounded-[28px] border border-[var(--line)] bg-[linear-gradient(145deg,rgba(255,255,255,0.94),rgba(240,220,235,0.68))] p-6 sm:p-8" data-reveal>
-          <div className="max-w-[58rem]">
-            <p className="font-mono text-[0.76rem] uppercase tracking-[0.24em] text-[var(--muted)]">
-              {isFrench ? "Pourquoi les entreprises adoptent l'IA" : 'Why companies adopt AI'}
-            </p>
-            <h3 className="section-title-break mt-5 max-w-[20ch] text-[clamp(2.1rem,4.5vw,3.8rem)] leading-[0.98] tracking-[-0.03em] text-[var(--ink)]">
-              {content.rationale.title}
-            </h3>
-            <div className="mt-6 space-y-4 text-[1rem] leading-8 text-[var(--muted)] sm:text-[1.05rem]">
-              {content.rationale.body.map((paragraph) => (
-                <p key={paragraph}>{paragraph}</p>
-              ))}
-            </div>
-          </div>
-
-          <div className="mt-8 grid gap-3 md:grid-cols-2 xl:grid-cols-3">
-            {content.rationale.results.map((item) => (
-              <div
-                key={item}
-                className="rounded-[20px] border border-[var(--line)] bg-white px-5 py-4 text-[0.98rem] leading-7 text-[var(--ink)]"
-              >
-                {item}
-              </div>
-            ))}
-          </div>
-        </div>
       </div>
     </section>
   )

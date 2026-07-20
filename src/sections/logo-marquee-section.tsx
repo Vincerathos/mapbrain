@@ -1,35 +1,32 @@
 import { useReveal } from '../hooks/use-reveal'
+import type { SiteContent } from '../types/site'
 
-const marqueeLogos = Array.from({ length: 10 }, (_, index) => ({
-  id: `logo-marquee-${index + 1}`,
-  src: '/logo-mapbrain.png'
-}))
+interface LogoMarqueeSectionProps {
+  content: SiteContent['partners']
+}
 
-export function LogoMarqueeSection() {
+export function LogoMarqueeSection({ content }: LogoMarqueeSectionProps) {
   const revealRef = useReveal<HTMLElement>()
-  const loopedLogos = [...marqueeLogos, ...marqueeLogos]
+  const loopedLogos = [...content.logos, ...content.logos]
 
   return (
     <section
-      aria-label="Partenaires visuels"
+      aria-label="Partenaires technologiques"
       className="relative -mt-4 border-b border-[var(--line)] bg-[var(--surface)]"
       ref={revealRef}
     >
-      <div className="section-shell mx-auto max-w-[1720px] overflow-hidden px-4 sm:px-6 lg:px-8" data-reveal>
-        <div className="logo-marquee-track flex min-w-max items-center gap-8 sm:gap-14">
+      <div
+        className="section-shell mx-auto max-w-[1720px] overflow-hidden px-4 sm:px-6 lg:px-8"
+        data-reveal
+      >
+        <div className="logo-marquee-track flex min-w-max items-center gap-10 sm:gap-16">
           {loopedLogos.map((logo, index) => (
-            <div
-              key={`${logo.id}-${index}`}
-              className="flex h-8 w-[7.5rem] shrink-0 items-center justify-center sm:h-10 sm:w-[10.5rem]"
+            <span
+              key={`${logo.name}-${index}`}
+              className="logo-marquee-mark shrink-0 whitespace-nowrap font-mono text-[0.9rem] font-medium uppercase tracking-[0.24em] text-[var(--ink)] sm:text-[1.05rem]"
             >
-              <img
-                alt=""
-                aria-hidden="true"
-                className="logo-marquee-mark h-7 w-auto object-contain sm:h-9"
-                loading="lazy"
-                src={logo.src}
-              />
-            </div>
+              {logo.name}
+            </span>
           ))}
         </div>
       </div>

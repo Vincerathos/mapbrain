@@ -1,15 +1,15 @@
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { siteContent } from './data/site-content'
 import { isLocale } from './lib/locale'
+import { readViewFromHash, type View } from './lib/views'
 import { AudienceSection } from './sections/audience-section'
 import { AboutSection } from './sections/about-section'
 import { AutomationSection } from './sections/automation-section'
-import { CapabilitySection } from './sections/capability-section'
 import { FaqSection } from './sections/faq-section'
 import { FinalCtaSection } from './sections/final-cta-section'
-import { FeaturedProjectsSection } from './sections/featured-projects-section'
 import { Footer } from './sections/footer'
+import { FormationsSection } from './sections/formations-section'
 import { Header } from './sections/header'
 import { HeroSection } from './sections/hero-section'
 import { LogoMarqueeSection } from './sections/logo-marquee-section'
@@ -21,12 +21,29 @@ import type { Locale } from './types/site'
 
 function App() {
   const { i18n, t } = useTranslation()
+  const [view, setView] = useState<View>(() => readViewFromHash())
 
   const locale: Locale = isLocale(i18n.resolvedLanguage)
     ? i18n.resolvedLanguage
     : 'fr'
 
   const content = siteContent[locale]
+
+  useEffect(() => {
+    const handleHashChange = () => {
+      setView(readViewFromHash())
+    }
+
+    window.addEventListener('hashchange', handleHashChange)
+
+    return () => {
+      window.removeEventListener('hashchange', handleHashChange)
+    }
+  }, [])
+
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: 'instant' })
+  }, [view])
 
   useEffect(() => {
     document.documentElement.lang = locale
@@ -59,26 +76,49 @@ function App() {
       </a>
 
       <Header
+        activeView={view}
         cta={content.navigation.cta}
         currentLocale={locale}
         items={content.navigation.items}
         onLocaleChange={handleLocaleChange}
       />
 
-      <main id="content">
-        <HeroSection content={content.hero} />
-        <FeaturedProjectsSection content={content.projects} />
-        <PromiseSection content={content.promise} />
-        <LogoMarqueeSection />
-        <AboutSection content={content.about} />
-        <AudienceSection content={content.audiences} />
-        <FrameworkSection content={content.framework} />
-        <ProjectsSection content={content.projects} />
-        <AutomationSection content={content.automation} />
-        <CapabilitySection content={content.capabilities} />
-        <PartnersSection content={content.partners} />
-        <FaqSection content={content.faq} />
-        <FinalCtaSection />
+      <main className={view === 'home' ? undefined : 'pt-24 sm:pt-28 lg:pt-32'} id="content">
+        {view === 'home' ? (
+          <>
+            <HeroSection content={content.hero} />
+            <LogoMarqueeSection content={content.partners} />
+            <PromiseSection content={content.promise} />
+            <AudienceSection content={content.audiences} />
+            <FinalCtaSection />
+          </>
+        ) : null}
+
+        {view === 'method' ? <FrameworkSection content={content.framework} /> : null}
+
+        {view === 'automation' ? (
+          <AutomationSection content={content.automation} />
+        ) : null}
+
+        {view === 'formations' ? (
+          <FormationsSection content={content.formations} />
+        ) : null}
+
+        {view === 'projects' ? <ProjectsSection content={content.projects} /> : null}
+
+        {view === 'about' ? (
+          <>
+            <AboutSection content={content.about} />
+            <PartnersSection content={content.partners} />
+          </>
+        ) : null}
+
+        {view === 'contact' ? (
+          <>
+            <FaqSection content={content.faq} />
+            <FinalCtaSection />
+          </>
+        ) : null}
       </main>
 
       <Footer

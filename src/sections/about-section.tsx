@@ -74,16 +74,16 @@ export function AboutSection({ content }: AboutSectionProps) {
               {content.body}
             </p>
 
-            <div className="mt-8 grid gap-3 md:grid-cols-2 xl:grid-cols-3" data-reveal>
+            <div className="mt-8 grid gap-3 sm:grid-cols-2 xl:grid-cols-5" data-reveal>
               {content.recognition.map((item) => (
                 <article
                   key={`${item.value}-${item.label}`}
-                  className="min-h-[164px] rounded-[24px] border border-[var(--line)] bg-[var(--surface)] px-6 py-6 sm:min-h-[176px] sm:px-8 sm:py-7"
+                  className="rounded-[18px] border border-[var(--line)] bg-[var(--surface)] px-5 py-4"
                 >
-                  <p className="text-[1.7rem] font-semibold leading-[1.02] tracking-[-0.055em] text-[var(--ink)] sm:text-[1.9rem]">
+                  <p className="text-[1.15rem] font-semibold leading-[1.05] tracking-[-0.04em] text-[var(--ink)]">
                     {item.value}
                   </p>
-                  <p className="mt-4 max-w-[22ch] text-[1.05rem] leading-7 text-[var(--muted)] sm:text-[1.08rem]">
+                  <p className="mt-1.5 text-[0.85rem] leading-6 text-[var(--muted)]">
                     {item.label}
                   </p>
                 </article>

@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react'
 import type { FormEvent } from 'react'
 import { useTranslation } from 'react-i18next'
 import { useReveal } from '../hooks/use-reveal'
+import { socialLinks } from '../data/social-links'
 
 export function FinalCtaSection() {
   const revealRef = useReveal<HTMLElement>()
@@ -11,20 +12,12 @@ export function FinalCtaSection() {
   const [email, setEmail] = useState('')
   const [company, setCompany] = useState('')
   const [message, setMessage] = useState('')
-  const isCaptureView =
-    typeof window !== 'undefined' && window.location.hash === '#contact'
-  const socialItems = [
-    { href: 'https://www.instagram.com/aimapbrain?igsh=MWt4cWJwMjZzanI2Nw==', label: 'Instagram', src: 'https://cdn.simpleicons.org/instagram/111111' },
-    { href: 'https://www.linkedin.com/company/mapbrain/', label: 'LinkedIn', src: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linkedin/linkedin-original.svg' },
-    { href: 'https://www.facebook.com', label: 'Facebook', src: 'https://cdn.simpleicons.org/facebook/111111' },
-    { href: 'https://x.com', label: 'X', src: 'https://cdn.simpleicons.org/x/111111' }
-  ]
   const offerBullets = [
     isFrench ? 'UI UX Design' : 'UI UX Design',
     isFrench ? 'Développement web' : 'Web Development',
-    isFrench ? 'Identité de marque' : 'Brand Identity',
-    isFrench ? 'Growth Ops' : 'Growth Ops',
-    isFrench ? 'Stratégie de contenu' : 'Content Strategy'
+    isFrench ? 'IA & automatisation' : 'AI & automation',
+    isFrench ? 'Formations IA' : 'AI training',
+    isFrench ? 'Growth Ops' : 'Growth Ops'
   ]
 
   useEffect(() => {
@@ -64,7 +57,7 @@ export function FinalCtaSection() {
 
   return (
     <section
-      className={`${isCaptureView ? 'fixed inset-0 z-[120] overflow-auto bg-[var(--surface)]' : 'scroll-mt-6 border-b border-[var(--line)] bg-[var(--surface)]'}`}
+      className="scroll-mt-6 border-b border-[var(--line)] bg-[var(--surface)]"
       id="contact"
       ref={revealRef}
     >
@@ -83,21 +76,17 @@ export function FinalCtaSection() {
                   {isFrench ? 'Suivez-nous' : 'Follow us'}
                 </p>
                 <div className="flex flex-wrap gap-2">
-                  {socialItems.map((item) => {
+                  {socialLinks.map((item) => {
                     return (
                       <a
                         key={item.label}
                         aria-label={item.label}
                         className="inline-flex size-11 items-center justify-center rounded-[4px] bg-white text-[var(--ink)]"
                         href={item.href}
+                        rel="noreferrer"
+                        target="_blank"
                       >
-                        <img
-                          alt=""
-                          aria-hidden="true"
-                          className="size-5 object-contain"
-                          loading="lazy"
-                          src={item.src}
-                        />
+                        <item.Icon />
                       </a>
                     )
                   })}
@@ -158,13 +147,13 @@ export function FinalCtaSection() {
               <div>
                 <p className="text-[1.75rem] font-semibold leading-[1.1] tracking-[-0.05em] text-[var(--ink)]">
                   {isFrench
-                    ? 'Une question, un challenge ou une idee ?'
+                    ? 'Une question, un challenge ou une idée ?'
                     : 'Got a question, challenge, or idea?'}
                 </p>
                 <p className="mt-2 text-[1rem] leading-7 text-[var(--ink)]">
                   {isFrench
-                    ? 'Remplissez le formulaire  nous revenons vers vous rapidement.'
-                    : `Fill out the form  we'll get back to you shortly.`}
+                    ? 'Remplissez le formulaire — nous revenons vers vous rapidement.'
+                    : `Fill out the form — we'll get back to you shortly.`}
                 </p>
               </div>
 
@@ -203,7 +192,7 @@ export function FinalCtaSection() {
                     className="min-h-[124px] rounded-[4px] border border-[var(--line)] bg-white px-5 py-4 text-[1rem] text-[var(--ink)] outline-none placeholder:text-[var(--ink)]"
                     id="contact-message"
                     onChange={(event) => setMessage(event.target.value)}
-                    placeholder={isFrench ? 'Votre message' : 'Test Message'}
+                    placeholder={isFrench ? 'Votre message' : 'Your message'}
                     required
                     value={message}
                   />

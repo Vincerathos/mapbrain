@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react'
 import { useReveal } from '../hooks/use-reveal'
 import type { HeroContent } from '../types/site'
 import { ButtonLink } from '../ui/button-link'
+import { socialLinks } from '../data/social-links'
 
 interface HeroSectionProps {
   content: HeroContent
@@ -10,35 +11,6 @@ interface HeroSectionProps {
 export function HeroSection({ content }: HeroSectionProps) {
   const revealRef = useReveal<HTMLElement>()
   const [phraseIndex, setPhraseIndex] = useState(0)
-  const teamPhotos = [
-    'https://randomuser.me/api/portraits/women/44.jpg',
-    'https://randomuser.me/api/portraits/men/32.jpg',
-    'https://randomuser.me/api/portraits/women/68.jpg',
-    'https://randomuser.me/api/portraits/men/75.jpg',
-    'https://randomuser.me/api/portraits/women/21.jpg'
-  ]
-  const socialLinks = [
-    {
-      href: 'https://www.linkedin.com/company/mapbrain/',
-      iconSrc: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linkedin/linkedin-original.svg',
-      label: 'LinkedIn'
-    },
-    {
-      href: 'https://www.instagram.com/aimapbrain?igsh=MWt4cWJwMjZzanI2Nw==',
-      iconSrc: 'https://cdn.simpleicons.org/instagram/111111',
-      label: 'Instagram'
-    },
-    {
-      href: 'https://x.com',
-      iconSrc: 'https://cdn.simpleicons.org/x/111111',
-      label: 'X'
-    },
-    {
-      href: 'https://www.facebook.com',
-      iconSrc: 'https://cdn.simpleicons.org/facebook/111111',
-      label: 'Facebook'
-    }
-  ]
   const visibleTags = content.serviceTags
 
   useEffect(() => {
@@ -125,22 +97,6 @@ export function HeroSection({ content }: HeroSectionProps) {
           <div className="grid min-h-[auto] gap-0 sm:min-h-[690px] lg:grid-cols-[minmax(0,1fr)_78px]">
             <div className="relative z-10 flex min-h-[auto] flex-col px-5 pb-8 pt-16 text-white sm:min-h-[690px] sm:px-10 sm:pb-24 sm:pt-28 lg:px-9 lg:pb-[5.9rem] lg:pt-32 xl:px-10 xl:pt-[8.75rem]">
               <div className="max-w-[58rem]">
-                <div className="mb-7 flex -space-x-2">
-                  {teamPhotos.map((photoUrl, index) => (
-                    <span
-                      key={photoUrl}
-                      className="inline-flex size-10 items-center justify-center overflow-hidden rounded-full border border-white/75 bg-[color:rgb(255_255_255_/_0.12)] text-[0.62rem] font-semibold shadow-[0_10px_20px_rgba(0,0,0,0.14)]"
-                    >
-                      <img
-                        alt={`Profil equipe MAPBRAIN ${index + 1}`}
-                        className="size-full object-cover"
-                        loading="eager"
-                        src={photoUrl}
-                      />
-                    </span>
-                  ))}
-                </div>
-
                 <div className="hero-phrase-shell max-w-[42rem]">
                   <p
                     key={`${content.title}-${phraseIndex}`}
@@ -153,6 +109,19 @@ export function HeroSection({ content }: HeroSectionProps) {
                 <p className="mt-3 max-w-[35rem] text-[0.98rem] leading-7 text-[color:rgb(255_255_255_/_0.84)]">
                   {content.body}
                 </p>
+
+                <div className="mt-7 flex flex-wrap items-center gap-3" data-reveal>
+                  <ButtonLink
+                    className="border-white bg-white text-[var(--ink)] hover:border-[var(--accent-soft)] hover:bg-[var(--accent-soft)]"
+                    link={content.primaryCta}
+                    tone="secondary"
+                  />
+                  <ButtonLink
+                    className="border-white/50 bg-transparent text-white hover:border-white hover:bg-white/10"
+                    link={content.secondaryCta}
+                    tone="text"
+                  />
+                </div>
               </div>
             </div>
 
@@ -162,12 +131,12 @@ export function HeroSection({ content }: HeroSectionProps) {
                   <a
                     key={item.label}
                     aria-label={item.label}
-                    className="inline-flex size-12 items-center justify-center rounded-[10px] border border-[color:rgb(255_255_255_/_0.42)] bg-[color:rgb(248_244_239_/_0.92)] text-[var(--ink)] backdrop-blur-sm transition-colors duration-200 hover:bg-white"
+                    className="inline-flex size-12 items-center justify-center rounded-[10px] border border-[color:rgb(255_255_255_/_0.42)] bg-[color:rgb(248_244_239_/_0.92)] text-[var(--ink)] transition-colors duration-200 hover:bg-white"
                     href={item.href}
                     rel="noreferrer"
                     target="_blank"
                   >
-                    <img alt="" className="size-5 object-contain" src={item.iconSrc} />
+                    <item.Icon />
                   </a>
                 )
               })}
@@ -178,7 +147,7 @@ export function HeroSection({ content }: HeroSectionProps) {
             {visibleTags.map((tag, index) => (
               <article
                 key={tag}
-                className="hero-service-card min-w-0 rounded-[16px] border border-[color:rgb(255_255_255_/_0.42)] bg-[color:rgb(255_255_255_/_0.82)] p-3 text-[var(--ink)] shadow-[0_18px_40px_rgba(17,17,17,0.08)] backdrop-blur-lg sm:min-w-[13.6rem] sm:flex-1"
+                className="hero-service-card min-w-0 rounded-[16px] border border-[color:rgb(255_255_255_/_0.42)] bg-[color:rgb(255_255_255_/_0.92)] p-3 text-[var(--ink)] shadow-[0_18px_40px_rgba(17,17,17,0.08)] sm:min-w-[13.6rem] sm:flex-1"
               >
                 <div className="flex items-center gap-3">
                   <div className={`hero-service-thumb hero-service-thumb-${(index % 5) + 1}`} />

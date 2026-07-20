@@ -55,9 +55,9 @@ export function PromiseSection({ content }: PromiseSectionProps) {
                 {content.points.map((point, index) => (
                   <div
                     key={point.title}
-                    className="rounded-[18px] border border-white/12 bg-[color:rgb(255_255_255_/_0.08)] p-4 backdrop-blur-md"
+                    className="rounded-[18px] border border-white/12 bg-[color:rgb(255_255_255_/_0.12)] p-4"
                   >
-                    <p className="font-mono text-[0.68rem] uppercase tracking-[0.22em] text-white/58">
+                    <p className="font-mono text-[0.68rem] uppercase tracking-[0.22em] text-white/72">
                       ({(index + 1).toString().padStart(2, '0')})
                     </p>
                     <p className="mt-4 text-[1.12rem] leading-[1.12] tracking-[-0.03em] text-white">

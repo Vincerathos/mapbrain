@@ -31,3 +31,6 @@ creative-marketing-home.png
 test-creative-viewport.png
 
 .vercel
+
+# Claude Code local tooling
+.claude/

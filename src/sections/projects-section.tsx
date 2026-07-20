@@ -144,17 +144,13 @@ export function ProjectsSection({ content }: ProjectsSectionProps) {
     }
   }, [activeCard])
 
-  const handleCardEnter = (cardId: string) => {
+  const handleCardActivate = (cardId: string) => {
     if (hoverTimeoutRef.current !== null) {
       window.clearTimeout(hoverTimeoutRef.current)
     }
 
     setIsVideoLoaded(false)
     setActiveCardId(cardId)
-  }
-
-  const handleCardActivate = (cardId: string) => {
-    handleCardEnter(cardId)
   }
 
   const handleStageLeave = () => {
@@ -165,6 +161,24 @@ export function ProjectsSection({ content }: ProjectsSectionProps) {
     setIsVideoLoaded(false)
     setActiveCardId(null)
   }
+
+  useEffect(() => {
+    if (!activeCardId) {
+      return undefined
+    }
+
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key === 'Escape') {
+        handleStageLeave()
+      }
+    }
+
+    window.addEventListener('keydown', handleKeyDown)
+
+    return () => {
+      window.removeEventListener('keydown', handleKeyDown)
+    }
+  }, [activeCardId])
 
   const handleStageClick = (event: ReactMouseEvent<HTMLDivElement>) => {
     const target = event.target as HTMLElement
@@ -217,7 +231,6 @@ export function ProjectsSection({ content }: ProjectsSectionProps) {
         className={`project-loom-stage relative mt-5 min-h-[620px] overflow-hidden border-y border-[var(--line)] bg-[var(--surface)] px-0 py-10 sm:py-12 lg:min-h-[720px] lg:py-14 ${activeCard ? 'has-active' : ''}`}
         data-reveal
         onClick={handleStageClick}
-        onMouseLeave={handleStageLeave}
         ref={stageRef}
       >
         <div className="project-loom-fade-left" />
@@ -243,7 +256,6 @@ export function ProjectsSection({ content }: ProjectsSectionProps) {
                   key={cardId}
                   className={`project-loom-card ${isActive ? 'is-active' : ''}`}
                   onClick={() => handleCardActivate(card.id)}
-                  onMouseEnter={() => handleCardEnter(card.id)}
                   type="button"
                 >
                   <div className="project-loom-thumb">
@@ -276,7 +288,6 @@ export function ProjectsSection({ content }: ProjectsSectionProps) {
                   key={cardId}
                   className={`project-loom-card ${isActive ? 'is-active' : ''}`}
                   onClick={() => handleCardActivate(card.id)}
-                  onMouseEnter={() => handleCardEnter(card.id)}
                   type="button"
                 >
                   <div className="project-loom-thumb">
@@ -350,13 +361,13 @@ export function ProjectsSection({ content }: ProjectsSectionProps) {
                     {activeCard?.sector ?? (isFrench ? 'Projet MAPBRAIN' : 'MAPBRAIN project')}
                   </span>
                   <h3 className="project-loom-aside-title">
-                    {activeCard?.title ?? (isFrench ? 'Survolez un projet' : 'Hover a project')}
+                    {activeCard?.title ?? (isFrench ? 'Choisissez un projet' : 'Pick a project')}
                   </h3>
                   <p className="project-loom-aside-body">
                     {activeCard?.description ??
                       (isFrench
-                        ? 'Survolez une carte pour afficher la vidéo Loom correspondante et accéder, quand disponible, au prototype Stitch associé.'
-                        : 'Hover a card to display its matching Loom walkthrough and, when available, open the related Stitch prototype.')}
+                        ? 'Cliquez sur une carte pour afficher la vidéo de démo et accéder, quand disponible, au prototype associé.'
+                        : 'Click a card to display its demo video and, when available, open the related prototype.')}
                   </p>
                   <div className="flex flex-wrap gap-3 pt-2">
                     {activeCard?.prototypeUrl ? (

@@ -17,7 +17,7 @@ export function LocaleSwitcher({
   return (
     <div
       aria-label={t('languageLabel')}
-      className="inline-flex rounded-full border border-[color:rgb(17_17_17_/_0.08)] bg-[color:rgb(255_255_255_/_0.72)] p-1 text-[var(--ink)] shadow-[0_8px_20px_rgba(17,17,17,0.04)] backdrop-blur-md"
+      className="inline-flex rounded-full border border-[color:rgb(17_17_17_/_0.08)] bg-[color:rgb(255_255_255_/_0.9)] p-1 text-[var(--ink)] shadow-[0_8px_20px_rgba(17,17,17,0.04)]"
       role="group"
     >
       <div className="relative grid grid-cols-2 rounded-full bg-[color:rgb(17_17_17_/_0.04)] p-0.5">

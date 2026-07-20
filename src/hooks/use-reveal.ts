@@ -1,5 +1,7 @@
 import { useEffect, useRef } from 'react'
-import { gsap } from 'gsap'
+
+const MAX_STAGGER_MS = 560
+const STAGGER_STEP_MS = 70
 
 export function useReveal<T extends HTMLElement>() {
   const ref = useRef<T | null>(null)
@@ -22,25 +24,24 @@ export function useReveal<T extends HTMLElement>() {
     const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)')
 
     if (reducedMotion.matches) {
-      gsap.set(targets, {
-        clearProps: 'all',
-        filter: 'blur(0px)',
-        opacity: 1,
-        scale: 1,
-        y: 0
-      })
       return undefined
     }
 
-    const context = gsap.context(() => {
-      gsap.set(targets, {
-        filter: 'blur(10px)',
-        opacity: 0,
-        scale: 0.985,
-        transformOrigin: '50% 50%',
-        y: 34
-      })
-    }, element)
+    // Les sections déjà visibles au montage (hero, rechargement en milieu de
+    // page…) restent affichées telles quelles : aucun masquage, meilleur LCP.
+    const rect = element.getBoundingClientRect()
+
+    if (rect.top < window.innerHeight * 0.85 && rect.bottom > 0) {
+      return undefined
+    }
+
+    targets.forEach((target, index) => {
+      target.style.setProperty(
+        '--reveal-delay',
+        `${Math.min(index * STAGGER_STEP_MS, MAX_STAGGER_MS)}ms`
+      )
+      target.classList.add('reveal-pending')
+    })
 
     const observer = new IntersectionObserver(
       (entries) => {
@@ -50,14 +51,8 @@ export function useReveal<T extends HTMLElement>() {
           return
         }
 
-        gsap.to(targets, {
-          duration: 0.95,
-          ease: 'power3.out',
-          filter: 'blur(0px)',
-          opacity: 1,
-          scale: 1,
-          stagger: 0.08,
-          y: 0
+        targets.forEach((target) => {
+          target.classList.add('reveal-visible')
         })
 
         observer.disconnect()
@@ -72,7 +67,10 @@ export function useReveal<T extends HTMLElement>() {
 
     return () => {
       observer.disconnect()
-      context.revert()
+      targets.forEach((target) => {
+        target.classList.remove('reveal-pending', 'reveal-visible')
+        target.style.removeProperty('--reveal-delay')
+      })
     }
   }, [])
 

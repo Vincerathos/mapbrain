@@ -76,9 +76,11 @@ export interface AutomationRationale {
 
 export interface FormationProgram {
   audience: string
+  badge?: string
   description: string
   duration: string
   image: ImageAsset
+  level: string
   title: string
   topics: string[]
 }

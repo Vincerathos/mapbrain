@@ -9,9 +9,9 @@ export const siteContent: Record<Locale, SiteContent> = {
     },
     navigation: {
       items: [
+        { href: '#formations', label: 'Formations' },
         { href: '#framework', label: 'Méthode' },
         { href: '#automation', label: 'IA & automatisation' },
-        { href: '#formations', label: 'Formations' },
         { href: '#projects', label: 'Projets' },
         { href: '#about', label: 'À propos' },
         { href: '#partners', label: 'Écosystème' }
@@ -455,75 +455,144 @@ export const siteContent: Record<Locale, SiteContent> = {
       ]
     },
     formations: {
-      eyebrow: 'Formations',
-      title: 'Formez vos équipes à l’IA et à l’automatisation.',
+      eyebrow: 'MapBrain Academy',
+      title: 'Six parcours pour former vos équipes à l’IA.',
       body:
-        'Des formations pratiques, construites sur vos cas réels, pour rendre vos équipes autonomes sur les outils qui comptent vraiment.',
+        'Du premier pas avec l’IA générative à la stratégie de transformation : des parcours débutant, intermédiaire et expert, construits sur vos cas réels — solutions Google, Microsoft, OpenAI, Claude, automatisation et agents IA.',
       programs: [
         {
           image: {
             src: 'https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&w=1200&q=80',
             alt: 'Atelier de formation avec des participants sur ordinateurs portables.'
           },
-          title: 'IA générative au quotidien',
+          title: 'AI Essentials',
+          level: 'Débutant',
           description:
-            'Prendre en main les outils d’IA générative et les intégrer dans le travail de tous les jours.',
+            'L’intelligence artificielle pour tous : comprendre l’IA et l’utiliser efficacement au quotidien.',
           topics: [
-            'Panorama des outils (ChatGPT, Claude, Gemini…)',
-            'Écrire des prompts efficaces',
-            'Cas d’usage par métier',
-            'Bonnes pratiques et limites'
+            'Fondamentaux de l’IA et des LLM',
+            'Panorama des outils : ChatGPT, Claude, Gemini, Copilot…',
+            'Prompt engineering fondamental',
+            'IA responsable, RGPD et cybersécurité',
+            'Concevoir son assistant IA personnalisé'
           ],
           audience: 'Tous collaborateurs',
-          duration: '1 jour'
+          duration: '1 à 2 jours'
         },
         {
+          badge: 'Parcours phare',
           image: {
             src: 'https://images.unsplash.com/photo-1531403009284-440f080d1e12?auto=format&fit=crop&w=1200&q=80',
             alt: 'Équipe qui cartographie des processus sur un tableau blanc.'
           },
-          title: 'Automatiser ses processus',
+          title: 'IA, Automatisation & Agents',
+          level: 'Intermédiaire à avancé',
           description:
-            'Connecter ses outils et automatiser les tâches répétitives avec n8n, Make ou Zapier.',
+            'Concevoir, automatiser et déployer des assistants et agents IA pour transformer les processus métier.',
           topics: [
-            'Cartographier les processus à automatiser',
-            'Construire ses premiers workflows',
-            'Connecter CRM, emails et outils métier',
-            'Fiabiliser et maintenir ses automatisations'
+            'Cartographier les processus métier',
+            'Automatisation no-code : Make, n8n, Power Automate, Zapier',
+            'API et webhooks sans coder',
+            'Assistants et agents IA spécialisés par métier',
+            'Hackathon IA en équipe (format 5 jours)'
           ],
-          audience: 'Ops, marketing, RH, ventes',
-          duration: '2 jours'
+          audience: 'Managers, chefs de projet, responsables métiers',
+          duration: '3 à 5 jours'
         },
         {
           image: {
-            src: 'https://images.unsplash.com/photo-1555949963-aa79dcee981c?auto=format&fit=crop&w=1200&q=80',
-            alt: 'Développeur travaillant sur un assistant logiciel, code à l’écran.'
+            src: 'https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1200&q=80',
+            alt: 'Espace de travail moderne avec plusieurs écrans et outils numériques.'
           },
-          title: 'Agents IA & assistants métier',
+          title: 'AI Productivity Suite',
+          level: 'Débutant à intermédiaire',
           description:
-            'Concevoir des assistants IA branchés sur vos données pour la vente, le support ou les opérations.',
+            'Maîtriser Microsoft Copilot, Google Gemini et les meilleurs outils IA pour un poste de travail augmenté.',
           topics: [
-            'Comprendre les agents IA et leurs usages',
-            'Concevoir un assistant sur vos données',
-            'Intégrer l’assistant dans les outils existants',
-            'Mesurer l’impact et itérer'
+            'Copilot dans Word, Excel, Outlook, Teams, PowerPoint',
+            'Gemini dans Gmail, Docs, Sheets et Meet',
+            'NotebookLM, Perplexity, Gamma, Canva AI',
+            'Audio et vidéo : ElevenLabs, HeyGen, Runway',
+            'Atelier : construire son poste de travail augmenté'
           ],
-          audience: 'Équipes produit & direction',
+          audience: 'Tous métiers',
           duration: '2 jours'
+        },
+        {
+          badge: 'Best-seller',
+          image: {
+            src: 'https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=1200&q=80',
+            alt: 'Équipe en formation autour d’un ordinateur portable.'
+          },
+          title: 'IA & Productivité au quotidien',
+          level: 'Débutant',
+          description:
+            'Gagner entre 1 et 2 heures par jour grâce à l’IA générative : la formation pour embarquer toute l’entreprise.',
+          topics: [
+            'Comprendre l’IA générative',
+            'ChatGPT, Claude, Gemini, Copilot, Perplexity, NotebookLM',
+            'Rédiger des prompts efficaces',
+            'Sécurité, RGPD et IA responsable',
+            'Plan de productivité IA sur 30 jours'
+          ],
+          audience: '100 % des collaborateurs',
+          duration: '1 jour'
+        },
+        {
+          badge: 'Très demandée',
+          image: {
+            src: 'https://images.unsplash.com/photo-1555949963-aa79dcee981c?auto=format&fit=crop&w=1200&q=80',
+            alt: 'Écran de travail avec workflows et outils connectés.'
+          },
+          title: 'Automatiser son entreprise avec l’IA',
+          level: 'Débutant à intermédiaire',
+          description:
+            'Automatiser les tâches répétitives sans écrire une ligne de code et connecter ses applications métier.',
+          topics: [
+            'Principes de l’automatisation des processus',
+            'Make, n8n, Power Automate, Zapier',
+            'Connecter ses applications : API et webhooks',
+            'Intégrer l’IA dans les workflows',
+            'Atelier : son premier workflow intelligent'
+          ],
+          audience: 'Dirigeants, managers, opérations',
+          duration: '2 à 3 jours'
+        },
+        {
+          badge: 'Dirigeants',
+          image: {
+            src: 'https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=1200&q=80',
+            alt: 'Comité de direction en séance de travail stratégique.'
+          },
+          title: 'AI Business Transformation',
+          level: 'Executive',
+          description:
+            'Définir sa stratégie IA, prioriser les projets à fort ROI et construire une feuille de route sur 12 mois.',
+          topics: [
+            'Vision stratégique et retour sur investissement',
+            'Opportunités IA par fonction de l’entreprise',
+            'Gouvernance, RGPD et AI Act',
+            'Feuille de route de transformation sur 12 mois',
+            'Conduite du changement'
+          ],
+          audience: 'Dirigeants, CODIR, COMEX',
+          duration: '3 jours'
         }
       ],
       formatsTitle: 'Comment ça se passe',
       formats: [
-        'Intra-entreprise, sur site ou à distance',
+        'Présentiel, distanciel ou hybride',
         'Ateliers 100 % pratiques sur vos cas réels',
-        'Groupes de 4 à 12 personnes',
-        'Supports, templates et suivi inclus'
+        'Groupes de 4 à 12 participants',
+        'Supports, prompts et modèles prêts à l’emploi inclus',
+        'Évaluations avant, pendant et après (démarche Qualiopi)',
+        'Attestation de fin de formation'
       ],
       note:
-        'Chaque programme est adapté à votre contexte : outils, niveau des équipes et objectifs. Des parcours sur mesure sont possibles.',
+        'Chaque parcours s’adapte à votre contexte : outils, niveau des équipes et objectifs. Parcours sur mesure et combinaisons possibles — demandez le catalogue complet.',
       cta: {
-        href: 'mailto:contact@mapbrain.ai?subject=Programme%20de%20formation%20MAPBRAIN',
-        label: 'Demander le programme'
+        href: 'mailto:contact@mapbrain.ai?subject=Catalogue%20de%20formations%20MAPBRAIN',
+        label: 'Demander le catalogue'
       }
     },
     partners: {
@@ -675,7 +744,7 @@ export const siteContent: Record<Locale, SiteContent> = {
         {
           question: 'Proposez-vous des formations ?',
           answer:
-            'Oui. Nous formons les équipes à l’IA générative, à l’automatisation des processus et à la conception d’assistants métier — en intra-entreprise ou à distance, toujours sur vos cas réels.'
+            'Oui. MapBrain Academy propose six parcours — du niveau débutant (AI Essentials, IA & Productivité) au niveau expert (Automatisation & Agents, AI Business Transformation) — en présentiel, distanciel ou hybride, toujours sur vos cas réels. Demandez le catalogue complet.'
         },
         {
           question: 'Comment savoir si un audit est la bonne première étape ?',
@@ -697,9 +766,9 @@ export const siteContent: Record<Locale, SiteContent> = {
     },
     navigation: {
       items: [
+        { href: '#formations', label: 'Training' },
         { href: '#framework', label: 'Framework' },
         { href: '#automation', label: 'AI & automation' },
-        { href: '#formations', label: 'Training' },
         { href: '#projects', label: 'Projects' },
         { href: '#about', label: 'About' },
         { href: '#partners', label: 'Ecosystem' }
@@ -1133,75 +1202,144 @@ export const siteContent: Record<Locale, SiteContent> = {
       ]
     },
     formations: {
-      eyebrow: 'Training',
-      title: 'Train your teams on AI and automation.',
+      eyebrow: 'MapBrain Academy',
+      title: 'Six training tracks to upskill your teams on AI.',
       body:
-        'Hands-on training programs, built on your real use cases, so your teams become autonomous on the tools that actually matter.',
+        'From first steps with generative AI to transformation strategy: beginner, intermediate and expert tracks built on your real use cases — Google, Microsoft, OpenAI and Claude solutions, automation and AI agents.',
       programs: [
         {
           image: {
             src: 'https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&w=1200&q=80',
             alt: 'Training workshop with participants on laptops.'
           },
-          title: 'Generative AI at work',
+          title: 'AI Essentials',
+          level: 'Beginner',
           description:
-            'Master generative AI tools and integrate them into everyday work.',
+            'Artificial intelligence for everyone: understand AI and use it effectively every day.',
           topics: [
-            'Tool landscape (ChatGPT, Claude, Gemini…)',
-            'Writing effective prompts',
-            'Use cases by role',
-            'Best practices and limits'
+            'AI and LLM fundamentals',
+            'Tool landscape: ChatGPT, Claude, Gemini, Copilot…',
+            'Fundamental prompt engineering',
+            'Responsible AI, GDPR and cybersecurity',
+            'Design your own AI assistant'
           ],
           audience: 'All employees',
-          duration: '1 day'
+          duration: '1 to 2 days'
         },
         {
+          badge: 'Flagship track',
           image: {
             src: 'https://images.unsplash.com/photo-1531403009284-440f080d1e12?auto=format&fit=crop&w=1200&q=80',
             alt: 'Team mapping processes on a whiteboard.'
           },
-          title: 'Automate your processes',
+          title: 'AI, Automation & Agents',
+          level: 'Intermediate to advanced',
           description:
-            'Connect your tools and automate repetitive tasks with n8n, Make or Zapier.',
+            'Design, automate and deploy AI assistants and agents to transform business processes.',
           topics: [
-            'Mapping processes worth automating',
-            'Building your first workflows',
-            'Connecting CRM, email and business tools',
-            'Making automations reliable and maintainable'
+            'Mapping business processes',
+            'No-code automation: Make, n8n, Power Automate, Zapier',
+            'APIs and webhooks without coding',
+            'Role-specific AI assistants and agents',
+            'Team AI hackathon (5-day format)'
           ],
-          audience: 'Ops, marketing, HR, sales',
-          duration: '2 days'
+          audience: 'Managers, project leads, business owners',
+          duration: '3 to 5 days'
         },
         {
           image: {
-            src: 'https://images.unsplash.com/photo-1555949963-aa79dcee981c?auto=format&fit=crop&w=1200&q=80',
-            alt: 'Developer building a software assistant, code on screen.'
+            src: 'https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1200&q=80',
+            alt: 'Modern workspace with multiple screens and digital tools.'
           },
-          title: 'AI agents & business assistants',
+          title: 'AI Productivity Suite',
+          level: 'Beginner to intermediate',
           description:
-            'Design AI assistants connected to your data for sales, support or operations.',
+            'Master Microsoft Copilot, Google Gemini and the best AI tools for an augmented workspace.',
           topics: [
-            'Understanding AI agents and their uses',
-            'Designing an assistant on your data',
-            'Integrating it into existing tools',
-            'Measuring impact and iterating'
+            'Copilot in Word, Excel, Outlook, Teams, PowerPoint',
+            'Gemini in Gmail, Docs, Sheets and Meet',
+            'NotebookLM, Perplexity, Gamma, Canva AI',
+            'Audio and video: ElevenLabs, HeyGen, Runway',
+            'Workshop: build your augmented workspace'
           ],
-          audience: 'Product teams & leadership',
+          audience: 'All roles',
           duration: '2 days'
+        },
+        {
+          badge: 'Best seller',
+          image: {
+            src: 'https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=1200&q=80',
+            alt: 'Team learning together around a laptop.'
+          },
+          title: 'AI & Everyday Productivity',
+          level: 'Beginner',
+          description:
+            'Save 1 to 2 hours a day with generative AI: the training to onboard the whole company.',
+          topics: [
+            'Understanding generative AI',
+            'ChatGPT, Claude, Gemini, Copilot, Perplexity, NotebookLM',
+            'Writing effective prompts',
+            'Security, GDPR and responsible AI',
+            '30-day AI productivity plan'
+          ],
+          audience: '100% of employees',
+          duration: '1 day'
+        },
+        {
+          badge: 'In high demand',
+          image: {
+            src: 'https://images.unsplash.com/photo-1555949963-aa79dcee981c?auto=format&fit=crop&w=1200&q=80',
+            alt: 'Work screen with workflows and connected tools.'
+          },
+          title: 'Automate your business with AI',
+          level: 'Beginner to intermediate',
+          description:
+            'Automate repetitive tasks without writing a single line of code and connect your business apps.',
+          topics: [
+            'Process automation principles',
+            'Make, n8n, Power Automate, Zapier',
+            'Connecting your apps: APIs and webhooks',
+            'Integrating AI into workflows',
+            'Workshop: your first intelligent workflow'
+          ],
+          audience: 'Leaders, managers, operations',
+          duration: '2 to 3 days'
+        },
+        {
+          badge: 'Executives',
+          image: {
+            src: 'https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=1200&q=80',
+            alt: 'Executive committee in a strategic working session.'
+          },
+          title: 'AI Business Transformation',
+          level: 'Executive',
+          description:
+            'Define your AI strategy, prioritize high-ROI projects and build a 12-month roadmap.',
+          topics: [
+            'Strategic vision and return on investment',
+            'AI opportunities across every function',
+            'Governance, GDPR and the EU AI Act',
+            '12-month transformation roadmap',
+            'Change management'
+          ],
+          audience: 'Executives, boards, leadership teams',
+          duration: '3 days'
         }
       ],
       formatsTitle: 'How it works',
       formats: [
-        'On-site or remote, in-company',
+        'On-site, remote or hybrid',
         '100% hands-on workshops on your real cases',
-        'Groups of 4 to 12 people',
-        'Materials, templates and follow-up included'
+        'Groups of 4 to 12 participants',
+        'Materials, prompts and ready-to-use templates included',
+        'Assessment before, during and after (Qualiopi approach)',
+        'Certificate of completion'
       ],
       note:
-        'Every program is adapted to your context: tools, team level and goals. Custom tracks are available.',
+        'Every track adapts to your context: tools, team level and goals. Custom tracks and combinations available — request the full catalogue.',
       cta: {
-        href: 'mailto:contact@mapbrain.ai?subject=MAPBRAIN%20Training%20Program',
-        label: 'Request the program'
+        href: 'mailto:contact@mapbrain.ai?subject=MAPBRAIN%20Training%20Catalogue',
+        label: 'Request the catalogue'
       }
     },
     partners: {
@@ -1353,7 +1491,7 @@ export const siteContent: Record<Locale, SiteContent> = {
         {
           question: 'Do you offer training?',
           answer:
-            'Yes. We train teams on generative AI, process automation and business assistant design — on-site or remote, always on your real use cases.'
+            'Yes. MapBrain Academy offers six tracks — from beginner (AI Essentials, AI & Productivity) to expert level (Automation & Agents, AI Business Transformation) — on-site, remote or hybrid, always on your real use cases. Request the full catalogue.'
         },
         {
           question: 'How do we know a strategic audit is the right first step?',

@@ -30,7 +30,7 @@ export function FormationsSection({ content }: FormationsSectionProps) {
           </div>
         </div>
 
-        <div className="mt-12 grid gap-4 lg:grid-cols-3 lg:gap-5">
+        <div className="mt-12 grid gap-4 md:grid-cols-2 xl:grid-cols-3 xl:gap-5">
           {content.programs.map((program, index) => {
             return (
               <article
@@ -50,10 +50,23 @@ export function FormationsSection({ content }: FormationsSectionProps) {
                   <span className="absolute left-4 top-4 rounded-full bg-white/90 px-3 py-1.5 font-mono text-[0.66rem] uppercase tracking-[0.2em] text-[var(--ink)] shadow-[0_8px_20px_rgba(17,17,17,0.1)]">
                     ({String(index + 1).padStart(2, '0')})
                   </span>
+                  {program.badge ? (
+                    <span className="absolute right-4 top-4 rounded-full bg-[var(--ink)] px-3 py-1.5 text-[0.7rem] font-semibold uppercase tracking-[0.12em] text-white shadow-[0_8px_20px_rgba(17,17,17,0.2)]">
+                      {program.badge}
+                    </span>
+                  ) : null}
                 </figure>
 
                 <div className="flex flex-1 flex-col p-6 sm:p-7">
-                <h3 className="text-[1.45rem] leading-[1.08] tracking-[-0.03em] text-[var(--ink)]">
+                <div className="flex flex-wrap items-center gap-2">
+                  <span className="rounded-full border border-[var(--line)] bg-[var(--accent-soft)] px-3 py-1 text-[0.72rem] font-medium text-[var(--ink)]">
+                    {program.level}
+                  </span>
+                  <span className="rounded-full border border-[var(--line)] bg-white px-3 py-1 text-[0.72rem] text-[var(--muted)]">
+                    {program.duration}
+                  </span>
+                </div>
+                <h3 className="mt-4 text-[1.45rem] leading-[1.08] tracking-[-0.03em] text-[var(--ink)]">
                   {program.title}
                 </h3>
                 <p className="mt-3 text-sm leading-6 text-[var(--muted)]">

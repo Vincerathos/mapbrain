@@ -3,9 +3,9 @@ import type { Locale, SiteContent } from '../types/site'
 export const siteContent: Record<Locale, SiteContent> = {
   fr: {
     meta: {
-      title: 'MAPBRAIN | Studio produit, IA & formations',
+      title: 'MAPBRAIN | Formations IA & studio produit',
       description:
-        "MAPBRAIN aide les startups, PME et organisations à valider, construire et faire croître leurs produits — stratégie, design, développement, automatisation IA et formations."
+        "MAPBRAIN forme vos équipes à l'IA et construit vos produits digitaux. Six parcours de formation, de l'initiation à la stratégie d'entreprise, en présentiel ou à distance."
     },
     navigation: {
       items: [
@@ -20,13 +20,13 @@ export const siteContent: Record<Locale, SiteContent> = {
     },
     hero: {
       title: 'Analyse. Build. Scale.',
-      subtitle: 'Transformez vos idées en produits performants.',
+      subtitle: 'Transformez vos idées en produits concrets.',
       body:
-        "Studio produit & IA : nous validons vos opportunités, construisons les bons produits, automatisons vos opérations et formons vos équipes à l'IA.",
+        "Nous construisons des produits digitaux, nous automatisons ce qui fait perdre du temps à vos équipes, et nous les formons à l'IA. De l'idée au lancement, avec un seul interlocuteur.",
       rotatingPhrases: [
-        'Transformez vos idées en produits performants.',
-        "Automatisez vos opérations avec l'IA.",
-        'Formez vos équipes aux bons outils.'
+        'Transformez vos idées en produits concrets.',
+        'Formez vos équipes aux outils qui comptent.',
+        'Automatisez ce qui vous fait perdre du temps.'
       ],
       primaryCta: { href: '#contact', label: 'Réserver un audit stratégique' },
       secondaryCta: { href: '#formations', label: 'Voir les formations' },
@@ -43,9 +43,9 @@ export const siteContent: Record<Locale, SiteContent> = {
     about: {
       eyebrow: 'About us',
       title:
-        'Nous structurons des produits, des opérations et de la croissance avec une exécution pensée pour durer.',
+        'Des produits livrés, des clients qui restent. Voilà ce qu’on a construit jusqu’ici.',
       body:
-        'MAPBRAIN combine stratégie, design, développement, IA et réseau pour transformer une ambition en système concret, crédible et scalable.',
+        'Plus de 100 projets livrés, des MVP chaque semaine, et un réseau de partenaires qui ouvre des portes. C’est sur cette base qu’on travaille.',
       figures: [
         { value: '100+', label: 'projets livrés' },
         { value: '100%', label: 'clients satisfaits' },
@@ -70,22 +70,22 @@ export const siteContent: Record<Locale, SiteContent> = {
       eyebrow: 'Notre promesse',
       title: "Un seul partenaire pour passer de l'idée à la croissance.",
       body:
-        'Nous combinons stratégie, intelligence artificielle, design, développement et accompagnement afin de réduire les risques et accélérer l’exécution.',
+        "Un seul interlocuteur, du cadrage au lancement. Moins d'intermédiaires, moins de risques, et des décisions qui se prennent en jours plutôt qu'en semaines.",
       points: [
         {
           title: 'Comprendre avant de produire',
           description:
-            'Chaque décision produit est ancrée dans une lecture business, marché et usage.'
+            "Rien n'est développé avant d'avoir vérifié que le besoin existe. Ça évite de construire dans le vide."
         },
         {
           title: 'Construire sans dette évitable',
           description:
-            'Le design, la technique et la structure de contenu avancent ensemble dès le départ.'
+            "Le design et la technique avancent ensemble dès le premier jour, pas l'un après l'autre."
         },
         {
           title: 'Accélérer avec de vrais leviers',
           description:
-            "L'IA et l'automatisation servent les opérations, les équipes et la croissance concrète."
+            "L'automatisation sert d'abord vos équipes : moins de tâches répétitives, plus de temps pour ce qui compte."
         }
       ]
     },
@@ -119,7 +119,7 @@ export const siteContent: Record<Locale, SiteContent> = {
       eyebrow: 'Le framework MAPBRAIN',
       title: 'Trois séquences pour cadrer, construire et faire passer le produit à l’échelle.',
       body:
-        'Une méthode simple : analyser avant d’investir, construire avec précision, puis accélérer avec les bons leviers.',
+        "La méthode tient en une phrase : on analyse avant d'investir, on construit, puis on accélère. Dans cet ordre, jamais l'inverse.",
       whatWeDoLabel: 'Ce que nous faisons',
       gainsLabel: 'Ce que vous gagnez',
       steps: [
@@ -199,9 +199,9 @@ export const siteContent: Record<Locale, SiteContent> = {
     },
     automation: {
       eyebrow: 'IA & automatisation',
-      title: 'Des assistants conçus pour produire un impact métier réel.',
+      title: 'Des assistants IA qui font gagner du temps. Pour de vrai.',
       body:
-        "L'objectif est d'aider vos équipes à travailler plus vite, plus efficacement et avec moins de tâches répétitives.",
+        'Moins de temps passé sur les tâches répétitives, plus de temps pour le travail qui compte. Le reste suit.',
       image: {
         src: 'https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1600&q=80',
         alt: "Poste de travail avancé avec écrans, données et environnement orienté automatisation."
@@ -363,7 +363,7 @@ export const siteContent: Record<Locale, SiteContent> = {
       eyebrow: 'Projets',
       title: 'Des projets qui montrent le niveau d’exécution.',
       body:
-        'Chaque projet est présenté en vidéo et, quand disponible, relié à son prototype interactif. Design, clarté, exécution : jugez sur pièces.',
+        'Chaque projet est montré en vidéo, avec son prototype interactif quand il existe. Jugez sur pièces.',
       items: [
         {
           sector: 'Prototype Stitch',
@@ -458,7 +458,7 @@ export const siteContent: Record<Locale, SiteContent> = {
       eyebrow: 'MapBrain Academy',
       title: 'Six parcours pour former vos équipes à l’IA.',
       body:
-        'Du premier pas avec l’IA générative à la stratégie de transformation : des parcours débutant, intermédiaire et expert, construits sur vos cas réels — solutions Google, Microsoft, OpenAI, Claude, automatisation et agents IA.',
+        "Du premier contact avec ChatGPT jusqu'à la feuille de route IA d'un comité de direction. Toujours sur vos cas réels, avec les outils que vos équipes utilisent déjà : Google, Microsoft, OpenAI, Claude.",
       programs: [
         {
           image: {
@@ -589,7 +589,7 @@ export const siteContent: Record<Locale, SiteContent> = {
         'Attestation de fin de formation'
       ],
       note:
-        'Chaque parcours s’adapte à votre contexte : outils, niveau des équipes et objectifs. Parcours sur mesure et combinaisons possibles — demandez le catalogue complet.',
+        "Chaque parcours s'adapte à vos outils et au niveau de vos équipes. On peut aussi combiner plusieurs parcours ou construire du sur-mesure. Demandez le catalogue, on en parle.",
       cta: {
         href: 'mailto:contact@mapbrain.ai?subject=Catalogue%20de%20formations%20MAPBRAIN',
         label: 'Demander le catalogue'
@@ -599,7 +599,7 @@ export const siteContent: Record<Locale, SiteContent> = {
       eyebrow: 'Écosystème',
       title: 'Un écosystème global pensé pour la croissance.',
       body:
-        'Construire un produit n’est qu’une partie du chemin. Accéder aux bonnes ressources, aux bonnes personnes et aux bonnes opportunités fait souvent la différence.',
+        "Construire le produit ne suffit pas. Un crédit cloud, un programme partenaire ou le bon contact au bon moment, ça change souvent la trajectoire d'un projet.",
       advantages: [
         'Accès plus rapide aux ressources',
         'Accès plus rapide aux opportunités de financement',
@@ -688,9 +688,9 @@ export const siteContent: Record<Locale, SiteContent> = {
     },
     finalCta: {
       eyebrow: 'Prochaine étape',
-      title: 'Vous avez une opportunité, une idée ou un produit à faire accélérer.',
+      title: 'Une idée à valider, un produit à lancer, des équipes à former ?',
       body:
-        'Le point de départ recommandé est un audit stratégique court pour clarifier le potentiel, les priorités et le bon plan d’exécution.',
+        "Le plus simple pour démarrer : un audit court. On clarifie le potentiel et les priorités, et on vous dit honnêtement ce qu'on ferait à votre place.",
       primaryCta: {
         href: 'mailto:contact@mapbrain.ai?subject=Audit%20strategique%20MAPBRAIN',
         label: 'Réserver un audit par email'
@@ -729,12 +729,12 @@ export const siteContent: Record<Locale, SiteContent> = {
         {
           question: 'À quelle vitesse peut-on lancer une première phase ?',
           answer:
-            'Dès que le cadrage et les priorités sont clairs. L’objectif est justement de réduire les cycles de flottement pour enclencher rapidement une première phase utile.'
+            'Dès que le cadrage est clair. En général, quelques jours suffisent entre le premier échange et le début de la mission.'
         },
         {
           question: 'Est-ce que vous combinez stratégie, produit et automatisation dans une même mission ?',
           answer:
-            'Oui. MAPBRAIN est pensé pour relier validation business, livraison produit et gains opérationnels dans une même trajectoire.'
+            "Oui, c'est même le principe : valider, construire et automatiser dans une seule mission, avec la même équipe."
         },
         {
           question: 'Travaillez-vous avec des équipes déjà en place ?',
@@ -749,20 +749,20 @@ export const siteContent: Record<Locale, SiteContent> = {
         {
           question: 'Comment savoir si un audit est la bonne première étape ?',
           answer:
-            'Quand il faut clarifier une opportunité, arbitrer des priorités ou éviter de lancer trop tôt, l’audit permet de réduire le risque avant d’investir davantage.'
+            "Si vous hésitez entre plusieurs directions, ou si vous craignez de développer trop tôt : c'est exactement à ça qu'il sert."
         }
       ]
     },
     footer: {
-      blurb: 'MAPBRAIN aide les équipes à transformer leurs opportunités en produits, à automatiser leurs opérations et à monter en compétence sur l’IA.',
+      blurb: 'MAPBRAIN construit des produits, automatise des opérations et forme des équipes à l’IA. Basé à Marseille, actif partout.',
       copyright: 'MAPBRAIN — Analyse. Build. Scale.'
     }
   },
   en: {
     meta: {
-      title: 'MAPBRAIN | Product studio, AI & training',
+      title: 'MAPBRAIN | AI training & product studio',
       description:
-        'MAPBRAIN helps startups, SMEs and organizations validate, build and grow their products — strategy, design, engineering, AI automation and team training.'
+        'MAPBRAIN trains your teams on AI and builds your digital products. Six training tracks, from first steps to executive strategy, on-site or remote.'
     },
     navigation: {
       items: [
@@ -777,13 +777,13 @@ export const siteContent: Record<Locale, SiteContent> = {
     },
     hero: {
       title: 'Analyze. Build. Scale.',
-      subtitle: 'Turn ideas into scalable products.',
+      subtitle: 'Turn ideas into real products.',
       body:
-        'Product & AI studio: we validate your opportunities, build the right products, automate your operations and train your teams on AI.',
+        'We build digital products, automate the work that wastes your teams’ time, and train them on AI. From idea to launch, with a single point of contact.',
       rotatingPhrases: [
-        'Turn ideas into scalable products.',
-        'Automate your operations with AI.',
-        'Train your teams on the right tools.'
+        'Turn ideas into real products.',
+        'Train your teams on the tools that matter.',
+        'Automate the work that wastes your time.'
       ],
       primaryCta: { href: '#contact', label: 'Book a Strategic Audit' },
       secondaryCta: { href: '#formations', label: 'Explore Training' },
@@ -800,9 +800,9 @@ export const siteContent: Record<Locale, SiteContent> = {
     about: {
       eyebrow: 'About us',
       title:
-        'We structure products, operations and growth through execution designed to hold up over time.',
+        'Products shipped, clients who stay. Here is what we have built so far.',
       body:
-        'MAPBRAIN combines strategy, design, development, AI and network leverage to turn ambition into a concrete, credible and scalable system.',
+        'Over 100 projects delivered, MVPs shipped every week, and a partner network that opens doors. That is the base we work from.',
       figures: [
         { value: '100+', label: 'Projects Built' },
         { value: '100%', label: 'Client Satisfaction' },
@@ -827,19 +827,21 @@ export const siteContent: Record<Locale, SiteContent> = {
       eyebrow: 'Our promise',
       title: 'One Partner From Idea to Growth.',
       body:
-        'We combine strategy, artificial intelligence, design, engineering and growth support to reduce risk and accelerate execution.',
+        'A single point of contact from framing to launch. Fewer intermediaries, fewer risks, and decisions made in days rather than weeks.',
       points: [
         {
           title: 'Understand before building',
-          description: 'Every product decision is grounded in business, market and user understanding.'
+          description:
+            'Nothing gets developed before we have checked the need is real. It keeps you from building into the void.'
         },
         {
           title: 'Build without avoidable debt',
-          description: 'Design, technical structure and content direction evolve together from day one.'
+          description: 'Design and engineering move together from day one, not one after the other.'
         },
         {
           title: 'Scale with real levers',
-          description: 'AI and automation are used to increase team capacity and operational clarity.'
+          description:
+            'Automation serves your teams first: fewer repetitive tasks, more time for the work that matters.'
         }
       ]
     },
@@ -873,7 +875,7 @@ export const siteContent: Record<Locale, SiteContent> = {
       eyebrow: 'The MAPBRAIN framework',
       title: 'Three sequences to frame, build and scale the right product.',
       body:
-        'A simple method: analyze before investing, build with precision, then scale with the right systems.',
+        'The method fits in one sentence: analyze before investing, build, then scale. In that order, never the other way around.',
       whatWeDoLabel: 'What we do',
       gainsLabel: 'What you gain',
       steps: [
@@ -948,9 +950,9 @@ export const siteContent: Record<Locale, SiteContent> = {
     },
     automation: {
       eyebrow: 'AI & automation',
-      title: 'Assistants designed to create real business impact.',
+      title: 'AI assistants that actually save time.',
       body:
-        'The goal is to help teams work faster, more efficiently and with fewer repetitive tasks.',
+        'Less time on repetitive tasks, more time for work that matters. Everything else follows.',
       image: {
         src: 'https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1600&q=80',
         alt: 'Advanced workstation with screens, data and an automation-oriented environment.'
@@ -1110,7 +1112,7 @@ export const siteContent: Record<Locale, SiteContent> = {
       eyebrow: 'Projects',
       title: 'Projects that show the level of execution.',
       body:
-        'Each project is presented on video and, when available, connected to its interactive prototype. Design, clarity, execution: judge for yourself.',
+        'Each project is shown on video, with its interactive prototype when one exists. Judge for yourself.',
       items: [
         {
           sector: 'Stitch Prototype',
@@ -1205,7 +1207,7 @@ export const siteContent: Record<Locale, SiteContent> = {
       eyebrow: 'MapBrain Academy',
       title: 'Six training tracks to upskill your teams on AI.',
       body:
-        'From first steps with generative AI to transformation strategy: beginner, intermediate and expert tracks built on your real use cases — Google, Microsoft, OpenAI and Claude solutions, automation and AI agents.',
+        'From a first conversation with ChatGPT to the AI roadmap of an executive committee. Always on your real use cases, with the tools your teams already use: Google, Microsoft, OpenAI, Claude.',
       programs: [
         {
           image: {
@@ -1336,7 +1338,7 @@ export const siteContent: Record<Locale, SiteContent> = {
         'Certificate of completion'
       ],
       note:
-        'Every track adapts to your context: tools, team level and goals. Custom tracks and combinations available — request the full catalogue.',
+        'Every track adapts to your tools and your teams’ level. Tracks can be combined or fully customized. Request the catalogue and let’s talk.',
       cta: {
         href: 'mailto:contact@mapbrain.ai?subject=MAPBRAIN%20Training%20Catalogue',
         label: 'Request the catalogue'
@@ -1346,7 +1348,7 @@ export const siteContent: Record<Locale, SiteContent> = {
       eyebrow: 'Ecosystem',
       title: 'A Global Ecosystem Built for Growth',
       body:
-        'Building a product is only one part of the journey. Accessing the right resources, people and opportunities is often what makes the difference.',
+        'Building the product is not enough. A cloud credit, a partner program or the right contact at the right moment often changes a project’s trajectory.',
       advantages: [
         'Faster access to resources',
         'Faster access to funding opportunities',
@@ -1435,9 +1437,9 @@ export const siteContent: Record<Locale, SiteContent> = {
     },
     finalCta: {
       eyebrow: 'Next step',
-      title: 'You already have an opportunity, an idea or a product that needs acceleration.',
+      title: 'An idea to validate, a product to launch, teams to train?',
       body:
-        'The recommended starting point is a short strategic audit to clarify potential, priorities and the right execution plan.',
+        'The simplest way to start: a short audit. We clarify the potential and the priorities, and tell you honestly what we would do in your place.',
       primaryCta: {
         href: 'mailto:contact@mapbrain.ai?subject=MAPBRAIN%20Strategic%20Audit',
         label: 'Book an audit by email'
@@ -1501,7 +1503,7 @@ export const siteContent: Record<Locale, SiteContent> = {
       ]
     },
     footer: {
-      blurb: 'MAPBRAIN helps teams turn opportunities into products, automate their operations and level up on AI.',
+      blurb: 'MAPBRAIN builds products, automates operations and trains teams on AI. Based in Marseille, working everywhere.',
       copyright: 'MAPBRAIN — Analyze. Build. Scale.'
     }
   }

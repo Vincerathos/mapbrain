@@ -1,0 +1,427 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8" />
+<title>MapBrain Academy — Catalogue de formations IA</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" />
+<style>
+  :root {
+    --ink: #171219;
+    --muted: #5c5260;
+    --line: #e4dbe1;
+    --brand: #5e4668;
+    --brand-soft: #f3edf6;
+    --accent: #d09880;
+    --c1: #2f6fb5; --c1s: #e9f1fa;
+    --c2: #3d8a52; --c2s: #e9f5ec;
+    --c3: #7b4fa6; --c3s: #f2ebf8;
+    --c4: #d07b2f; --c4s: #faf0e5;
+    --c5: #c04b4b; --c5s: #faeaea;
+    --c6: #2b2b30; --c6s: #ededf0;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  body { font-family: 'Manrope', sans-serif; color: var(--ink); font-size: 10.5pt; line-height: 1.5; }
+  .page { width: 210mm; min-height: 297mm; padding: 16mm 18mm; page-break-after: always; position: relative; }
+  .page:last-child { page-break-after: auto; }
+  h1, h2, h3 { font-family: 'Instrument Sans', sans-serif; }
+
+  /* ---- Couverture ---- */
+  .cover { background: linear-gradient(150deg, #4c3757 0%, #6b5476 45%, #a4738f 100%); color: #fff; display: flex; flex-direction: column; }
+  .cover .brand-line { font-size: 12pt; letter-spacing: 0.24em; text-transform: uppercase; opacity: 0.85; }
+  .cover h1 { font-size: 34pt; line-height: 1.06; margin-top: 42mm; font-weight: 700; letter-spacing: -0.02em; }
+  .cover .sub { margin-top: 8mm; font-size: 13pt; max-width: 130mm; opacity: 0.92; }
+  .cover .chips { margin-top: 12mm; display: flex; flex-wrap: wrap; gap: 3mm; }
+  .cover .chips span { border: 1px solid rgba(255,255,255,0.45); border-radius: 99px; padding: 2mm 5mm; font-size: 9.5pt; }
+  .cover .foot { margin-top: auto; display: flex; justify-content: space-between; align-items: flex-end; border-top: 1px solid rgba(255,255,255,0.35); padding-top: 6mm; font-size: 9.5pt; }
+  .cover .foot strong { font-size: 11pt; }
+
+  /* ---- Communs ---- */
+  .kicker { font-size: 8.5pt; letter-spacing: 0.22em; text-transform: uppercase; color: var(--muted); }
+  .page h2 { font-size: 19pt; letter-spacing: -0.02em; margin: 2mm 0 6mm; }
+  .lead { color: var(--muted); max-width: 165mm; }
+  .grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 5mm; }
+  .grid3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 4mm; }
+  .card { border: 1px solid var(--line); border-radius: 4mm; padding: 5mm; }
+  .num { font-family: 'Instrument Sans', sans-serif; font-size: 16pt; font-weight: 700; color: var(--brand); }
+  .num-label { font-size: 9pt; color: var(--muted); }
+  .footer-page { position: absolute; bottom: 8mm; left: 18mm; right: 18mm; display: flex; justify-content: space-between; font-size: 8pt; color: var(--muted); border-top: 1px solid var(--line); padding-top: 3mm; }
+
+  /* ---- Sommaire ---- */
+  .toc-item { display: flex; align-items: center; gap: 4mm; padding: 3.5mm 0; border-bottom: 1px solid var(--line); }
+  .dot { width: 5mm; height: 5mm; border-radius: 1.5mm; flex-shrink: 0; }
+  .toc-item .t { font-weight: 700; }
+  .toc-item .d { color: var(--muted); font-size: 9.5pt; }
+  .toc-item .pg { margin-left: auto; color: var(--muted); font-size: 9.5pt; }
+
+  /* ---- Page parcours ---- */
+  .head-band { border-radius: 4mm; padding: 7mm 7mm 6mm; color: #fff; margin-bottom: 6mm; }
+  .head-band .kicker { color: rgba(255,255,255,0.75); }
+  .head-band h2 { color: #fff; margin-bottom: 1.5mm; }
+  .head-band .promise { font-size: 11pt; opacity: 0.93; max-width: 150mm; }
+  .badge { display: inline-block; background: rgba(255,255,255,0.18); border: 1px solid rgba(255,255,255,0.4); border-radius: 99px; padding: 1mm 4mm; font-size: 8.5pt; margin-bottom: 3mm; letter-spacing: 0.08em; text-transform: uppercase; }
+  .meta { display: grid; grid-template-columns: repeat(4, 1fr); gap: 3mm; margin-bottom: 5mm; }
+  .meta .card { padding: 3.5mm 4mm; }
+  .meta .k { font-size: 8pt; letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted); }
+  .meta .v { font-weight: 700; font-size: 10pt; margin-top: 1mm; }
+  .cols { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 5mm; }
+  h3.mini { font-size: 10pt; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 2.5mm; }
+  ul.clean { list-style: none; }
+  ul.clean li { padding: 1.6mm 0 1.6mm 6mm; position: relative; border-bottom: 1px solid var(--line); font-size: 9.5pt; }
+  ul.clean li:last-child { border-bottom: none; }
+  ul.clean li::before { content: ''; position: absolute; left: 0; top: 3.4mm; width: 2.6mm; height: 2.6mm; border-radius: 50%; }
+  .soft { border-radius: 4mm; padding: 5mm; }
+  .deliv { margin-top: 5mm; }
+
+  /* couleurs par parcours */
+  .p1 .head-band { background: linear-gradient(135deg, #275e9a, #4b8ecb); } .p1 ul.clean li::before { background: var(--c1); } .p1 .soft { background: var(--c1s); }
+  .p2 .head-band { background: linear-gradient(135deg, #2f7040, #58a86e); } .p2 ul.clean li::before { background: var(--c2); } .p2 .soft { background: var(--c2s); }
+  .p3 .head-band { background: linear-gradient(135deg, #643f8c, #9268bd); } .p3 ul.clean li::before { background: var(--c3); } .p3 .soft { background: var(--c3s); }
+  .p4 .head-band { background: linear-gradient(135deg, #b5651d, #e09347); } .p4 ul.clean li::before { background: var(--c4); } .p4 .soft { background: var(--c4s); }
+  .p5 .head-band { background: linear-gradient(135deg, #a53b3b, #d66c62); } .p5 ul.clean li::before { background: var(--c5); } .p5 .soft { background: var(--c5s); }
+  .p6 .head-band { background: linear-gradient(135deg, #1f1f24, #4a4a55); } .p6 ul.clean li::before { background: var(--c6); } .p6 .soft { background: var(--c6s); }
+
+  .why-card { border-left: 3px solid var(--brand); background: var(--brand-soft); border-radius: 0 3mm 3mm 0; padding: 4mm 5mm; }
+  .why-card b { display: block; margin-bottom: 1mm; }
+  .cta-final { background: linear-gradient(150deg, #4c3757, #6b5476); color: #fff; border-radius: 4mm; padding: 8mm; margin-top: 6mm; }
+  .cta-final h3 { font-size: 15pt; margin-bottom: 2mm; }
+  .cta-final p { opacity: 0.92; font-size: 10pt; }
+  .cta-final .mail { display: inline-block; margin-top: 4mm; background: #fff; color: var(--ink); border-radius: 99px; padding: 2.5mm 6mm; font-weight: 700; font-size: 10pt; }
+</style>
+</head>
+<body>
+
+<!-- ============ COUVERTURE ============ -->
+<section class="page cover">
+  <div class="brand-line">MAPBRAIN Academy</div>
+  <h1>Catalogue de formations<br />Intelligence artificielle<br />&amp; automatisation</h1>
+  <p class="sub">Six parcours pour former vos équipes, du premier contact avec l'IA générative jusqu'à la stratégie de transformation de votre entreprise.</p>
+  <div class="chips">
+    <span>Présentiel · Distanciel · Hybride</span>
+    <span>Ateliers pratiques sur vos cas réels</span>
+    <span>Débutant → Executive</span>
+    <span>Démarche Qualiopi</span>
+  </div>
+  <div class="foot">
+    <div><strong>MAPBRAIN</strong><br />Marseille — interventions partout en France et à distance</div>
+    <div>contact@mapbrain.ai<br />Édition 2026</div>
+  </div>
+</section>
+
+<!-- ============ POURQUOI + SOMMAIRE ============ -->
+<section class="page">
+  <div class="kicker">MapBrain Academy</div>
+  <h2>Pourquoi former vos équipes à l'IA ?</h2>
+  <p class="lead">L'IA générative est déjà dans vos équipes, avec ou sans cadre. Former, c'est transformer un usage improvisé en gains mesurables : du temps gagné chaque jour, des processus automatisés, des données mieux protégées.</p>
+
+  <div class="grid3" style="margin-top: 6mm;">
+    <div class="card"><div class="num">6</div><div class="num-label">parcours de formation, du débutant au comité de direction</div></div>
+    <div class="card"><div class="num">100+</div><div class="num-label">cas d'usage entreprise, classés par métier</div></div>
+    <div class="card"><div class="num">1 à 2 h</div><div class="num-label">gagnées par jour et par collaborateur après formation</div></div>
+  </div>
+  <div class="grid3" style="margin-top: 4mm;">
+    <div class="card"><div class="num">60 %</div><div class="num-label">de pratique : ateliers, cas réels, manipulation des outils</div></div>
+    <div class="card"><div class="num">4-12</div><div class="num-label">participants par groupe, pour que chacun manipule</div></div>
+    <div class="card"><div class="num">100 %</div><div class="num-label">orienté entreprise : vos outils, vos processus, vos métiers</div></div>
+  </div>
+
+  <h2 style="margin-top: 10mm;">Les six parcours</h2>
+  <div class="toc-item"><span class="dot" style="background: var(--c1);"></span><div><div class="t">AI Essentials</div><div class="d">Comprendre les fondamentaux de l'IA et l'utiliser au quotidien — Débutant · 1 à 2 jours</div></div><span class="pg">p. 3</span></div>
+  <div class="toc-item"><span class="dot" style="background: var(--c2);"></span><div><div class="t">IA &amp; Productivité au quotidien ⭐ Best-seller</div><div class="d">Gagner 1 à 2 heures par jour grâce à l'IA générative — Débutant · 1 jour</div></div><span class="pg">p. 4</span></div>
+  <div class="toc-item"><span class="dot" style="background: var(--c3);"></span><div><div class="t">AI Productivity Suite</div><div class="d">Microsoft Copilot, Google Gemini et les meilleurs outils IA — Débutant à intermédiaire · 2 jours</div></div><span class="pg">p. 5</span></div>
+  <div class="toc-item"><span class="dot" style="background: var(--c4);"></span><div><div class="t">Automatiser son entreprise avec l'IA</div><div class="d">Automatiser sans coder avec Make, n8n, Power Automate, Zapier — Débutant à intermédiaire · 2 à 3 jours</div></div><span class="pg">p. 6</span></div>
+  <div class="toc-item"><span class="dot" style="background: var(--c5);"></span><div><div class="t">IA, Automatisation &amp; Agents ⭐ Parcours phare</div><div class="d">Concevoir et déployer assistants et agents IA — Intermédiaire à avancé · 3 à 5 jours</div></div><span class="pg">p. 7</span></div>
+  <div class="toc-item"><span class="dot" style="background: var(--c6);"></span><div><div class="t">AI Business Transformation</div><div class="d">La stratégie IA de votre entreprise, feuille de route sur 12 mois — Dirigeants · 3 jours</div></div><span class="pg">p. 8</span></div>
+
+  <div class="footer-page"><span>MapBrain Academy — Catalogue de formations IA &amp; automatisation</span><span>contact@mapbrain.ai · p. 2</span></div>
+</section>
+
+<!-- ============ PARCOURS 1 ============ -->
+<section class="page p1">
+  <div class="head-band">
+    <div class="kicker">Parcours 1 · Fondamentaux</div>
+    <h2>AI Essentials</h2>
+    <p class="promise">L'intelligence artificielle pour tous : comprendre comment ça marche, et s'en servir efficacement dès le lendemain.</p>
+  </div>
+  <div class="meta">
+    <div class="card"><div class="k">Durée</div><div class="v">1 à 2 jours (7-14 h)</div></div>
+    <div class="card"><div class="k">Niveau</div><div class="v">Débutant</div></div>
+    <div class="card"><div class="k">Public</div><div class="v">Tous collaborateurs</div></div>
+    <div class="card"><div class="k">Prérequis</div><div class="v">Aucun</div></div>
+  </div>
+  <div class="cols">
+    <div>
+      <h3 class="mini">Programme</h3>
+      <ul class="clean">
+        <li>Comprendre l'IA : histoire, familles d'IA, fonctionnement de ChatGPT, limites et hallucinations</li>
+        <li>Découverte des principaux outils : ChatGPT, Claude, Gemini, Copilot, Perplexity, NotebookLM, Gamma, Canva AI</li>
+        <li>Prompt engineering fondamental : méthodes, frameworks (RODE, CRISPE…), exercices par métier</li>
+        <li>IA responsable : RGPD, AI Act, confidentialité, cybersécurité</li>
+        <li>Booster sa productivité : cas d'usage RH, marketing, commercial, finance, direction, support</li>
+        <li>Atelier final : chaque participant construit son workflow IA adapté à son métier</li>
+      </ul>
+    </div>
+    <div>
+      <h3 class="mini">Objectifs</h3>
+      <ul class="clean">
+        <li>Choisir l'outil IA adapté à son besoin</li>
+        <li>Rédiger des prompts efficaces</li>
+        <li>Automatiser des tâches quotidiennes</li>
+        <li>Utiliser l'IA dans le respect du RGPD</li>
+        <li>Concevoir un assistant IA personnalisé</li>
+      </ul>
+      <div class="soft deliv">
+        <h3 class="mini">Chaque participant repart avec</h3>
+        Support complet · 30+ prompts classés par métier · bibliothèque de modèles · son assistant IA configuré · guide RGPD &amp; cybersécurité · plan d'action personnalisé · attestation
+      </div>
+    </div>
+  </div>
+  <div class="footer-page"><span>MapBrain Academy</span><span>p. 3</span></div>
+</section>
+
+<!-- ============ PARCOURS 2 (best seller = IA & Productivité) ============ -->
+<section class="page p2">
+  <div class="head-band">
+    <div class="kicker">Parcours 2 · Performance individuelle</div>
+    <span class="badge">⭐ Best-seller n°1</span>
+    <h2>IA &amp; Productivité au quotidien</h2>
+    <p class="promise">Gagnez entre 1 et 2 heures par jour grâce à l'IA générative. La formation pour embarquer 100 % des collaborateurs, quel que soit leur métier.</p>
+  </div>
+  <div class="meta">
+    <div class="card"><div class="k">Durée</div><div class="v">1 jour (7 h)</div></div>
+    <div class="card"><div class="k">Niveau</div><div class="v">Débutant</div></div>
+    <div class="card"><div class="k">Public</div><div class="v">100 % des collaborateurs</div></div>
+    <div class="card"><div class="k">Prérequis</div><div class="v">Aucun</div></div>
+  </div>
+  <div class="cols">
+    <div>
+      <h3 class="mini">Programme</h3>
+      <ul class="clean">
+        <li>Comprendre l'IA générative : LLM, limites, biais, bonnes pratiques</li>
+        <li>Les meilleurs outils professionnels : ChatGPT, Claude, Gemini, Copilot, Perplexity, NotebookLM — ateliers sur chacun</li>
+        <li>Prompt engineering : rôle, contexte, objectif, contraintes, format</li>
+        <li>Sécurité, RGPD et IA responsable : scénarios concrets</li>
+        <li>Cas d'usage par métier : RH, marketing, commercial, direction, finance, support client</li>
+        <li>Grand atelier final : construire son plan de productivité IA sur 30 jours</li>
+      </ul>
+    </div>
+    <div>
+      <h3 class="mini">Objectifs</h3>
+      <ul class="clean">
+        <li>Dialoguer efficacement avec une IA</li>
+        <li>Produire des contenus professionnels</li>
+        <li>Résumer et analyser des documents</li>
+        <li>Automatiser des tâches simples</li>
+        <li>Gagner du temps chaque jour, dès le retour au poste</li>
+      </ul>
+      <div class="soft deliv">
+        <h3 class="mini">Chaque participant repart avec</h3>
+        Guide pratique de l'IA générative · 30+ prompts prêts à l'emploi · sélection des meilleurs outils · checklist RGPD · feuille de route « Mes 30 premiers jours avec l'IA » · attestation
+      </div>
+    </div>
+  </div>
+  <div class="footer-page"><span>MapBrain Academy</span><span>p. 4</span></div>
+</section>
+
+<!-- ============ PARCOURS 3 ============ -->
+<section class="page p3">
+  <div class="head-band">
+    <div class="kicker">Parcours 3 · Outils professionnels</div>
+    <h2>AI Productivity Suite</h2>
+    <p class="promise">Les meilleurs outils IA professionnels, dans les environnements que vos équipes utilisent déjà : Microsoft 365 et Google Workspace.</p>
+  </div>
+  <div class="meta">
+    <div class="card"><div class="k">Durée</div><div class="v">2 jours (14 h)</div></div>
+    <div class="card"><div class="k">Niveau</div><div class="v">Débutant à intermédiaire</div></div>
+    <div class="card"><div class="k">Public</div><div class="v">Tous métiers</div></div>
+    <div class="card"><div class="k">Prérequis</div><div class="v">Bureautique courante</div></div>
+  </div>
+  <div class="cols">
+    <div>
+      <h3 class="mini">Programme</h3>
+      <ul class="clean">
+        <li>Microsoft Copilot : Word, Excel, Outlook, Teams, PowerPoint, Power Automate, Copilot Studio</li>
+        <li>Google Workspace &amp; Gemini : Gmail, Docs, Sheets, Slides, Meet, Drive</li>
+        <li>NotebookLM : base documentaire intelligente, synthèses, podcasts IA</li>
+        <li>Les incontournables : Perplexity, Gamma, Napkin, Canva AI, Fireflies, Otter</li>
+        <li>Audio et vidéo : ElevenLabs, HeyGen, Runway</li>
+        <li>Atelier final : construire son poste de travail augmenté et ses workflows personnels</li>
+      </ul>
+    </div>
+    <div>
+      <h3 class="mini">Objectifs</h3>
+      <ul class="clean">
+        <li>Utiliser Copilot et Gemini dans son environnement</li>
+        <li>Produire documents, présentations et analyses avec l'IA</li>
+        <li>Choisir l'outil pertinent selon le cas d'usage</li>
+        <li>Structurer un poste de travail augmenté</li>
+      </ul>
+      <div class="soft deliv">
+        <h3 class="mini">Chaque participant repart avec</h3>
+        Guide comparatif des solutions IA · 60+ prompts par métier et par outil · modèles de workflows Microsoft 365 et Google Workspace · plan de déploiement personnalisé · attestation
+      </div>
+    </div>
+  </div>
+  <div class="footer-page"><span>MapBrain Academy</span><span>p. 5</span></div>
+</section>
+
+<!-- ============ PARCOURS 4 ============ -->
+<section class="page p4">
+  <div class="head-band">
+    <div class="kicker">Parcours 4 · Workflows &amp; no-code</div>
+    <span class="badge">⭐ L'une des plus demandées</span>
+    <h2>Automatiser son entreprise avec l'IA</h2>
+    <p class="promise">Automatisez vos tâches répétitives sans écrire une seule ligne de code, et connectez vos applications métier entre elles.</p>
+  </div>
+  <div class="meta">
+    <div class="card"><div class="k">Durée</div><div class="v">2 j (3 j en avancé)</div></div>
+    <div class="card"><div class="k">Niveau</div><div class="v">Débutant à intermédiaire</div></div>
+    <div class="card"><div class="k">Public</div><div class="v">Dirigeants, managers, ops</div></div>
+    <div class="card"><div class="k">Prérequis</div><div class="v">Bureautique courante</div></div>
+  </div>
+  <div class="cols">
+    <div>
+      <h3 class="mini">Programme</h3>
+      <ul class="clean">
+        <li>Comprendre l'automatisation : déclencheurs, actions, conditions, gestion des erreurs</li>
+        <li>Les plateformes : Make, n8n, Microsoft Power Automate, Zapier — cas pratiques sur chacune</li>
+        <li>Connecter les applications : API REST, JSON, authentification, webhooks</li>
+        <li>Intégrer l'IA dans les workflows : résumés, génération d'e-mails, classification, analyse</li>
+        <li>Cas d'usage métiers : RH, commercial, marketing, finance, support, direction</li>
+        <li>Grand atelier final : construire son premier workflow intelligent, opérationnel en fin de formation</li>
+      </ul>
+    </div>
+    <div>
+      <h3 class="mini">Objectifs</h3>
+      <ul class="clean">
+        <li>Identifier les tâches répétitives à automatiser</li>
+        <li>Créer des workflows avec Make, n8n, Power Automate, Zapier</li>
+        <li>Connecter ses applications via API et webhooks</li>
+        <li>Mesurer les gains de temps et le ROI</li>
+      </ul>
+      <div class="soft deliv">
+        <h3 class="mini">Chaque participant repart avec</h3>
+        Modèles de workflows prêts à l'emploi · 40+ scénarios d'automatisation par métier · modèles de connexion API/webhooks · checklist de déploiement · feuille de route « Mes 10 premières automatisations » · attestation
+      </div>
+    </div>
+  </div>
+  <div class="footer-page"><span>MapBrain Academy</span><span>p. 6</span></div>
+</section>
+
+<!-- ============ PARCOURS 5 ============ -->
+<section class="page p5">
+  <div class="head-band">
+    <div class="kicker">Parcours 5 · IA avancée</div>
+    <span class="badge">⭐ Parcours phare</span>
+    <h2>IA, Automatisation &amp; Agents</h2>
+    <p class="promise">Concevoir, automatiser et déployer des assistants et des agents IA pour transformer les processus métier. Sans prérequis de programmation.</p>
+  </div>
+  <div class="meta">
+    <div class="card"><div class="k">Durée</div><div class="v">3, 4 ou 5 jours</div></div>
+    <div class="card"><div class="k">Niveau</div><div class="v">Intermédiaire à avancé</div></div>
+    <div class="card"><div class="k">Public</div><div class="v">Managers, chefs de projet, SI</div></div>
+    <div class="card"><div class="k">Prérequis</div><div class="v">AI Essentials ou équivalent</div></div>
+  </div>
+  <div class="cols">
+    <div>
+      <h3 class="mini">Programme (par journée)</h3>
+      <ul class="clean">
+        <li>J1 — Cartographier les processus métier : SIPOC, BPMN, tâches répétitives, matrice impact/effort, ROI</li>
+        <li>J2 — Automatisation no-code : Make, n8n, Power Automate, Zapier, API et webhooks</li>
+        <li>J3 — Construire des assistants IA spécialisés par métier : RH, commercial, marketing, finance, direction</li>
+        <li>J4 — Concevoir des agents IA autonomes : architecture, outils, mémoire, supervision humaine (format 4-5 j)</li>
+        <li>J5 — Hackathon IA : projet réel en équipe, jury, grille d'évaluation (format 5 j)</li>
+      </ul>
+    </div>
+    <div>
+      <h3 class="mini">Objectifs</h3>
+      <ul class="clean">
+        <li>Cartographier un processus de bout en bout</li>
+        <li>Construire des workflows automatisés</li>
+        <li>Créer un assistant IA métier</li>
+        <li>Concevoir un agent IA autonome</li>
+        <li>Déployer un premier cas d'usage dans son entreprise</li>
+      </ul>
+      <div class="soft deliv">
+        <h3 class="mini">Chaque participant repart avec</h3>
+        Modèles de cartographie (SIPOC, BPMN, VSM) · bibliothèque de workflows · modèles d'assistants et d'agents personnalisables · 50+ prompts avancés · plan de déploiement d'un premier agent · attestation
+      </div>
+    </div>
+  </div>
+  <div class="footer-page"><span>MapBrain Academy</span><span>p. 7</span></div>
+</section>
+
+<!-- ============ PARCOURS 6 ============ -->
+<section class="page p6">
+  <div class="head-band">
+    <div class="kicker">Parcours 6 · Stratégie &amp; direction</div>
+    <span class="badge">Dirigeants · CODIR · COMEX</span>
+    <h2>AI Business Transformation</h2>
+    <p class="promise">Définir votre stratégie IA, identifier les opportunités à forte valeur et repartir avec une feuille de route opérationnelle sur 12 mois.</p>
+  </div>
+  <div class="meta">
+    <div class="card"><div class="k">Durée</div><div class="v">3 jours (21 h)</div></div>
+    <div class="card"><div class="k">Niveau</div><div class="v">Dirigeant / Executive</div></div>
+    <div class="card"><div class="k">Public</div><div class="v">Directions, CODIR, COMEX</div></div>
+    <div class="card"><div class="k">Format</div><div class="v">Séminaire possible</div></div>
+  </div>
+  <div class="cols">
+    <div>
+      <h3 class="mini">Programme (par journée)</h3>
+      <ul class="clean">
+        <li>J1 — Vision stratégique : enjeux, ROI, gouvernance, RGPD et AI Act, premières règles internes</li>
+        <li>J2 — Opportunités métier : cas d'usage par fonction (RH, commerce, marketing, finance, juridique, production, support, direction), atelier de cartographie et priorisation</li>
+        <li>J3 — Feuille de route : diagnostic de maturité, matrice de priorisation, roadmap 0-3, 3-6 et 6-12 mois, conduite du changement</li>
+      </ul>
+      <h3 class="mini" style="margin-top: 5mm;">Pourquoi ce parcours</h3>
+      <p style="font-size: 9.5pt; color: var(--muted);">Beaucoup d'organisations testent l'IA sans vision d'ensemble. Trois jours pour prendre de la hauteur, prioriser les investissements et repartir avec un plan que le comité de direction partage.</p>
+    </div>
+    <div>
+      <h3 class="mini">Objectifs</h3>
+      <ul class="clean">
+        <li>Identifier les opportunités de création de valeur</li>
+        <li>Prioriser les projets à fort retour sur investissement</li>
+        <li>Définir une gouvernance IA adaptée</li>
+        <li>Intégrer RGPD et AI Act</li>
+        <li>Construire une feuille de route sur 12 mois</li>
+      </ul>
+      <div class="soft deliv">
+        <h3 class="mini">Chaque participant repart avec</h3>
+        Diagnostic de maturité IA · matrice de priorisation · référentiel de gouvernance · checklist conformité (RGPD, AI Act) · modèle de feuille de route 12 mois · 100+ cas d'usage par fonction · attestation
+      </div>
+    </div>
+  </div>
+  <div class="footer-page"><span>MapBrain Academy</span><span>p. 8</span></div>
+</section>
+
+<!-- ============ PÉDAGOGIE + CONTACT ============ -->
+<section class="page">
+  <div class="kicker">Notre pédagogie</div>
+  <h2>Des formations qui se mesurent</h2>
+  <div class="grid2" style="margin-top: 4mm;">
+    <div class="why-card"><b>Learning by doing</b>60 % de pratique : démonstrations en direct, ateliers, cas métiers, mises en situation. Chaque participant manipule les outils.</div>
+    <div class="why-card"><b>Sur vos cas réels</b>Aucune formation standardisée : les exercices partent de vos processus, de vos outils et de vos données.</div>
+    <div class="why-card"><b>Évaluation avant, pendant, après</b>Positionnement en amont, quiz et cas pratiques pendant, évaluation à froid entre 30 et 90 jours. Démarche alignée sur le référentiel Qualiopi.</div>
+    <div class="why-card"><b>Livrables opérationnels</b>Prompts, assistants configurés, workflows, feuilles de route : les participants repartent avec des outils utilisables le lendemain.</div>
+  </div>
+
+  <h2 style="margin-top: 9mm;">Modalités pratiques</h2>
+  <div class="grid3">
+    <div class="card"><div class="num" style="font-size: 11pt;">Formats</div><div class="num-label">Présentiel, distanciel, hybride, séminaire de direction, intra ou inter-entreprise</div></div>
+    <div class="card"><div class="num" style="font-size: 11pt;">Groupes</div><div class="num-label">4 à 12 participants pour garantir la pratique individuelle</div></div>
+    <div class="card"><div class="num" style="font-size: 11pt;">Sur mesure</div><div class="num-label">Parcours combinables et adaptables : secteur, métiers, niveau de maturité IA</div></div>
+  </div>
+
+  <div class="cta-final">
+    <h3>Prêt à former vos équipes à l'IA ?</h3>
+    <p>Parlons de vos objectifs : nous vous recommandons le parcours adapté, ou nous en construisons un sur mesure. Réponse sous 48 h.</p>
+    <span class="mail">contact@mapbrain.ai</span>
+  </div>
+
+  <div class="footer-page"><span>MapBrain Academy — Catalogue de formations IA &amp; automatisation · Édition 2026</span><span>p. 9</span></div>
+</section>
+
+</body>
+</html>

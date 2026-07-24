@@ -16,28 +16,201 @@ export const siteContent: Record<Locale, SiteContent> = {
         { href: '#about', label: 'À propos' },
         { href: '#partners', label: 'Écosystème' }
       ],
-      cta: { href: '#contact', label: 'Réserver un audit' }
+      cta: { href: '#contact', label: 'Demander un devis' }
     },
     hero: {
       title: 'Analyse. Build. Scale.',
-      subtitle: 'Transformez vos idées en produits concrets.',
+      subtitle: "Formez vos équipes à l'intelligence artificielle.",
       body:
-        "Nous construisons des produits digitaux, nous automatisons ce qui fait perdre du temps à vos équipes, et nous les formons à l'IA. De l'idée au lancement, avec un seul interlocuteur.",
+        "Des formations IA concrètes pour gagner en productivité, automatiser vos processus et transformer votre entreprise. Organisme certifié Qualiopi.",
       rotatingPhrases: [
-        'Transformez vos idées en produits concrets.',
-        'Formez vos équipes aux outils qui comptent.',
-        'Automatisez ce qui vous fait perdre du temps.'
+        "Formez vos équipes à l'intelligence artificielle.",
+        'Des formations concrètes, sur vos cas réels.',
+        "Gagnez jusqu'à 2 heures par jour."
       ],
-      primaryCta: { href: '#contact', label: 'Réserver un audit stratégique' },
-      secondaryCta: { href: '#formations', label: 'Voir les formations' },
-      badgeTitle: 'MAPBRAIN Team',
-      badgeBody: 'Analyse, build et scale pour les équipes qui veulent aller vite.',
+      primaryCta: { href: '#formations', label: 'Découvrir les parcours' },
+      secondaryCta: { href: '#contact', label: 'Demander un devis' },
+      badgeTitle: 'MapBrain Academy',
+      badgeBody: 'Centre de formation IA & automatisation, certifié Qualiopi.',
       serviceTags: [
-        'Validation business',
-        'Design produit',
-        'Développement web & mobile',
-        'IA & automatisation',
-        'Formations IA'
+        'Formations sur mesure',
+        'Présentiel · Distanciel · Hybride',
+        'Ateliers pratiques',
+        'Certifié Qualiopi',
+        'Finançable OPCO'
+      ]
+    },
+    home: {
+      statsTitle: 'MapBrain en quelques chiffres',
+      stats: [
+        { value: '6', label: 'parcours de formation' },
+        { value: '100+', label: "cas d'usage entreprise" },
+        { value: '200+', label: 'ateliers pratiques' },
+        { value: '1-2 h', label: 'gagnées par jour et par collaborateur' },
+        { value: '4-12', label: 'participants par groupe' },
+        { value: '100 %', label: 'orienté entreprise' }
+      ],
+      parcoursTitle: 'Nos parcours',
+      parcoursCta: { href: '#formations', label: 'Voir le détail des parcours' },
+      parcoursCards: [
+        {
+          color: 'blue',
+          title: 'AI Essentials',
+          description: "Comprendre les fondamentaux de l'IA.",
+          tools: 'ChatGPT · Claude · Gemini · Copilot'
+        },
+        {
+          color: 'green',
+          title: 'IA & Productivité',
+          description: "Utiliser l'IA au quotidien. ⭐ Best-seller",
+          tools: 'ChatGPT · Claude · Perplexity · NotebookLM'
+        },
+        {
+          color: 'purple',
+          title: 'AI Productivity Suite',
+          description: 'Les meilleurs outils IA professionnels.',
+          tools: 'Microsoft 365 · Google Workspace · Canva'
+        },
+        {
+          color: 'orange',
+          title: 'Automatiser son entreprise',
+          description: 'Créer des automatisations sans coder.',
+          tools: 'Make · n8n · Zapier · Power Automate'
+        },
+        {
+          color: 'red',
+          title: 'IA, Automatisation & Agents',
+          description: 'Construire des assistants et des agents IA. ⭐ Parcours phare',
+          tools: 'Agents IA · API · Webhooks'
+        },
+        {
+          color: 'dark',
+          title: 'AI Business Transformation',
+          description: "Construire la stratégie IA de votre entreprise.",
+          tools: 'Dirigeants · CODIR · COMEX'
+        }
+      ],
+      customTitle: 'Des formations entièrement personnalisées',
+      customChecks: [
+        'Votre secteur',
+        'Vos métiers',
+        'Vos processus',
+        'Vos objectifs',
+        'Votre niveau de maturité IA'
+      ],
+      customNote: 'Aucune formation standardisée.',
+      useCasesTitle: "Des cas d'usage concrets, métier par métier",
+      useCaseLabels: { automate: 'Automatiser', create: 'Créer', deploy: 'Déployer' },
+      useCases: [
+        {
+          icon: 'users',
+          title: 'Ressources Humaines',
+          automate: "le recrutement et l'onboarding",
+          create: 'un assistant RH',
+          deploy: 'un agent de gestion des talents'
+        },
+        {
+          icon: 'megaphone',
+          title: 'Marketing',
+          automate: 'les campagnes',
+          create: 'un assistant de création de contenu',
+          deploy: 'un agent qui pilote contenus et veille'
+        },
+        {
+          icon: 'handshake',
+          title: 'Commerce',
+          automate: 'la prospection et les relances',
+          create: 'un assistant commercial',
+          deploy: 'un agent de prospection connecté au CRM'
+        },
+        {
+          icon: 'coins',
+          title: 'Finance',
+          automate: 'les reportings',
+          create: "un assistant d'analyse financière",
+          deploy: 'un agent de pilotage des indicateurs'
+        },
+        {
+          icon: 'scale',
+          title: 'Juridique',
+          automate: 'la gestion documentaire',
+          create: 'un assistant juridique',
+          deploy: 'un agent de conformité réglementaire'
+        },
+        {
+          icon: 'truck',
+          title: 'Supply Chain',
+          automate: 'les flux logistiques',
+          create: 'un assistant supply chain',
+          deploy: "un agent d'optimisation des approvisionnements"
+        },
+        {
+          icon: 'factory',
+          title: 'Production',
+          automate: 'le suivi des opérations',
+          create: 'un assistant qualité',
+          deploy: "un agent d'amélioration continue"
+        },
+        {
+          icon: 'headset',
+          title: 'Service Client',
+          automate: 'les demandes récurrentes',
+          create: 'un assistant SAV',
+          deploy: 'un agent conversationnel de support'
+        },
+        {
+          icon: 'chart',
+          title: 'Business Intelligence',
+          automate: 'les tableaux de bord',
+          create: 'un assistant data',
+          deploy: "un agent d'analyse décisionnelle"
+        },
+        {
+          icon: 'target',
+          title: 'Direction',
+          automate: 'le reporting exécutif',
+          create: 'un assistant de direction',
+          deploy: "un agent d'aide à la décision"
+        }
+      ],
+      pedagogyTitle: 'Une pédagogie qui fait la différence',
+      pedagogy: [
+        { title: 'Learning by doing', body: '60 % de pratique, sur de vrais outils.' },
+        { title: 'Ateliers interactifs', body: 'Manipulation immédiate, pas de démo passive.' },
+        { title: 'Approche métier', body: 'Des cas adaptés à chaque fonction.' },
+        { title: 'Parcours personnalisés', body: 'Adaptés à votre entreprise et vos outils.' },
+        { title: 'Évaluation continue', body: 'Avant · pendant · après (jusqu’à 90 jours).' },
+        { title: 'Livrables opérationnels', body: 'Prompts, assistants, workflows, plans d’action.' }
+      ],
+      benefitsTitle: 'Pourquoi former vos équipes ?',
+      benefits: [
+        'Plus de productivité',
+        'Automatisation des processus',
+        'Maîtrise de l’IA générative',
+        'Meilleure prise de décision',
+        'Culture de l’innovation',
+        'Compétences d’avenir'
+      ],
+      audiencesTitle: 'À qui s’adressent nos parcours ?',
+      audienceOrgs: ['PME', 'ETI', 'Grandes entreprises', 'Collectivités', 'Administrations', 'Écoles'],
+      audiencePeople: [
+        'Collaborateurs',
+        'Managers',
+        'Dirigeants',
+        'Comités de direction',
+        'Fonctions support',
+        'Métiers opérationnels'
+      ],
+      engagementsTitle: 'Nos engagements',
+      engagements: [
+        'Formateurs experts',
+        'Cas d’usage réels',
+        'Ateliers pratiques',
+        'Formations interactives',
+        'Parcours personnalisés',
+        'Certifié Qualiopi',
+        'Livrables immédiatement exploitables',
+        'Accompagnement orienté résultats'
       ]
     },
     about: {
@@ -585,7 +758,7 @@ export const siteContent: Record<Locale, SiteContent> = {
         'Ateliers 100 % pratiques sur vos cas réels',
         'Groupes de 4 à 12 participants',
         'Supports, prompts et modèles prêts à l’emploi inclus',
-        'Évaluations avant, pendant et après (démarche Qualiopi)',
+        'Évaluations avant, pendant et après — certifié Qualiopi, finançable OPCO',
         'Attestation de fin de formation'
       ],
       note:
@@ -688,12 +861,12 @@ export const siteContent: Record<Locale, SiteContent> = {
     },
     finalCta: {
       eyebrow: 'Prochaine étape',
-      title: 'Une idée à valider, un produit à lancer, des équipes à former ?',
+      title: 'Prêt à former vos équipes à l’IA ?',
       body:
-        "Le plus simple pour démarrer : un audit court. On clarifie le potentiel et les priorités, et on vous dit honnêtement ce qu'on ferait à votre place.",
+        "Parlez-nous de vos objectifs : on vous recommande le parcours adapté, ou on le construit sur mesure. Certifié Qualiopi, finançable OPCO. Réponse sous 48 h.",
       primaryCta: {
-        href: 'mailto:contact@mapbrain.ai?subject=Audit%20strategique%20MAPBRAIN',
-        label: 'Réserver un audit par email'
+        href: 'mailto:contact@mapbrain.ai?subject=Devis%20formation%20MAPBRAIN',
+        label: 'Demander un devis par email'
       },
       channels: [
         { label: 'Email', value: 'contact@mapbrain.ai', href: 'mailto:contact@mapbrain.ai' },
@@ -717,39 +890,54 @@ export const siteContent: Record<Locale, SiteContent> = {
       },
       items: [
         {
-          question: 'Quels types de missions MAPBRAIN peut prendre en charge ?',
+          question: 'Quelles formations proposez-vous ?',
           answer:
-            'Nous intervenons sur le cadrage stratégique, le design produit, le développement web ou SaaS, l’automatisation IA et les systèmes de croissance.'
+            "Six parcours, du débutant au comité de direction : AI Essentials, IA & Productivité, AI Productivity Suite, Automatiser son entreprise, IA-Automatisation & Agents, et AI Business Transformation."
         },
         {
-          question: 'Travaillez-vous plutôt en audit, en sprint ou en accompagnement long ?',
+          question: 'Êtes-vous certifiés Qualiopi ?',
           answer:
-            'Les trois sont possibles. Nous pouvons démarrer par un audit court, enchaîner sur un sprint ciblé ou prendre un produit en exécution plus continue selon le contexte.'
+            'Oui, MapBrain est un organisme de formation certifié Qualiopi.'
         },
         {
-          question: 'À quelle vitesse peut-on lancer une première phase ?',
+          question: 'Les formations sont-elles finançables par mon OPCO ?',
           answer:
-            'Dès que le cadrage est clair. En général, quelques jours suffisent entre le premier échange et le début de la mission.'
+            'Oui. Grâce à la certification Qualiopi, nos formations sont éligibles aux financements OPCO. On vous aide à monter le dossier.'
         },
         {
-          question: 'Est-ce que vous combinez stratégie, produit et automatisation dans une même mission ?',
+          question: 'En présentiel ou à distance ?',
           answer:
-            "Oui, c'est même le principe : valider, construire et automatiser dans une seule mission, avec la même équipe."
+            'Les deux, et aussi en hybride. Sur site partout en France, ou en classe virtuelle.'
         },
         {
-          question: 'Travaillez-vous avec des équipes déjà en place ?',
+          question: 'Faut-il des prérequis techniques ?',
           answer:
-            'Oui. Nous pouvons renforcer une équipe existante, structurer la collaboration avec des partenaires externes ou porter une partie de l’exécution en direct.'
+            'Non pour les parcours débutants : savoir utiliser un ordinateur suffit. Les parcours avancés demandent d’être à l’aise avec les outils numériques, sans programmation.'
         },
         {
-          question: 'Proposez-vous des formations ?',
+          question: 'Combien de participants par session ?',
           answer:
-            'Oui. MapBrain Academy propose six parcours — du niveau débutant (AI Essentials, IA & Productivité) au niveau expert (Automatisation & Agents, AI Business Transformation) — en présentiel, distanciel ou hybride, toujours sur vos cas réels. Demandez le catalogue complet.'
+            'De 4 à 12 personnes, pour que chacun manipule vraiment les outils.'
         },
         {
-          question: 'Comment savoir si un audit est la bonne première étape ?',
+          question: 'Peut-on personnaliser une formation ?',
           answer:
-            "Si vous hésitez entre plusieurs directions, ou si vous craignez de développer trop tôt : c'est exactement à ça qu'il sert."
+            'Oui, systématiquement : secteur, métiers, processus, outils. Aucune formation standardisée.'
+        },
+        {
+          question: 'Quels outils apprend-on à utiliser ?',
+          answer:
+            'ChatGPT, Claude, Gemini, Microsoft Copilot, Perplexity, NotebookLM, Make, n8n, Zapier, Power Automate… selon le parcours.'
+        },
+        {
+          question: 'Faites-vous aussi du développement et de l’automatisation ?',
+          answer:
+            'Oui. MAPBRAIN est aussi un studio produit : audit, design, développement web et SaaS, automatisation IA. Voir l’onglet Méthode.'
+        },
+        {
+          question: 'Comment démarrer ?',
+          answer:
+            'Écrivez-nous via le formulaire ou à contact@mapbrain.ai. Réponse sous 48 h avec une recommandation de parcours et un devis.'
         }
       ]
     },
@@ -773,28 +961,201 @@ export const siteContent: Record<Locale, SiteContent> = {
         { href: '#about', label: 'About' },
         { href: '#partners', label: 'Ecosystem' }
       ],
-      cta: { href: '#contact', label: 'Book an audit' }
+      cta: { href: '#contact', label: 'Request a quote' }
     },
     hero: {
       title: 'Analyze. Build. Scale.',
-      subtitle: 'Turn ideas into real products.',
+      subtitle: 'Train your teams on artificial intelligence.',
       body:
-        'We build digital products, automate the work that wastes your teams’ time, and train them on AI. From idea to launch, with a single point of contact.',
+        'Hands-on AI training to boost productivity, automate your processes and transform your company. Qualiopi-certified training provider.',
       rotatingPhrases: [
-        'Turn ideas into real products.',
-        'Train your teams on the tools that matter.',
-        'Automate the work that wastes your time.'
+        'Train your teams on artificial intelligence.',
+        'Hands-on training, built on your real cases.',
+        'Save up to 2 hours a day.'
       ],
-      primaryCta: { href: '#contact', label: 'Book a Strategic Audit' },
-      secondaryCta: { href: '#formations', label: 'Explore Training' },
-      badgeTitle: 'MAPBRAIN Team',
-      badgeBody: 'Analyze, build and scale for teams that need speed and clarity.',
+      primaryCta: { href: '#formations', label: 'Explore the tracks' },
+      secondaryCta: { href: '#contact', label: 'Request a quote' },
+      badgeTitle: 'MapBrain Academy',
+      badgeBody: 'AI & automation training center, Qualiopi certified.',
       serviceTags: [
-        'Business validation',
-        'Product design',
-        'Web & mobile development',
-        'AI & automation',
-        'AI training'
+        'Tailor-made training',
+        'On-site · Remote · Hybrid',
+        'Hands-on workshops',
+        'Qualiopi certified',
+        'OPCO fundable'
+      ]
+    },
+    home: {
+      statsTitle: 'MapBrain in numbers',
+      stats: [
+        { value: '6', label: 'training tracks' },
+        { value: '100+', label: 'business use cases' },
+        { value: '200+', label: 'hands-on workshops' },
+        { value: '1-2 h', label: 'saved per day, per employee' },
+        { value: '4-12', label: 'participants per group' },
+        { value: '100%', label: 'business-oriented' }
+      ],
+      parcoursTitle: 'Our tracks',
+      parcoursCta: { href: '#formations', label: 'See track details' },
+      parcoursCards: [
+        {
+          color: 'blue',
+          title: 'AI Essentials',
+          description: 'Understand the fundamentals of AI.',
+          tools: 'ChatGPT · Claude · Gemini · Copilot'
+        },
+        {
+          color: 'green',
+          title: 'AI & Productivity',
+          description: 'Use AI every day. ⭐ Best seller',
+          tools: 'ChatGPT · Claude · Perplexity · NotebookLM'
+        },
+        {
+          color: 'purple',
+          title: 'AI Productivity Suite',
+          description: 'The best professional AI tools.',
+          tools: 'Microsoft 365 · Google Workspace · Canva'
+        },
+        {
+          color: 'orange',
+          title: 'Automate your business',
+          description: 'Build automations without coding.',
+          tools: 'Make · n8n · Zapier · Power Automate'
+        },
+        {
+          color: 'red',
+          title: 'AI, Automation & Agents',
+          description: 'Build AI assistants and agents. ⭐ Flagship track',
+          tools: 'AI agents · APIs · Webhooks'
+        },
+        {
+          color: 'dark',
+          title: 'AI Business Transformation',
+          description: 'Build your company’s AI strategy.',
+          tools: 'Executives · Boards · Leadership'
+        }
+      ],
+      customTitle: 'Fully personalized training',
+      customChecks: [
+        'Your industry',
+        'Your roles',
+        'Your processes',
+        'Your goals',
+        'Your AI maturity level'
+      ],
+      customNote: 'No standardized training. Ever.',
+      useCasesTitle: 'Concrete use cases, role by role',
+      useCaseLabels: { automate: 'Automate', create: 'Create', deploy: 'Deploy' },
+      useCases: [
+        {
+          icon: 'users',
+          title: 'Human Resources',
+          automate: 'recruitment and onboarding',
+          create: 'an HR assistant',
+          deploy: 'a talent management agent'
+        },
+        {
+          icon: 'megaphone',
+          title: 'Marketing',
+          automate: 'campaigns',
+          create: 'a content creation assistant',
+          deploy: 'an agent running content and monitoring'
+        },
+        {
+          icon: 'handshake',
+          title: 'Sales',
+          automate: 'prospecting and follow-ups',
+          create: 'a sales assistant',
+          deploy: 'a prospecting agent connected to your CRM'
+        },
+        {
+          icon: 'coins',
+          title: 'Finance',
+          automate: 'reporting',
+          create: 'a financial analysis assistant',
+          deploy: 'a KPI monitoring agent'
+        },
+        {
+          icon: 'scale',
+          title: 'Legal',
+          automate: 'document management',
+          create: 'a legal assistant',
+          deploy: 'a regulatory compliance agent'
+        },
+        {
+          icon: 'truck',
+          title: 'Supply Chain',
+          automate: 'logistics flows',
+          create: 'a supply chain assistant',
+          deploy: 'a procurement optimization agent'
+        },
+        {
+          icon: 'factory',
+          title: 'Operations',
+          automate: 'operations tracking',
+          create: 'a quality assistant',
+          deploy: 'a continuous improvement agent'
+        },
+        {
+          icon: 'headset',
+          title: 'Customer Service',
+          automate: 'recurring requests',
+          create: 'a support assistant',
+          deploy: 'a conversational support agent'
+        },
+        {
+          icon: 'chart',
+          title: 'Business Intelligence',
+          automate: 'dashboards',
+          create: 'a data assistant',
+          deploy: 'a decision analysis agent'
+        },
+        {
+          icon: 'target',
+          title: 'Leadership',
+          automate: 'executive reporting',
+          create: 'an executive assistant',
+          deploy: 'a decision support agent'
+        }
+      ],
+      pedagogyTitle: 'A teaching approach that makes the difference',
+      pedagogy: [
+        { title: 'Learning by doing', body: '60% practice, on real tools.' },
+        { title: 'Interactive workshops', body: 'Immediate hands-on, no passive demos.' },
+        { title: 'Role-based approach', body: 'Cases adapted to every function.' },
+        { title: 'Personalized tracks', body: 'Adapted to your company and your tools.' },
+        { title: 'Continuous assessment', body: 'Before · during · after (up to 90 days).' },
+        { title: 'Operational deliverables', body: 'Prompts, assistants, workflows, action plans.' }
+      ],
+      benefitsTitle: 'Why train your teams?',
+      benefits: [
+        'Higher productivity',
+        'Process automation',
+        'Generative AI mastery',
+        'Better decision-making',
+        'A culture of innovation',
+        'Future-proof skills'
+      ],
+      audiencesTitle: 'Who are our tracks for?',
+      audienceOrgs: ['SMEs', 'Mid-caps', 'Large companies', 'Public sector', 'Administrations', 'Schools'],
+      audiencePeople: [
+        'Employees',
+        'Managers',
+        'Executives',
+        'Leadership teams',
+        'Support functions',
+        'Operational roles'
+      ],
+      engagementsTitle: 'Our commitments',
+      engagements: [
+        'Expert trainers',
+        'Real use cases',
+        'Hands-on workshops',
+        'Interactive sessions',
+        'Personalized tracks',
+        'Qualiopi certified',
+        'Immediately usable deliverables',
+        'Results-driven support'
       ]
     },
     about: {
@@ -1334,7 +1695,7 @@ export const siteContent: Record<Locale, SiteContent> = {
         '100% hands-on workshops on your real cases',
         'Groups of 4 to 12 participants',
         'Materials, prompts and ready-to-use templates included',
-        'Assessment before, during and after (Qualiopi approach)',
+        'Assessment before, during and after — Qualiopi certified',
         'Certificate of completion'
       ],
       note:
@@ -1437,12 +1798,12 @@ export const siteContent: Record<Locale, SiteContent> = {
     },
     finalCta: {
       eyebrow: 'Next step',
-      title: 'An idea to validate, a product to launch, teams to train?',
+      title: 'Ready to train your teams on AI?',
       body:
-        'The simplest way to start: a short audit. We clarify the potential and the priorities, and tell you honestly what we would do in your place.',
+        'Tell us about your goals: we recommend the right track, or build one from scratch. Qualiopi certified, OPCO fundable. Answer within 48 h.',
       primaryCta: {
-        href: 'mailto:contact@mapbrain.ai?subject=MAPBRAIN%20Strategic%20Audit',
-        label: 'Book an audit by email'
+        href: 'mailto:contact@mapbrain.ai?subject=MAPBRAIN%20Training%20Quote',
+        label: 'Request a quote by email'
       },
       channels: [
         { label: 'Email', value: 'contact@mapbrain.ai', href: 'mailto:contact@mapbrain.ai' },
@@ -1466,39 +1827,51 @@ export const siteContent: Record<Locale, SiteContent> = {
       },
       items: [
         {
-          question: 'What kinds of missions can MAPBRAIN handle?',
+          question: 'What training do you offer?',
           answer:
-            'We work across strategic framing, product design, web or SaaS development, AI automation and growth systems.'
+            'Six tracks, from beginner to executive: AI Essentials, AI & Productivity, AI Productivity Suite, Automate your business, AI-Automation & Agents, and AI Business Transformation.'
         },
         {
-          question: 'Do you work through audits, sprints or longer partnerships?',
-          answer:
-            'All three are possible. We can start with a short audit, move into a focused sprint or support execution over a longer arc depending on the situation.'
+          question: 'Are you Qualiopi certified?',
+          answer: 'Yes, MapBrain is a Qualiopi-certified training provider.'
         },
         {
-          question: 'How fast can a first phase start?',
+          question: 'Can French OPCO funding cover the training?',
           answer:
-            'As soon as the framing and priorities are clear. The goal is precisely to reduce drift and trigger a useful first phase quickly.'
+            'Yes. Thanks to the Qualiopi certification, our courses are eligible for OPCO funding. We help you build the application.'
         },
         {
-          question: 'Can you combine strategy, product and automation in one engagement?',
-          answer:
-            'Yes. MAPBRAIN is built to connect business validation, product delivery and operational leverage inside one trajectory.'
+          question: 'On-site or remote?',
+          answer: 'Both, plus hybrid. On-site anywhere in France, or in a virtual classroom.'
         },
         {
-          question: 'Do you work with teams that already have internal resources?',
+          question: 'Are there technical prerequisites?',
           answer:
-            'Yes. We can strengthen an existing team, help structure external partners or directly own part of the execution layer.'
+            'Not for beginner tracks: basic computer skills are enough. Advanced tracks require comfort with digital tools, no programming needed.'
         },
         {
-          question: 'Do you offer training?',
-          answer:
-            'Yes. MapBrain Academy offers six tracks — from beginner (AI Essentials, AI & Productivity) to expert level (Automation & Agents, AI Business Transformation) — on-site, remote or hybrid, always on your real use cases. Request the full catalogue.'
+          question: 'How many participants per session?',
+          answer: '4 to 12 people, so everyone actually gets hands-on.'
         },
         {
-          question: 'How do we know a strategic audit is the right first step?',
+          question: 'Can a course be customized?',
           answer:
-            'When an opportunity needs clarification, priorities are unclear or the risk of building too early is high, the audit is usually the best starting point.'
+            'Yes, always: industry, roles, processes, tools. No standardized training.'
+        },
+        {
+          question: 'Which tools will we learn?',
+          answer:
+            'ChatGPT, Claude, Gemini, Microsoft Copilot, Perplexity, NotebookLM, Make, n8n, Zapier, Power Automate… depending on the track.'
+        },
+        {
+          question: 'Do you also build software and automations?',
+          answer:
+            'Yes. MAPBRAIN is also a product studio: audit, design, web and SaaS development, AI automation. See the Framework tab.'
+        },
+        {
+          question: 'How do we get started?',
+          answer:
+            'Write to us through the form or at contact@mapbrain.ai. Answer within 48 h with a track recommendation and a quote.'
         }
       ]
     },

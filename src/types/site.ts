@@ -74,6 +74,64 @@ export interface AutomationRationale {
   body: string[]
 }
 
+export interface HomeStat {
+  label: string
+  value: string
+}
+
+export interface ParcoursCard {
+  color: 'blue' | 'green' | 'purple' | 'orange' | 'red' | 'dark'
+  description: string
+  title: string
+  tools: string
+}
+
+export interface UseCaseCard {
+  automate: string
+  create: string
+  deploy: string
+  icon:
+    | 'users'
+    | 'megaphone'
+    | 'handshake'
+    | 'coins'
+    | 'scale'
+    | 'truck'
+    | 'factory'
+    | 'headset'
+    | 'chart'
+    | 'target'
+  title: string
+}
+
+export interface PedagogyCard {
+  body: string
+  title: string
+}
+
+export interface HomeContent {
+  audienceOrgs: string[]
+  audiencePeople: string[]
+  audiencesTitle: string
+  benefits: string[]
+  benefitsTitle: string
+  customChecks: string[]
+  customNote: string
+  customTitle: string
+  engagements: string[]
+  engagementsTitle: string
+  parcoursCards: ParcoursCard[]
+  parcoursCta: CtaLink
+  parcoursTitle: string
+  pedagogy: PedagogyCard[]
+  pedagogyTitle: string
+  stats: HomeStat[]
+  statsTitle: string
+  useCaseLabels: { automate: string; create: string; deploy: string }
+  useCases: UseCaseCard[]
+  useCasesTitle: string
+}
+
 export interface FormationProgram {
   audience: string
   badge?: string
@@ -181,6 +239,7 @@ export interface SiteContent {
     whatWeDoLabel: string
   }
   hero: HeroContent
+  home: HomeContent
   meta: {
     description: string
     title: string

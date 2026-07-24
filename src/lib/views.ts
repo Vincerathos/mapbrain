@@ -12,15 +12,15 @@ export type View =
 export const hashToView: Record<string, View> = {
   '': 'home',
   top: 'home',
-  promise: 'home',
-  audiences: 'home',
+  faq: 'home',
   framework: 'method',
   automation: 'automation',
   formations: 'formations',
   projects: 'projects',
   about: 'about',
+  promise: 'about',
+  audiences: 'about',
   partners: 'about',
-  faq: 'contact',
   contact: 'contact'
 }
 

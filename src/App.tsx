@@ -10,6 +10,12 @@ import { FaqSection } from './sections/faq-section'
 import { FinalCtaSection } from './sections/final-cta-section'
 import { Footer } from './sections/footer'
 import { FormationsSection } from './sections/formations-section'
+import {
+  HomeStatsSection,
+  ParcoursOverviewSection,
+  PedagogySection,
+  UseCasesSection
+} from './sections/home-landing-sections'
 import { Header } from './sections/header'
 import { HeroSection } from './sections/hero-section'
 import { LogoMarqueeSection } from './sections/logo-marquee-section'
@@ -88,8 +94,11 @@ function App() {
           <>
             <HeroSection content={content.hero} />
             <LogoMarqueeSection content={content.partners} />
-            <PromiseSection content={content.promise} />
-            <AudienceSection content={content.audiences} />
+            <HomeStatsSection content={content.home} />
+            <ParcoursOverviewSection content={content.home} />
+            <UseCasesSection content={content.home} />
+            <PedagogySection content={content.home} />
+            <FaqSection content={content.faq} />
             <FinalCtaSection />
           </>
         ) : null}
@@ -109,16 +118,13 @@ function App() {
         {view === 'about' ? (
           <>
             <AboutSection content={content.about} />
+            <PromiseSection content={content.promise} />
+            <AudienceSection content={content.audiences} />
             <PartnersSection content={content.partners} />
           </>
         ) : null}
 
-        {view === 'contact' ? (
-          <>
-            <FaqSection content={content.faq} />
-            <FinalCtaSection />
-          </>
-        ) : null}
+        {view === 'contact' ? <FinalCtaSection /> : null}
       </main>
 
       <Footer

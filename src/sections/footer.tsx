@@ -41,6 +41,13 @@ export function Footer({ content, currentLocale, items }: FooterProps) {
             <p className="max-w-[32ch] text-[0.74rem] normal-case tracking-[0.01em] text-[rgba(17,17,17,0.56)]">
               {content.blurb}
             </p>
+            {isAcademy ? (
+              <p className="max-w-[32ch] rounded-[10px] border border-[var(--line)] bg-white px-3 py-2 text-[0.7rem] normal-case leading-5 tracking-[0.01em] text-[var(--muted)]">
+                {currentLocale === 'fr'
+                  ? 'Organisme de formation certifié Qualiopi au titre des actions de formation.'
+                  : 'Training provider Qualiopi-certified for training actions.'}
+              </p>
+            ) : null}
           </div>
 
           <nav
@@ -82,13 +89,13 @@ export function Footer({ content, currentLocale, items }: FooterProps) {
             aria-hidden="true"
             className="select-none overflow-hidden text-center font-[var(--font-display)] text-[clamp(4.6rem,22vw,21rem)] font-semibold uppercase leading-[0.78] tracking-[-0.12em] text-transparent [background-image:radial-gradient(circle,rgba(0,0,0,0.52)_1.15px,transparent_1.15px)] [background-position:center] [background-size:8px_8px] bg-clip-text"
           >
-            MAPBRAIN
+            {isAcademy ? 'ACADEMY' : 'MAPBRAIN'}
           </p>
         </div>
 
         <div className="relative z-10 -mt-2 flex items-center justify-between px-5 pb-4 sm:px-8 lg:px-12">
           <span className="text-[0.68rem] uppercase tracking-[0.18em] text-[rgba(17,17,17,0.68)]">
-            MAPBRAIN
+            {isAcademy ? 'MapBrain Academy' : 'MAPBRAIN'}
           </span>
           <span className="text-right text-[0.68rem] uppercase tracking-[0.18em] text-[rgba(17,17,17,0.68)]">
             {copy.strategy}

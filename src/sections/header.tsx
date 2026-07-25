@@ -1,7 +1,9 @@
 import { Menu, X } from 'lucide-react'
 import { useState } from 'react'
+import { isAcademy } from '../lib/site-mode'
 import { hashToView, type View } from '../lib/views'
 import type { CtaLink, Locale, NavItem } from '../types/site'
+import { AcademyLogo } from '../ui/academy-logo'
 import { LocaleSwitcher } from '../ui/locale-switcher'
 
 interface HeaderProps {
@@ -34,11 +36,18 @@ export function Header({
         <div className="rounded-[28px] border border-[color:rgb(17_17_17_/_0.08)] bg-[color:rgb(255_255_255_/_0.72)] px-4 py-3 shadow-[0_14px_34px_rgba(17,17,17,0.06)] backdrop-blur-md">
           <div className="flex items-center justify-between gap-4">
             <a
-              className="shrink-0 text-[1rem] font-semibold tracking-[-0.06em] text-[var(--ink)]"
+              className="flex shrink-0 items-center gap-2 text-[1rem] font-semibold tracking-[-0.04em] text-[var(--ink)]"
               href="#top"
               onClick={handleCloseMobileMenu}
             >
-              MAPBRAIN
+              {isAcademy ? (
+                <>
+                  <AcademyLogo className="h-6 w-auto" />
+                  <span>MapBrain Academy</span>
+                </>
+              ) : (
+                'MAPBRAIN'
+              )}
             </a>
 
             <nav aria-label="Navigation principale" className="hidden xl:block">

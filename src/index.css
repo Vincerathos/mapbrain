@@ -79,6 +79,21 @@ html[data-site='academy'] .hero-stage-ribbon {
   background: linear-gradient(90deg, rgba(146, 104, 189, 0.12), rgba(224, 147, 71, 0.2), rgba(192, 90, 127, 0.1));
 }
 
+/* Typographie Academy : titres ronds (Bricolage Grotesque), esprit brochure. */
+html[data-site='academy'] {
+  --font-display: 'Bricolage Grotesque', 'Manrope', sans-serif;
+}
+
+html[data-site='academy'] h1,
+html[data-site='academy'] h2,
+html[data-site='academy'] h3,
+html[data-site='academy'] .hero-wordmark,
+html[data-site='academy'] .hero-panel-title,
+html[data-site='academy'] .section-title-break {
+  font-family: 'Bricolage Grotesque', 'Manrope', sans-serif;
+  letter-spacing: -0.02em;
+}
+
 /* Apparition au scroll (voir use-reveal.ts) — opacity/transform uniquement, GPU-friendly. */
 @media (prefers-reduced-motion: no-preference) {
   .reveal-pending {

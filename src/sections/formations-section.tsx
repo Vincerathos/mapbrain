@@ -8,6 +8,11 @@ interface FormationsSectionProps {
   content: SiteContent['formations']
 }
 
+// Couleur d'identité de chaque parcours (même ordre que content.programs) :
+// AI Essentials, Automatisation & Agents, Productivity Suite,
+// IA & Productivité, Automatiser son entreprise, Business Transformation.
+const programPalette = ['#2f6fb5', '#c04b4b', '#7b4fa6', '#3d8a52', '#d07b2f', '#2b2b30']
+
 export function FormationsSection({ content }: FormationsSectionProps) {
   const revealRef = useReveal<HTMLElement>()
 
@@ -56,6 +61,12 @@ export function FormationsSection({ content }: FormationsSectionProps) {
                     </span>
                   ) : null}
                 </figure>
+
+                <span
+                  aria-hidden="true"
+                  className="block h-1.5 w-full"
+                  style={{ background: programPalette[index % programPalette.length] }}
+                />
 
                 <div className="flex flex-1 flex-col p-6 sm:p-7">
                 <div className="flex flex-wrap items-center gap-2">

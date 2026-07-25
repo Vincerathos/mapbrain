@@ -1,3 +1,5 @@
+import { isAcademy } from '../lib/site-mode'
+
 interface SectionBandHeadingProps {
   eyebrow: string
   title: string
@@ -16,7 +18,15 @@ export function SectionBandHeading({
         {title}
       </h2>
       <div className="flex items-center gap-3 border-l border-[var(--line)] pl-5 md:justify-end">
-        <span className="size-2 shrink-0 rounded-full bg-[var(--accent-alt)]" />
+        {isAcademy ? (
+          <span aria-hidden="true" className="flex shrink-0 items-center">
+            <span className="size-2.5 rounded-full bg-[#c05a7f]" />
+            <span className="-ml-0.5 size-2 rounded-full bg-[#9268bd]" />
+            <span className="-ml-0.5 size-1.5 rounded-full bg-[#e09347]" />
+          </span>
+        ) : (
+          <span className="size-2 shrink-0 rounded-full bg-[var(--accent-alt)]" />
+        )}
         <span className="font-mono text-[0.76rem] uppercase tracking-[0.24em] text-[var(--muted)]">
           {eyebrow}
         </span>

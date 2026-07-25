@@ -1,4 +1,5 @@
 import { useReveal } from '../hooks/use-reveal'
+import { contactEmail, isAcademy } from '../lib/site-mode'
 import type { Locale, NavItem, SiteContent } from '../types/site'
 
 interface FooterProps {
@@ -15,16 +16,16 @@ export function Footer({ content, currentLocale, items }: FooterProps) {
   const copy =
     currentLocale === 'fr'
       ? {
-          audit: 'Réserver un audit',
-          contact: 'contact@mapbrain.ai',
+          audit: isAcademy ? 'Demander un devis' : 'Réserver un audit',
+          contact: contactEmail,
           copyright: `© ${year} MAPBRAIN`,
-          strategy: 'Analyse. Build. Scale.'
+          strategy: isAcademy ? 'Formations IA certifiées Qualiopi' : 'Analyse. Build. Scale.'
         }
       : {
-          audit: 'Book an audit',
-          contact: 'contact@mapbrain.ai',
+          audit: isAcademy ? 'Request a quote' : 'Book an audit',
+          contact: contactEmail,
           copyright: `© ${year} MAPBRAIN`,
-          strategy: 'Analyze. Build. Scale.'
+          strategy: isAcademy ? 'Qualiopi-certified AI training' : 'Analyze. Build. Scale.'
         }
 
   return (
@@ -60,13 +61,13 @@ export function Footer({ content, currentLocale, items }: FooterProps) {
           <div className="flex flex-wrap gap-x-6 gap-y-2 lg:min-w-[280px] lg:justify-end">
             <a
               className="transition-colors duration-200 hover:text-[var(--ink)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--ink)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--surface)]"
-              href="mailto:contact@mapbrain.ai"
+              href={`mailto:${contactEmail}`}
             >
               {copy.contact}
             </a>
             <a
               className="transition-colors duration-200 hover:text-[var(--ink)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--ink)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--surface)]"
-              href="mailto:contact@mapbrain.ai?subject=MAPBRAIN%20Strategic%20Audit"
+              href={`mailto:${contactEmail}?subject=${isAcademy ? 'Devis%20formation%20MAPBRAIN' : 'MAPBRAIN%20Strategic%20Audit'}`}
             >
               {copy.audit}
             </a>

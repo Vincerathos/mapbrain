@@ -3,6 +3,7 @@ import type { FormEvent } from 'react'
 import { useTranslation } from 'react-i18next'
 import { useReveal } from '../hooks/use-reveal'
 import { socialLinks } from '../data/social-links'
+import { contactEmail } from '../lib/site-mode'
 
 export function FinalCtaSection() {
   const revealRef = useReveal<HTMLElement>()
@@ -52,7 +53,7 @@ export function FinalCtaSection() {
       message
     ].join('\n')
 
-    window.location.href = `mailto:contact@mapbrain.ai?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`
+    window.location.href = `mailto:${contactEmail}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`
   }
 
   return (
@@ -127,7 +128,7 @@ export function FinalCtaSection() {
                       E-Mail
                     </p>
                     <p className="mt-6 text-[1rem] leading-8 text-[var(--ink)]">
-                      contact@mapbrain.ai
+                      {contactEmail}
                     </p>
                   </div>
 

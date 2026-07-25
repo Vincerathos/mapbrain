@@ -800,7 +800,7 @@ export const siteContent: Record<Locale, SiteContent> = {
       note:
         "Chaque parcours s'adapte à vos outils et au niveau de vos équipes. On peut aussi combiner plusieurs parcours ou construire du sur-mesure. Demandez le catalogue, on en parle.",
       cta: {
-        href: 'mailto:contact@mapbrain.ai?subject=Catalogue%20de%20formations%20MAPBRAIN',
+        href: 'mailto:contact@mapbrain-academy.fr?subject=Catalogue%20de%20formations%20MapBrain%20Academy',
         label: 'Demander le catalogue'
       }
     },
@@ -917,7 +917,7 @@ export const siteContent: Record<Locale, SiteContent> = {
         'Voici les réponses les plus utiles pour comprendre comment MAPBRAIN cadre, exécute et accélère un projet.',
       contactPrompt: 'Vous avez encore une question ?',
       contactCta: {
-        href: 'mailto:contact@mapbrain.ai?subject=Question%20MAPBRAIN',
+        href: 'mailto:contact@mapbrain-academy.fr?subject=Question%20MapBrain%20Academy',
         label: 'Nous contacter'
       },
       visual: {
@@ -973,7 +973,7 @@ export const siteContent: Record<Locale, SiteContent> = {
         {
           question: 'Comment démarrer ?',
           answer:
-            'Écrivez-nous via le formulaire ou à contact@mapbrain.ai. Réponse sous 48 h avec une recommandation de parcours et un devis.'
+            'Écrivez-nous via le formulaire ou à contact@mapbrain-academy.fr. Réponse sous 48 h avec une recommandation de parcours et un devis.'
         }
       ]
     },
@@ -1773,7 +1773,7 @@ export const siteContent: Record<Locale, SiteContent> = {
       note:
         'Every track adapts to your tools and your teams’ level. Tracks can be combined or fully customized. Request the catalogue and let’s talk.',
       cta: {
-        href: 'mailto:contact@mapbrain.ai?subject=MAPBRAIN%20Training%20Catalogue',
+        href: 'mailto:contact@mapbrain-academy.fr?subject=MapBrain%20Academy%20Training%20Catalogue',
         label: 'Request the catalogue'
       }
     },
@@ -1890,7 +1890,7 @@ export const siteContent: Record<Locale, SiteContent> = {
         'Here are the answers that matter most to understand how MAPBRAIN frames, builds and accelerates a project.',
       contactPrompt: 'Still have a question?',
       contactCta: {
-        href: 'mailto:contact@mapbrain.ai?subject=Question%20for%20MAPBRAIN',
+        href: 'mailto:contact@mapbrain-academy.fr?subject=Question%20for%20MapBrain%20Academy',
         label: 'Contact us'
       },
       visual: {
@@ -1943,7 +1943,7 @@ export const siteContent: Record<Locale, SiteContent> = {
         {
           question: 'How do we get started?',
           answer:
-            'Write to us through the form or at contact@mapbrain.ai. Answer within 48 h with a track recommendation and a quote.'
+            'Write to us through the form or at contact@mapbrain-academy.fr. Answer within 48 h with a track recommendation and a quote.'
         }
       ]
     },

@@ -3,9 +3,9 @@ import type { Locale, SiteContent } from '../types/site'
 export const siteContent: Record<Locale, SiteContent> = {
   fr: {
     meta: {
-      title: 'MAPBRAIN | Formations IA & studio produit',
+      title: 'MapBrain Academy | Formations IA certifiées Qualiopi',
       description:
-        "MAPBRAIN forme vos équipes à l'IA et construit vos produits digitaux. Six parcours de formation, de l'initiation à la stratégie d'entreprise, en présentiel ou à distance."
+        "MapBrain Academy forme vos équipes à l'IA : six parcours certifiés Qualiopi, du collaborateur au comité de direction, finançables OPCO. Présentiel, distanciel ou hybride."
     },
     navigation: {
       items: [
@@ -984,9 +984,9 @@ export const siteContent: Record<Locale, SiteContent> = {
   },
   en: {
     meta: {
-      title: 'MAPBRAIN | AI training & product studio',
+      title: 'MapBrain Academy | Qualiopi-certified AI training',
       description:
-        'MAPBRAIN trains your teams on AI and builds your digital products. Six training tracks, from first steps to executive strategy, on-site or remote.'
+        'MapBrain Academy trains your teams on AI: six Qualiopi-certified tracks, from employees to executive committees. On-site, remote or hybrid.'
     },
     navigation: {
       items: [

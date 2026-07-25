@@ -9,14 +9,50 @@ export const siteContent: Record<Locale, SiteContent> = {
     },
     navigation: {
       items: [
-        { href: '#formations', label: 'Formations' },
-        { href: '#framework', label: 'Méthode' },
-        { href: '#automation', label: 'IA & automatisation' },
-        { href: '#projects', label: 'Projets' },
-        { href: '#about', label: 'À propos' },
-        { href: '#partners', label: 'Écosystème' }
+        { href: '#formations', label: 'Les parcours' },
+        { href: '#faq', label: 'FAQ' },
+        { href: '#contact', label: 'Contact' }
       ],
       cta: { href: '#contact', label: 'Demander un devis' }
+    },
+    agency: {
+      meta: {
+        title: 'MAPBRAIN | Studio produit & IA',
+        description:
+          "MAPBRAIN construit des produits digitaux et automatise les opérations : stratégie, design, développement web et SaaS, IA. Basé à Marseille, actif partout."
+      },
+      navigation: {
+        items: [
+          { href: '#framework', label: 'Méthode' },
+          { href: '#automation', label: 'IA & automatisation' },
+          { href: '#projects', label: 'Projets' },
+          { href: '#about', label: 'À propos' },
+          { href: '#partners', label: 'Écosystème' }
+        ],
+        cta: { href: '#contact', label: 'Réserver un audit' }
+      },
+      hero: {
+        title: 'Analyse. Build. Scale.',
+        subtitle: 'Transformez vos idées en produits concrets.',
+        body:
+          "Nous construisons des produits digitaux, nous automatisons ce qui fait perdre du temps à vos équipes. De l'idée au lancement, avec un seul interlocuteur.",
+        rotatingPhrases: [
+          'Transformez vos idées en produits concrets.',
+          'Automatisez ce qui vous fait perdre du temps.',
+          'Analyse. Build. Scale.'
+        ],
+        primaryCta: { href: '#contact', label: 'Réserver un audit stratégique' },
+        secondaryCta: { href: '#projects', label: 'Voir nos projets' },
+        badgeTitle: 'MAPBRAIN Team',
+        badgeBody: 'Analyse, build et scale pour les équipes qui veulent aller vite.',
+        serviceTags: [
+          'Validation business',
+          'Design produit',
+          'Développement web & mobile',
+          'IA & automatisation',
+          'Croissance'
+        ]
+      }
     },
     hero: {
       title: 'Analyse. Build. Scale.',
@@ -954,14 +990,50 @@ export const siteContent: Record<Locale, SiteContent> = {
     },
     navigation: {
       items: [
-        { href: '#formations', label: 'Training' },
-        { href: '#framework', label: 'Framework' },
-        { href: '#automation', label: 'AI & automation' },
-        { href: '#projects', label: 'Projects' },
-        { href: '#about', label: 'About' },
-        { href: '#partners', label: 'Ecosystem' }
+        { href: '#formations', label: 'The tracks' },
+        { href: '#faq', label: 'FAQ' },
+        { href: '#contact', label: 'Contact' }
       ],
       cta: { href: '#contact', label: 'Request a quote' }
+    },
+    agency: {
+      meta: {
+        title: 'MAPBRAIN | Product & AI studio',
+        description:
+          'MAPBRAIN builds digital products and automates operations: strategy, design, web and SaaS development, AI. Based in Marseille, working everywhere.'
+      },
+      navigation: {
+        items: [
+          { href: '#framework', label: 'Framework' },
+          { href: '#automation', label: 'AI & automation' },
+          { href: '#projects', label: 'Projects' },
+          { href: '#about', label: 'About' },
+          { href: '#partners', label: 'Ecosystem' }
+        ],
+        cta: { href: '#contact', label: 'Book an audit' }
+      },
+      hero: {
+        title: 'Analyze. Build. Scale.',
+        subtitle: 'Turn ideas into real products.',
+        body:
+          'We build digital products and automate the work that wastes your teams’ time. From idea to launch, with a single point of contact.',
+        rotatingPhrases: [
+          'Turn ideas into real products.',
+          'Automate the work that wastes your time.',
+          'Analyze. Build. Scale.'
+        ],
+        primaryCta: { href: '#contact', label: 'Book a Strategic Audit' },
+        secondaryCta: { href: '#projects', label: 'See our projects' },
+        badgeTitle: 'MAPBRAIN Team',
+        badgeBody: 'Analyze, build and scale for teams that need speed and clarity.',
+        serviceTags: [
+          'Business validation',
+          'Product design',
+          'Web & mobile development',
+          'AI & automation',
+          'Growth'
+        ]
+      }
     },
     hero: {
       title: 'Analyze. Build. Scale.',

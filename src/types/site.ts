@@ -240,6 +240,17 @@ export interface SiteContent {
   }
   hero: HeroContent
   home: HomeContent
+  agency: {
+    hero: HeroContent
+    meta: {
+      description: string
+      title: string
+    }
+    navigation: {
+      cta: CtaLink
+      items: NavItem[]
+    }
+  }
   meta: {
     description: string
     title: string

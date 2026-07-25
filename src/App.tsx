@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { siteContent } from './data/site-content'
 import { isLocale } from './lib/locale'
+import { academyUrl, agencyUrl, isAcademy } from './lib/site-mode'
 import { readViewFromHash, type View } from './lib/views'
 import { AudienceSection } from './sections/audience-section'
 import { AboutSection } from './sections/about-section'
@@ -35,6 +36,16 @@ function App() {
 
   const content = siteContent[locale]
 
+  const meta = isAcademy ? content.meta : content.agency.meta
+  const hero = isAcademy ? content.hero : content.agency.hero
+  const navigation = isAcademy ? content.navigation : content.agency.navigation
+
+  // Lien croisé entre les deux sites.
+  const crossLink = isAcademy
+    ? { href: agencyUrl, label: locale === 'fr' ? 'Le studio' : 'The studio' }
+    : { href: academyUrl, label: 'MapBrain Academy' }
+  const navItems = [...navigation.items, crossLink]
+
   useEffect(() => {
     const handleHashChange = () => {
       setView(readViewFromHash())
@@ -53,7 +64,7 @@ function App() {
 
   useEffect(() => {
     document.documentElement.lang = locale
-    document.title = content.meta.title
+    document.title = meta.title
 
     let description = document.querySelector<HTMLMetaElement>(
       'meta[name="description"]'
@@ -65,8 +76,8 @@ function App() {
       document.head.appendChild(description)
     }
 
-    description.content = content.meta.description
-  }, [content.meta.description, content.meta.title, locale])
+    description.content = meta.description
+  }, [meta.description, meta.title, locale])
 
   const handleLocaleChange = (nextLocale: Locale) => {
     void i18n.changeLanguage(nextLocale)
@@ -83,22 +94,32 @@ function App() {
 
       <Header
         activeView={view}
-        cta={content.navigation.cta}
+        cta={navigation.cta}
         currentLocale={locale}
-        items={content.navigation.items}
+        items={navItems}
         onLocaleChange={handleLocaleChange}
       />
 
       <main className={view === 'home' ? undefined : 'pt-24 sm:pt-28 lg:pt-32'} id="content">
-        {view === 'home' ? (
+        {view === 'home' && isAcademy ? (
           <>
-            <HeroSection content={content.hero} />
+            <HeroSection content={hero} />
             <LogoMarqueeSection content={content.partners} />
             <HomeStatsSection content={content.home} />
             <ParcoursOverviewSection content={content.home} />
             <UseCasesSection content={content.home} />
             <PedagogySection content={content.home} />
             <FaqSection content={content.faq} />
+            <FinalCtaSection />
+          </>
+        ) : null}
+
+        {view === 'home' && !isAcademy ? (
+          <>
+            <HeroSection content={hero} />
+            <LogoMarqueeSection content={content.partners} />
+            <PromiseSection content={content.promise} />
+            <AudienceSection content={content.audiences} />
             <FinalCtaSection />
           </>
         ) : null}
@@ -118,8 +139,6 @@ function App() {
         {view === 'about' ? (
           <>
             <AboutSection content={content.about} />
-            <PromiseSection content={content.promise} />
-            <AudienceSection content={content.audiences} />
             <PartnersSection content={content.partners} />
           </>
         ) : null}
@@ -130,7 +149,7 @@ function App() {
       <Footer
         content={content.footer}
         currentLocale={locale}
-        items={content.navigation.items}
+        items={navItems}
       />
     </div>
   )

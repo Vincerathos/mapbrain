@@ -38,6 +38,47 @@ html {
   overflow-x: clip;
 }
 
+/* ------------------------------------------------------------------ */
+/* Charte MapBrain Academy (brochure) : violet profond, lavande,       */
+/* dégradé rose/orange. Appliquée uniquement quand data-site=academy.  */
+/* ------------------------------------------------------------------ */
+html[data-site='academy'] {
+  --surface: #faf8fc;
+  --panel: #f3eef9;
+  --ink: #261a38;
+  --muted: #5b4e6e;
+  --line: #e5ddf0;
+  --line-strong: #cdbfe0;
+  --accent: #d07b2f;
+  --accent-deep: #7b4fa6;
+  --accent-soft: #f3eafb;
+  --accent-alt: #c05a7f;
+  --accent-alt-deep: #643f8c;
+  --accent-alt-soft: #f7e6ee;
+  --hero-dark: #2e1f45;
+  --hero-mid: #9268bd;
+}
+
+/* Hero façon couverture de brochure : fond violet profond, halos doux. */
+html[data-site='academy'] .hero-stage {
+  background:
+    radial-gradient(circle at 78% 16%, rgba(224, 147, 71, 0.42), transparent 22%),
+    radial-gradient(circle at 89% 44%, rgba(192, 90, 127, 0.4), transparent 18%),
+    radial-gradient(circle at 66% 62%, rgba(146, 104, 189, 0.48), transparent 22%),
+    radial-gradient(circle at 12% 84%, rgba(146, 104, 189, 0.32), transparent 26%),
+    radial-gradient(circle at 30% 24%, rgba(192, 90, 127, 0.2), transparent 22%),
+    linear-gradient(135deg, #241533 0%, #33204a 42%, #4a2c5e 74%, #6d3f63 100%);
+}
+
+html[data-site='academy'] .hero-stage::before,
+html[data-site='academy'] .hero-stage::after {
+  background: linear-gradient(90deg, rgba(146, 104, 189, 0.1), rgba(224, 147, 71, 0.18), rgba(192, 90, 127, 0.12));
+}
+
+html[data-site='academy'] .hero-stage-ribbon {
+  background: linear-gradient(90deg, rgba(146, 104, 189, 0.12), rgba(224, 147, 71, 0.2), rgba(192, 90, 127, 0.1));
+}
+
 /* Apparition au scroll (voir use-reveal.ts) — opacity/transform uniquement, GPU-friendly. */
 @media (prefers-reduced-motion: no-preference) {
   .reveal-pending {

@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 import { useReveal } from '../hooks/use-reveal'
+import { isAcademy } from '../lib/site-mode'
 import type { HeroContent } from '../types/site'
 import { ButtonLink } from '../ui/button-link'
 import { socialLinks } from '../data/social-links'
@@ -54,7 +55,7 @@ export function HeroSection({ content }: HeroSectionProps) {
                 <span className="block sm:inline">MAPBRAIN</span>
                 <sup className="hero-wordmark-mark">®</sup>
               </span>
-              <span className="inline">_Agency</span>
+              <span className="inline">{isAcademy ? '_Academy' : '_Agency'}</span>
             </h1>
           </div>
 

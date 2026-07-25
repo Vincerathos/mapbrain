@@ -105,7 +105,7 @@ export function FormationsSection({ content }: FormationsSectionProps) {
         </div>
 
         <div
-          className="mt-6 overflow-hidden rounded-[26px] border border-[color:rgb(17_17_17_/_0.08)] bg-[linear-gradient(135deg,#6b5476_0%,#8f6c95_48%,#d09880_100%)] p-6 text-white sm:p-8"
+          className="mt-6 overflow-hidden rounded-[26px] border border-[color:rgb(17_17_17_/_0.08)] bg-[linear-gradient(135deg,#2e1f45_0%,#7b4fa6_45%,#c05a7f_75%,#e09347_100%)] p-6 text-white sm:p-8"
           data-reveal
         >
           <div className="grid gap-6 lg:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)] lg:items-center">
